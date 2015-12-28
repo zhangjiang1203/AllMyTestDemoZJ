@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ZJBaiDuBaseViewController">
+            <connections>
+                <outlet property="myBaiDuMapView" destination="kAR-q8-UbD" id="7Sd-pE-Pr0"/>
+                <outlet property="scaleBackView" destination="eoe-Ik-gFc" id="061-cb-qP4"/>
+                <outlet property="scaleBigImage" destination="V8l-uq-bff" id="LFS-ed-vh9"/>
+                <outlet property="scaleSmallImage" destination="vss-Kr-aHn" id="Rps-Hu-hKl"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kAR-q8-UbD" customClass="BMKMapView">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eoe-Ik-gFc">
+                    <rect key="frame" x="275" y="478" width="30" height="70"/>
+                    <subviews>
+                        <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_scaleSamll" translatesAutoresizingMaskIntoConstraints="NO" id="vss-Kr-aHn">
+                            <rect key="frame" x="2" y="4" width="25" height="25"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="25" id="2c1-EO-JBV"/>
+                                <constraint firstAttribute="height" constant="25" id="WEy-AT-VcO"/>
+                            </constraints>
+                            <connections>
+                                <outletCollection property="gestureRecognizers" destination="tGc-Wf-fNl" appends="YES" id="UR5-4A-wwP"/>
+                            </connections>
+                        </imageView>
+                        <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_scaleBig" translatesAutoresizingMaskIntoConstraints="NO" id="V8l-uq-bff">
+                            <rect key="frame" x="2" y="41" width="25" height="25"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="25" id="MfO-VM-kJb"/>
+                                <constraint firstAttribute="width" constant="25" id="chP-Dm-R5N"/>
+                            </constraints>
+                            <connections>
+                                <outletCollection property="gestureRecognizers" destination="R1E-qK-OGM" appends="YES" id="rKb-FO-otE"/>
+                            </connections>
+                        </imageView>
+                    </subviews>
+                    <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="30" id="3Sy-Qd-Kdt"/>
+                        <constraint firstItem="V8l-uq-bff" firstAttribute="centerX" secondItem="eoe-Ik-gFc" secondAttribute="centerX" id="Cst-rF-zBX"/>
+                        <constraint firstAttribute="height" constant="70" id="inj-qT-r3k"/>
+                        <constraint firstItem="vss-Kr-aHn" firstAttribute="top" secondItem="eoe-Ik-gFc" secondAttribute="top" constant="4" id="kIN-8Q-IAS"/>
+                        <constraint firstItem="vss-Kr-aHn" firstAttribute="centerX" secondItem="eoe-Ik-gFc" secondAttribute="centerX" id="s2T-UE-zIz"/>
+                        <constraint firstAttribute="bottom" secondItem="V8l-uq-bff" secondAttribute="bottom" constant="4" id="wsQ-VZ-Aqg"/>
+                    </constraints>
+                </view>
+                <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rGk-de-nTC" userLabel="location">
+                    <rect key="frame" x="15" y="474" width="30" height="44"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="44" id="ihp-JY-bqr"/>
+                        <constraint firstAttribute="width" constant="30" id="zog-7M-aYC"/>
+                    </constraints>
+                    <state key="normal" image="icon_location"/>
+                    <connections>
+                        <action selector="mapViewButtonClick:" destination="-1" eventType="touchUpInside" id="KuY-vQ-Xo4"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <gestureRecognizers/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="eoe-Ik-gFc" secondAttribute="bottom" constant="20" id="5k3-dN-4Qr"/>
+                <constraint firstAttribute="bottom" secondItem="eoe-Ik-gFc" secondAttribute="bottom" constant="20" id="61c-sL-awf"/>
+                <constraint firstItem="rGk-de-nTC" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="15" id="7e6-04-J0t"/>
+                <constraint firstAttribute="bottom" secondItem="rGk-de-nTC" secondAttribute="bottom" constant="50" id="ALO-IK-AaZ"/>
+                <constraint firstAttribute="trailing" secondItem="eoe-Ik-gFc" secondAttribute="trailing" constant="15" id="L1w-SK-SQw"/>
+                <constraint firstItem="kAR-q8-UbD" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="Uk9-Mp-Cfq"/>
+                <constraint firstItem="kAR-q8-UbD" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="dCL-f3-EV9"/>
+                <constraint firstAttribute="trailing" secondItem="kAR-q8-UbD" secondAttribute="trailing" id="erE-M3-BEb"/>
+                <constraint firstAttribute="bottom" secondItem="kAR-q8-UbD" secondAttribute="bottom" id="ero-35-JTj"/>
+                <constraint firstAttribute="trailing" secondItem="eoe-Ik-gFc" secondAttribute="trailing" constant="15" id="fjw-dY-5yw"/>
+            </constraints>
+            <point key="canvasLocation" x="478" y="434"/>
+        </view>
+        <tapGestureRecognizer id="tGc-Wf-fNl">
+            <connections>
+                <action selector="scaleSmallBaiDuMap:" destination="-1" id="iwu-Dr-EH4"/>
+            </connections>
+        </tapGestureRecognizer>
+        <tapGestureRecognizer id="R1E-qK-OGM">
+            <connections>
+                <action selector="scaleBigBaiDuMap:" destination="-1" id="joW-fD-d3C"/>
+            </connections>
+        </tapGestureRecognizer>
+    </objects>
+    <resources>
+        <image name="icon_location" width="22" height="35"/>
+        <image name="icon_scaleBig" width="30" height="30"/>
+        <image name="icon_scaleSamll" width="30" height="30"/>
+    </resources>
+</document>

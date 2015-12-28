@@ -1,0 +1,78 @@
+//
+//  AllMyTestDemoXi-Prefix.pch
+//  AllMyTestDemoZJ
+//
+//  Created by zhangjiang on 15/11/6.
+//  Copyright © 2015年 zhangjiang. All rights reserved.
+//
+
+/*
+ * 默认字体可以设置字体大小
+ */
+#define KDefaultFont(A) [UIFont systemFontOfSize:(A)]
+
+//#define g_App ((AppDelegate*)[[UIApplication sharedApplication] delegate])
+/**
+ *  十六进制颜色代码
+ */
+#define UIColorFromRGB(rgbValue) [UIColor colorWithRed : ((float)((rgbValue & 0xFF0000) >> 16)) / 255.0 green : ((float)((rgbValue & 0xFF00) >> 8)) / 255.0 blue : ((float)(rgbValue & 0xFF)) / 255.0 alpha : 1.0]
+/**
+ *  快速定义颜色
+ */
+#define KRGBA(r,g,b,a) [UIColor colorWithRed:r/255.0 green:g/255.0 blue:b/255.0 alpha:a]
+
+#define ScreenWidth [UIScreen mainScreen].bounds.size.width
+#define ScreenHeight [UIScreen mainScreen].bounds.size.height
+
+
+#ifdef __OBJC__
+
+#import "MBProgressHUD+Add.h"
+#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
+#import <QuartzCore/QuartzCore.h>
+#import <pop/POP.h>
+//使用不带前缀的约束
+#define MAS_SHORTHAND
+//使用带前缀的约束mas_
+#define MAS_SHORTHAND_GLOBALS
+#import "Masonry.h"
+#import "HUDHelper.h"
+#import "WCPaymentModel.h"
+#import "MJExtension.h"
+#import "UIScrollView+EmptyDataSet.h"
+#import "UITableView+LoadAnimation.h"
+
+//多视图滚动
+#import "XTSegmentControl.h"
+#import "iCarousel.h"
+#import "ZJAreaDataManager.h"
+#import "ZJAreaModel.h"
+#import "MJRefresh.h"
+
+#pragma mark -百度地图
+#import <BaiduMapAPI_Base/BMKBaseComponent.h>//引入base相关所有的头文件
+#import <BaiduMapAPI_Map/BMKMapComponent.h>//引入地图功能所有的头文件
+#import <BaiduMapAPI_Search/BMKSearchComponent.h>//引入检索功能所有的头文件
+#import <BaiduMapAPI_Cloud/BMKCloudSearchComponent.h>//引入云检索功能所有的头文件
+#import <BaiduMapAPI_Location/BMKLocationComponent.h>//引入定位功能所有的头文件
+#import <BaiduMapAPI_Utils/BMKUtilsComponent.h>//引入计算工具所有的头文件
+#import <BaiduMapAPI_Radar/BMKRadarComponent.h>//引入周边雷达功能所有的头文件
+#import <BaiduMapAPI_Map/BMKMapView.h>//只引入所需的单个头文件
+
+#pragma mark -高德地图
+#import <AMapSearchKit/AMapSearchKit.h>
+#import <AMapNaviKit/AMapNaviKit.h>
+#import <AMapNaviKit/MAMapKit.h>
+
+#pragma mark -通知定义
+#define KPraiseImage @"KChangePraiseImage"
+
+/**
+ *  3D Touch 出发事件
+ */
+#define KCutItem1 @"muBaiDuMap"
+#define KCutItem2 @"MulScroll"
+#define KCutItem3 @"ownPayment"
+
+#endif

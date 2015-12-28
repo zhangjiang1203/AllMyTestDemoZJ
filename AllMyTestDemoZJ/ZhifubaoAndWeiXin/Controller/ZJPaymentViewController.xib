@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9059" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ZJPaymentViewController">
+            <connections>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outlet property="weiXinImage" destination="PQL-q5-yvv" id="tIx-hU-zMO"/>
+                <outlet property="zhiFuBaoImage" destination="9kE-Z7-aJj" id="x3a-hg-gIH"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="zhifubao" translatesAutoresizingMaskIntoConstraints="NO" id="9kE-Z7-aJj">
+                    <rect key="frame" x="45" y="140" width="90" height="90"/>
+                    <animations/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="90" id="0tW-L8-VD1"/>
+                        <constraint firstAttribute="height" constant="90" id="u44-nf-Ltq"/>
+                    </constraints>
+                    <connections>
+                        <outletCollection property="gestureRecognizers" destination="cEU-SE-pg9" appends="YES" id="ZWO-LD-J8l"/>
+                    </connections>
+                </imageView>
+                <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="weixin" translatesAutoresizingMaskIntoConstraints="NO" id="PQL-q5-yvv">
+                    <rect key="frame" x="185" y="140" width="90" height="90"/>
+                    <animations/>
+                    <connections>
+                        <outletCollection property="gestureRecognizers" destination="ROw-rr-Wnb" appends="YES" id="BlI-Cu-mRw"/>
+                    </connections>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="请选择支付方式" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6aW-Ga-990">
+                    <rect key="frame" x="50" y="50" width="220" height="20"/>
+                    <animations/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="20" id="DyM-Mg-Kpu"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" red="0.29803921568627451" green="0.29803921568627451" blue="0.29803921568627451" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <animations/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="PQL-q5-yvv" firstAttribute="top" secondItem="9kE-Z7-aJj" secondAttribute="top" id="46A-xv-kNy"/>
+                <constraint firstItem="PQL-q5-yvv" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" constant="70" id="M6S-8i-sxT"/>
+                <constraint firstItem="6aW-Ga-990" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="50" id="P5v-Gk-b7r"/>
+                <constraint firstAttribute="trailing" secondItem="6aW-Ga-990" secondAttribute="trailing" constant="50" id="Swb-C5-TOJ"/>
+                <constraint firstItem="PQL-q5-yvv" firstAttribute="width" secondItem="9kE-Z7-aJj" secondAttribute="width" id="XZC-ve-alN"/>
+                <constraint firstItem="6aW-Ga-990" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="50" id="ZB7-dK-1gF"/>
+                <constraint firstItem="PQL-q5-yvv" firstAttribute="height" secondItem="9kE-Z7-aJj" secondAttribute="height" id="jlJ-KR-Txu"/>
+                <constraint firstItem="9kE-Z7-aJj" firstAttribute="top" secondItem="6aW-Ga-990" secondAttribute="bottom" constant="70" id="mn9-IA-8sd"/>
+                <constraint firstItem="9kE-Z7-aJj" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" constant="-70" id="snd-RO-dyP"/>
+            </constraints>
+            <point key="canvasLocation" x="478" y="434"/>
+        </view>
+        <tapGestureRecognizer id="cEU-SE-pg9">
+            <connections>
+                <action selector="zhiFuBaoPay:" destination="-1" id="UuL-Wg-xp8"/>
+            </connections>
+        </tapGestureRecognizer>
+        <tapGestureRecognizer id="ROw-rr-Wnb">
+            <connections>
+                <action selector="weiXinPay:" destination="-1" id="6nV-aW-YFb"/>
+            </connections>
+        </tapGestureRecognizer>
+    </objects>
+    <resources>
+        <image name="weixin" width="180" height="180"/>
+        <image name="zhifubao" width="180" height="180"/>
+    </resources>
+</document>
