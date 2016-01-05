@@ -1,0 +1,70 @@
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>hello World</title>
+    <script type="text/javascript">
+    window.onload = function(){
+    	console.log( "load..." ) ;
+    	document.getElementById("btn-01").onclick = function(){
+	    	var msg = document.getElementById("msg").value ;
+	    	console.log( msg ) ;
+	    	if( msg == "" ) {
+	    		document.getElementById("error-box").innerHTML = "请输入要发送的消息!" ;
+	    		return false ;
+	    	}
+	    	document.getElementById("error-box").innerHTML = "" ;
+    		if( sendMessageToApp( msg ) ) {
+    			document.getElementById("console").innerHTML += msg +"<br/>" ;
+    		}
+    		//sendMessageToJS( msg ) ;
+    	}
+    }
+    /**
+    *  JS调用移动端 invokeAppMethod( arg1 , arg2 ) 方法传值给 APP .
+    */
+    function sendMessageToApp( message ){
+    	var url = "testapp:" + message ;
+    	window.location.href= url ;
+    	return true ;
+    }
+	/**
+    *  APP调用js sendMessageToJS( arg1 ) 方法传值给 JS .
+    */
+    function sendMessageToJS( message ){
+    	if( typeof( message ) == 'undefined' || message == null || message == "" ){
+			document.getElementById("error-box-02").innerHTML = "message 为空 !" ;
+    		return false ;
+    	}
+    	document.getElementById("error-box-02").innerHTML = "" ;
+    	document.getElementById("textplain").innerHTML = message ;
+    	return true ;
+    }
+    </script>
+    <style type="text/css">
+    .content{
+    	width:auto;
+    	height:auto;
+    	padding:1dp;
+    }
+    .btn-wrap{
+    	padding:1dp;
+    	width:auto;
+    }
+    .error{
+    	color:red;
+    }
+    </style>
+</head>
+<body>
+	<div class="btn-wrap">
+		<input type="text" placeholder="请输入" id="msg">
+		<input type="button" id="btn-01" value="js2app">
+		<div id="console"></div>
+		&nbsp;<span class="error" id="error-box"></span>
+		<hr/>
+		app&nbsp;to&nbsp;js&nbsp;:<br/>
+		<span class="error" id="error-box-02"></span>
+		<div id="textplain"></div>	
+	</div>
+</body>
+</html>

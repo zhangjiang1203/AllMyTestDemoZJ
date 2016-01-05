@@ -38,11 +38,11 @@
     
     self.resultArr = [NSMutableArray array];
     //添加搜索框
-    UIView *searchView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, 250, 30)];
+    UIView *searchView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, 200, 30)];
     searchView.layer.cornerRadius = 5;
     searchView.layer.masksToBounds = YES;
     
-    UISearchBar *searchBar = [[UISearchBar alloc]initWithFrame:CGRectMake(0, 0, 250, 30)];
+    UISearchBar *searchBar = [[UISearchBar alloc]initWithFrame:CGRectMake(0, 0, 200, 30)];
     searchBar.delegate = self;
     searchBar.placeholder = @"搜索停车地点";
     [searchBar becomeFirstResponder];

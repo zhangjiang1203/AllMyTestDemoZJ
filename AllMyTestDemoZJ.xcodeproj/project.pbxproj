@@ -32,6 +32,13 @@
 		5463924B1C0D7A1200C61EB2 /* ZJCalendarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 546392491C0D7A1200C61EB2 /* ZJCalendarViewController.m */; };
 		5463924C1C0D7A1200C61EB2 /* ZJCalendarViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5463924A1C0D7A1200C61EB2 /* ZJCalendarViewController.xib */; };
 		5463924F1C0D7CA600C61EB2 /* WCChooseTimeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5463924E1C0D7CA600C61EB2 /* WCChooseTimeView.m */; };
+		546804AA1C3B5E7E00BC3A3C /* ZJWebOperationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 546804A91C3B5E7E00BC3A3C /* ZJWebOperationViewController.m */; };
+		546804AC1C3B875D00BC3A3C /* testHTML.html in Resources */ = {isa = PBXBuildFile; fileRef = 546804AB1C3B875D00BC3A3C /* testHTML.html */; };
+		546804AE1C3B8B8D00BC3A3C /* testHTML.png in Resources */ = {isa = PBXBuildFile; fileRef = 546804AD1C3B8B8D00BC3A3C /* testHTML.png */; };
+		546804B01C3B91B600BC3A3C /* testJavascript.js in Resources */ = {isa = PBXBuildFile; fileRef = 546804AF1C3B91B600BC3A3C /* testJavascript.js */; };
+		546804B21C3BA35D00BC3A3C /* AppJsDemo.html in Resources */ = {isa = PBXBuildFile; fileRef = 546804B11C3BA35D00BC3A3C /* AppJsDemo.html */; };
+		546804B61C3BB42800BC3A3C /* UIView+ZJViewExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 546804B51C3BB42800BC3A3C /* UIView+ZJViewExtension.m */; };
+		546804B91C3BBCBD00BC3A3C /* ZJInputToolView.m in Sources */ = {isa = PBXBuildFile; fileRef = 546804B81C3BBCBD00BC3A3C /* ZJInputToolView.m */; };
 		546F9A5F1C1572900079AD80 /* ZJCalendarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 546F9A5E1C1572900079AD80 /* ZJCalendarView.m */; };
 		546F9A731C157FED0079AD80 /* ZJNavAnimationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 546F9A711C157FED0079AD80 /* ZJNavAnimationViewController.m */; };
 		546F9A741C157FED0079AD80 /* ZJNavAnimationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 546F9A721C157FED0079AD80 /* ZJNavAnimationViewController.xib */; };
@@ -171,6 +178,16 @@
 		5463924A1C0D7A1200C61EB2 /* ZJCalendarViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZJCalendarViewController.xib; sourceTree = "<group>"; };
 		5463924D1C0D7CA600C61EB2 /* WCChooseTimeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WCChooseTimeView.h; sourceTree = "<group>"; };
 		5463924E1C0D7CA600C61EB2 /* WCChooseTimeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WCChooseTimeView.m; sourceTree = "<group>"; };
+		546804A81C3B5E7E00BC3A3C /* ZJWebOperationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZJWebOperationViewController.h; sourceTree = "<group>"; };
+		546804A91C3B5E7E00BC3A3C /* ZJWebOperationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZJWebOperationViewController.m; sourceTree = "<group>"; };
+		546804AB1C3B875D00BC3A3C /* testHTML.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = testHTML.html; sourceTree = "<group>"; };
+		546804AD1C3B8B8D00BC3A3C /* testHTML.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = testHTML.png; sourceTree = "<group>"; };
+		546804AF1C3B91B600BC3A3C /* testJavascript.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = testJavascript.js; sourceTree = "<group>"; };
+		546804B11C3BA35D00BC3A3C /* AppJsDemo.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = AppJsDemo.html; sourceTree = "<group>"; };
+		546804B41C3BB42800BC3A3C /* UIView+ZJViewExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+ZJViewExtension.h"; sourceTree = "<group>"; };
+		546804B51C3BB42800BC3A3C /* UIView+ZJViewExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+ZJViewExtension.m"; sourceTree = "<group>"; };
+		546804B71C3BBCBD00BC3A3C /* ZJInputToolView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZJInputToolView.h; sourceTree = "<group>"; };
+		546804B81C3BBCBD00BC3A3C /* ZJInputToolView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZJInputToolView.m; sourceTree = "<group>"; };
 		546F9A5D1C1572900079AD80 /* ZJCalendarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZJCalendarView.h; sourceTree = "<group>"; };
 		546F9A5E1C1572900079AD80 /* ZJCalendarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZJCalendarView.m; sourceTree = "<group>"; };
 		546F9A701C157FED0079AD80 /* ZJNavAnimationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZJNavAnimationViewController.h; sourceTree = "<group>"; };
@@ -499,6 +516,45 @@
 				5460CFB31C310F7700F563BF /* ZJCustomeSegment.m */,
 				5488F3FE1C2CD05A00773324 /* MANaviAnnotationView.h */,
 				5488F3FF1C2CD05A00773324 /* MANaviAnnotationView.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		546804A41C3B5E0F00BC3A3C /* WebViewOperation */ = {
+			isa = PBXGroup;
+			children = (
+				546804A51C3B5E4C00BC3A3C /* Controller */,
+				546804A61C3B5E4C00BC3A3C /* Model */,
+				546804A71C3B5E4C00BC3A3C /* View */,
+			);
+			path = WebViewOperation;
+			sourceTree = "<group>";
+		};
+		546804A51C3B5E4C00BC3A3C /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				546804A81C3B5E7E00BC3A3C /* ZJWebOperationViewController.h */,
+				546804A91C3B5E7E00BC3A3C /* ZJWebOperationViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		546804A61C3B5E4C00BC3A3C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				546804B11C3BA35D00BC3A3C /* AppJsDemo.html */,
+				546804AF1C3B91B600BC3A3C /* testJavascript.js */,
+				546804AD1C3B8B8D00BC3A3C /* testHTML.png */,
+				546804AB1C3B875D00BC3A3C /* testHTML.html */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		546804A71C3B5E4C00BC3A3C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				546804B71C3BBCBD00BC3A3C /* ZJInputToolView.h */,
+				546804B81C3BBCBD00BC3A3C /* ZJInputToolView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -999,6 +1055,7 @@
 				8D2EB5D51BEC984200C314B3 /* ZJRootViewController.h */,
 				8D2EB5D61BEC984200C314B3 /* ZJRootViewController.m */,
 				8D2EB5D71BEC984200C314B3 /* ZJRootViewController.xib */,
+				546804A41C3B5E0F00BC3A3C /* WebViewOperation */,
 				546F9A611C157F660079AD80 /* NavAnimation */,
 				8D2EB5E01BEC9C3600C314B3 /* MainFile */,
 				8DFA183B1BF9D3B6005CBA53 /* MulScrollView */,
@@ -1055,6 +1112,8 @@
 				8DFA182E1BF9C633005CBA53 /* UITableView+LoadAnimation.m */,
 				545FC8651C0EEBF300BD7600 /* UIView+PopViewAnimation.h */,
 				545FC8661C0EEBF300BD7600 /* UIView+PopViewAnimation.m */,
+				546804B41C3BB42800BC3A3C /* UIView+ZJViewExtension.h */,
+				546804B51C3BB42800BC3A3C /* UIView+ZJViewExtension.m */,
 			);
 			path = CommonTools;
 			sourceTree = "<group>";
@@ -1163,6 +1222,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8DFA18431BF9D417005CBA53 /* ZJMulScrollViewController.xib in Resources */,
+				546804AC1C3B875D00BC3A3C /* testHTML.html in Resources */,
 				54441B111C2AA4AF006DC0CF /* MBProgressHUD.bundle in Resources */,
 				8D2EB5D91BEC984200C314B3 /* ZJRootViewController.xib in Resources */,
 				8D5EA88C1BF2DAC900ADFB2A /* ZJPaymentViewController.xib in Resources */,
@@ -1170,9 +1230,12 @@
 				5471D55D1C0BFF05002D25F7 /* ELGoodBriefCell.xib in Resources */,
 				8D5EA9081BF2E4EF00ADFB2A /* AlipaySDK.bundle in Resources */,
 				8D415F331BF18FCE00F41927 /* ZJBaiDuBaseViewController.xib in Resources */,
+				546804AE1C3B8B8D00BC3A3C /* testHTML.png in Resources */,
 				5471D5621C0C4859002D25F7 /* ZJTrackViewController.xib in Resources */,
 				CFFCFA581C2AD6A600130306 /* ZJNearByPlaceViewController.xib in Resources */,
+				546804B21C3BA35D00BC3A3C /* AppJsDemo.html in Resources */,
 				546F9A741C157FED0079AD80 /* ZJNavAnimationViewController.xib in Resources */,
+				546804B01C3B91B600BC3A3C /* testJavascript.js in Resources */,
 				8D7DC0EA1BF03FBB00C14F48 /* mapapi.bundle in Resources */,
 				8D5EA9071BF2E4EF00ADFB2A /* read_me.txt in Resources */,
 				8D0052041BF442AC00C3C0D1 /* ZJAreaListViewController.xib in Resources */,
@@ -1240,6 +1303,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				545B80071C16C27B00C0365E /* PortalAnimation.m in Sources */,
+				546804B91C3BBCBD00BC3A3C /* ZJInputToolView.m in Sources */,
 				8DFA18331BF9CDC3005CBA53 /* UIScrollView+EmptyDataSet.m in Sources */,
 				8D5EA9131BF2E4F000ADFB2A /* openssl_wrapper.m in Sources */,
 				8D5EA9031BF2E4EF00ADFB2A /* ApiXml.mm in Sources */,
@@ -1250,6 +1314,7 @@
 				8D415F421BF1CD3A00F41927 /* ZJCustomPaoPaoView.m in Sources */,
 				8D3C8B451C069FF90005CD9A /* WCSafeInfoView.m in Sources */,
 				8D2EB5D81BEC984200C314B3 /* ZJRootViewController.m in Sources */,
+				546804AA1C3B5E7E00BC3A3C /* ZJWebOperationViewController.m in Sources */,
 				8DFA182F1BF9C633005CBA53 /* UITableView+LoadAnimation.m in Sources */,
 				8D5EA90A1BF2E4F000ADFB2A /* APAuthV2Info.m in Sources */,
 				C5471F7B1BEC748E0001CE89 /* AppDelegate.m in Sources */,
@@ -1284,6 +1349,7 @@
 				8DC891DF1BF768710012D04F /* ZJAreaModel.m in Sources */,
 				8D415F321BF18FCE00F41927 /* ZJBaiDuBaseViewController.mm in Sources */,
 				8D415F3F1BF190D700F41927 /* MyAnnotation.m in Sources */,
+				546804B61C3BB42800BC3A3C /* UIView+ZJViewExtension.m in Sources */,
 				CFFCFA571C2AD6A600130306 /* ZJNearByPlaceViewController.m in Sources */,
 				8D659B671C05B2E700DEC679 /* CXCardView.m in Sources */,
 				545FC8671C0EEBF300BD7600 /* UIView+PopViewAnimation.m in Sources */,

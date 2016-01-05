@@ -42,6 +42,7 @@
 #import "MJExtension.h"
 #import "UIScrollView+EmptyDataSet.h"
 #import "UITableView+LoadAnimation.h"
+#import "UIView+ZJViewExtension.h"
 
 //多视图滚动
 #import "XTSegmentControl.h"

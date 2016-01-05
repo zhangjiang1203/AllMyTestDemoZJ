@@ -11,6 +11,8 @@
 #import "ZJPaymentViewController.h"
 #import "ZJMulScrollViewController.h"
 #import "ZJCalendarViewController.h"
+#import "ZJWebOperationViewController.h"
+
 #import "ZJBaseMapViewController.h"
 #import "AppDelegate.h"
 @interface ZJRootViewController ()<UITableViewDataSource,UITableViewDelegate>
@@ -27,8 +29,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"功能选择";
-    viewControllerArr = @[@"ZJBaiDuBaseViewController",@"ZJBaseMapViewController",@"ZJPaymentViewController",@"ZJMulScrollViewController",@"ZJCalendarViewController"];
-    titleControllerArr = @[@"百度地图",@"高德地图",@"移动支付",@"多视图滚动",@"自定义日历"];
+    viewControllerArr = @[@"ZJBaiDuBaseViewController",@"ZJBaseMapViewController",@"ZJPaymentViewController",@"ZJMulScrollViewController",@"ZJCalendarViewController",@"ZJWebOperationViewController"];
+    titleControllerArr = @[@"百度地图",@"高德地图",@"移动支付",@"多视图滚动",@"自定义日历",@"webView交互"];
     
 }
 

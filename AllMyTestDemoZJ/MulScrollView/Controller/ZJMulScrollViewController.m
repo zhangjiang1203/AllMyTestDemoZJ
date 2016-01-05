@@ -72,8 +72,8 @@
     self.natGeoAnimation             = [[ZJNatGeoAnimation alloc]init];
     self.magicMoveAnimation          = [[ZJNavMagicMoveAnination alloc]init];
     self.magicMoveAnimation.delegate = self;
-    self.sliderAnimation = [[ZJNavSliderAnimation alloc]init];
-    self.customAnimation = [[ZJCustomScaleAnimation alloc]init];
+    self.sliderAnimation             = [[ZJNavSliderAnimation alloc]init];
+    self.customAnimation             = [[ZJCustomScaleAnimation alloc]init];
     
 }
 #pragma mark -magicMove的代理方法
