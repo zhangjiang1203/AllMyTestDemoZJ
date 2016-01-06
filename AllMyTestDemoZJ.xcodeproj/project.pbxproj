@@ -21,6 +21,7 @@
 		54441B2F1C2AA76D006DC0CF /* ZJRouteSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 54441B251C2AA76D006DC0CF /* ZJRouteSearchViewController.m */; };
 		54441B301C2AA76D006DC0CF /* ZJRouteSearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 54441B261C2AA76D006DC0CF /* ZJRouteSearchViewController.xib */; };
 		54441B311C2AA76D006DC0CF /* ZJLocationAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 54441B291C2AA76D006DC0CF /* ZJLocationAnnotation.m */; };
+		544ED9561C3CAAF500F53526 /* NSString+URLCode.m in Sources */ = {isa = PBXBuildFile; fileRef = 544ED9551C3CAAF500F53526 /* NSString+URLCode.m */; };
 		545B7FFF1C1674CA00C0365E /* ZJNavMagicMoveAnination.m in Sources */ = {isa = PBXBuildFile; fileRef = 545B7FFE1C1674CA00C0365E /* ZJNavMagicMoveAnination.m */; };
 		545B80021C16A15300C0365E /* ZJCircleTransitionAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 545B80011C16A15300C0365E /* ZJCircleTransitionAnimation.m */; };
 		545B80071C16C27B00C0365E /* PortalAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 545B80061C16C27B00C0365E /* PortalAnimation.m */; };
@@ -157,6 +158,8 @@
 		54441B261C2AA76D006DC0CF /* ZJRouteSearchViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZJRouteSearchViewController.xib; sourceTree = "<group>"; };
 		54441B281C2AA76D006DC0CF /* ZJLocationAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZJLocationAnnotation.h; sourceTree = "<group>"; };
 		54441B291C2AA76D006DC0CF /* ZJLocationAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZJLocationAnnotation.m; sourceTree = "<group>"; };
+		544ED9541C3CAAF500F53526 /* NSString+URLCode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+URLCode.h"; sourceTree = "<group>"; };
+		544ED9551C3CAAF500F53526 /* NSString+URLCode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+URLCode.m"; sourceTree = "<group>"; };
 		545B7FFD1C1674CA00C0365E /* ZJNavMagicMoveAnination.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZJNavMagicMoveAnination.h; sourceTree = "<group>"; };
 		545B7FFE1C1674CA00C0365E /* ZJNavMagicMoveAnination.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZJNavMagicMoveAnination.m; sourceTree = "<group>"; };
 		545B80001C16A15300C0365E /* ZJCircleTransitionAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZJCircleTransitionAnimation.h; sourceTree = "<group>"; };
@@ -1114,6 +1117,8 @@
 				545FC8661C0EEBF300BD7600 /* UIView+PopViewAnimation.m */,
 				546804B41C3BB42800BC3A3C /* UIView+ZJViewExtension.h */,
 				546804B51C3BB42800BC3A3C /* UIView+ZJViewExtension.m */,
+				544ED9541C3CAAF500F53526 /* NSString+URLCode.h */,
+				544ED9551C3CAAF500F53526 /* NSString+URLCode.m */,
 			);
 			path = CommonTools;
 			sourceTree = "<group>";
@@ -1336,6 +1341,7 @@
 				8DFA183A1BF9D382005CBA53 /* iCarousel.m in Sources */,
 				542151511C17FC9E00B04253 /* ZJCustomScaleAnimation.m in Sources */,
 				8D5EA9111BF2E4F000ADFB2A /* MD5DataSigner.m in Sources */,
+				544ED9561C3CAAF500F53526 /* NSString+URLCode.m in Sources */,
 				8D659B661C05B2E700DEC679 /* CXCardContainerView.m in Sources */,
 				8D2EB5E61BEC9CFC00C314B3 /* ZJBaseTabBarViewController.m in Sources */,
 				8D5EA9041BF2E4EF00ADFB2A /* payRequsestHandler.mm in Sources */,

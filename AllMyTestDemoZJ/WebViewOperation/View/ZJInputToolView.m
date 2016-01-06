@@ -31,10 +31,6 @@
         CGFloat inputW = frame.size.width - 3*leftPadding - buttonW;
         self.inputField = [[UITextField alloc]initWithFrame:CGRectMake(leftPadding, topPadding, inputW, inputH)];
         self.inputField.borderStyle = UITextBorderStyleNone;
-        self.inputField.layer.masksToBounds = YES;
-        self.inputField.layer.cornerRadius = 5;
-        self.inputField.layer.borderColor = KRGBA(30, 30, 30, 1).CGColor;
-        self.inputField.layer.borderWidth = 0.5;
         self.inputField.returnKeyType = UIReturnKeyDone;
         self.inputField.font = KDefaultFont(15);
         self.inputField.delegate = self;
@@ -67,6 +63,8 @@
         NSString *messageStr = self.inputField.text;
         _messageAction(messageStr);
     }
+    self.inputField.text = @"";
+    [self.inputField endEditing:YES];
     
 }
 
@@ -75,7 +73,6 @@
     if (messageAction) {
         _messageAction = messageAction;
     }
-    
 }
 
 @end
