@@ -41,6 +41,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.title = @"百度地图";
     [self initMyBaiDuMapView];
     [self setRightButtonItem];
 }

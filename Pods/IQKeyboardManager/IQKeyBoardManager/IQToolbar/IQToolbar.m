@@ -28,16 +28,28 @@
 
 #import <UIKit/UIViewController.h>
 
+#if !(__has_feature(objc_instancetype))
+    #define instancetype id
+#endif
+
+
 @implementation IQToolbar
 @synthesize titleFont = _titleFont;
 @synthesize title = _title;
 
-+(void)load
++(void)initialize
 {
+    [super initialize];
+    
     //Tint Color
     [[self appearance] setTintColor:nil];
 
-    [[self appearance] setBarTintColor:nil];
+#ifdef NSFoundationVersionNumber_iOS_6_1
+    if ([[self appearance] respondsToSelector:@selector(setBarTintColor:)])
+    {
+        [[self appearance] setBarTintColor:nil];
+    }
+#endif
     
     //Background image
     [[self appearance] setBackgroundImage:nil forToolbarPosition:UIBarPositionAny           barMetrics:UIBarMetricsDefault];
@@ -60,7 +72,15 @@
     [self sizeToFit];
     self.autoresizingMask = UIViewAutoresizingFlexibleWidth;// | UIViewAutoresizingFlexibleHeight;
     self.translucent = YES;
-    [self setTintColor:[UIColor blackColor]];
+    
+    if (IQ_IS_IOS7_OR_GREATER)
+    {
+        [self setTintColor:[UIColor blackColor]];
+    }
+    else
+    {
+        [self setBarStyle:UIBarStyleBlackTranslucent];
+    }
 }
 
 - (instancetype)initWithFrame:(CGRect)frame

@@ -179,7 +179,9 @@ void _IQShowLog(NSString *logString);
 @synthesize enableAutoToolbar                   =   _enableAutoToolbar;
 @synthesize toolbarManageBehaviour              =   _toolbarManageBehaviour;
 
+#ifdef NSFoundationVersionNumber_iOS_6_1
 @synthesize shouldToolbarUsesTextFieldTintColor =   _shouldToolbarUsesTextFieldTintColor;
+#endif
 
 @synthesize shouldShowTextFieldPlaceholder      =   _shouldShowTextFieldPlaceholder;
 @synthesize placeholderFont                     =   _placeholderFont;
@@ -187,7 +189,9 @@ void _IQShowLog(NSString *logString);
 //TextView handling
 @synthesize canAdjustTextView                   =   _canAdjustTextView;
 
+#ifdef NSFoundationVersionNumber_iOS_6_1
 @synthesize shouldFixTextViewClip               =   _shouldFixTextViewClip;
+#endif
 
 //Resign handling
 @synthesize shouldResignOnTouchOutside          =   _shouldResignOnTouchOutside;
@@ -237,7 +241,6 @@ void _IQShowLog(NSString *logString);
             
             //Creating gesture for @shouldResignOnTouchOutside. (Enhancement ID: #14)
             _tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapRecognized:)];
-            _tapGesture.cancelsTouchesInView = NO;
             [_tapGesture setDelegate:self];
             _tapGesture.enabled = _shouldResignOnTouchOutside;
 
@@ -264,8 +267,10 @@ void _IQShowLog(NSString *logString);
             _disabledClasses = [[NSMutableSet alloc] initWithObjects:[UITableViewController class], nil];
             _disabledToolbarClasses = [[NSMutableSet alloc] init];
 
+#ifdef NSFoundationVersionNumber_iOS_6_1
             [self setShouldToolbarUsesTextFieldTintColor:NO];
             [self setShouldFixTextViewClip:YES];
+#endif
             
             _toolbarPreviousNextConsideredClass = [[NSMutableSet alloc] initWithObjects:[UITableView class],[UICollectionView class], nil];
         });
@@ -449,18 +454,12 @@ void _IQShowLog(NSString *logString);
     UIViewController *rootController = [_textFieldView topMostController];
     if (rootController == nil)  rootController = [keyWindow topMostController];
     
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wdeprecated-declarations"
     //If it's iOS8 then we should do calculations according to portrait orientations.   //  (Bug ID: #64, #66)
-    
-#ifdef __IPHONE_8_0
-    #if __IPHONE_OS_VERSION_MIN_REQUIRED >= __IPHONE_8_0
-        UIInterfaceOrientation interfaceOrientation = UIInterfaceOrientationPortrait;
-    #else
-        UIInterfaceOrientation interfaceOrientation = IQ_IS_IOS8_OR_GREATER ? UIInterfaceOrientationPortrait : [rootController interfaceOrientation];
-    #endif
-#else
-    UIInterfaceOrientation interfaceOrientation = [rootController interfaceOrientation];
-#endif
-    
+    UIInterfaceOrientation interfaceOrientation = IQ_IS_IOS8_OR_GREATER ? UIInterfaceOrientationPortrait : [rootController interfaceOrientation];
+#pragma GCC diagnostic pop
+
     //  Converting Rectangle according to window bounds.
     CGRect textFieldViewRect = [[_textFieldView superview] convertRect:_textFieldView.frame toView:keyWindow];
     //  Getting RootViewRect.
@@ -1078,7 +1077,7 @@ void _IQShowLog(NSString *logString);
             // TODO: restore scrollView state
             // This is temporary solution. Have to implement the save and restore scrollView state
             UIScrollView *superscrollView = _lastScrollView;
-            do
+            while ((superscrollView = (UIScrollView*)[superscrollView superviewOfClassType:[UIScrollView class]]))
             {
                 CGSize contentSize = CGSizeMake(MAX(superscrollView.contentSize.width, CGRectGetWidth(superscrollView.frame)), MAX(superscrollView.contentSize.height, CGRectGetHeight(superscrollView.frame)));
                 
@@ -1090,7 +1089,7 @@ void _IQShowLog(NSString *logString);
                     
                     _IQShowLog([NSString stringWithFormat:@"Restoring %@ contentOffset to : %@",[superscrollView _IQDescription],NSStringFromCGPoint(superscrollView.contentOffset)]);
                 }
-            } while ((superscrollView = (UIScrollView*)[superscrollView superviewOfClassType:[UIScrollView class]]));
+            }
 
         } completion:NULL];
     }
@@ -1301,6 +1300,7 @@ void _IQShowLog(NSString *logString);
 /** UITextViewTextDidChangeNotificationBug,  fix for iOS 7.0.x - http://stackoverflow.com/questions/18966675/uitextview-in-ios7-clips-the-last-line-of-text-string */
 -(void)textFieldViewDidChange:(NSNotification*)notification //  (Bug ID: #18)
 {
+#ifdef NSFoundationVersionNumber_iOS_6_1
     if (_shouldFixTextViewClip == YES)
     {
         UITextView *textView = (UITextView *)notification.object;
@@ -1321,6 +1321,7 @@ void _IQShowLog(NSString *logString);
             } completion:NULL];
         }
     }
+#endif
 }
 
 #pragma mark - UIInterfaceOrientation Change notification methods
@@ -1609,20 +1610,25 @@ void _IQShowLog(NSString *logString);
             IQToolbar *toolbar = (IQToolbar*)[textField inputAccessoryView];
             
             //Bar style according to keyboard appearance
-            if ([textField respondsToSelector:@selector(keyboardAppearance)])
+            if (IQ_IS_IOS7_OR_GREATER && [textField respondsToSelector:@selector(keyboardAppearance)])
             {
                 switch ([(UITextField*)textField keyboardAppearance])
                 {
                     case UIKeyboardAppearanceAlert:
                     {
                         toolbar.barStyle = UIBarStyleBlack;
-                        [toolbar setTintColor:[UIColor whiteColor]];
+                        if ([toolbar respondsToSelector:@selector(tintColor)])
+                            [toolbar setTintColor:[UIColor whiteColor]];
                     }
                         break;
                     default:
                     {
                         toolbar.barStyle = UIBarStyleDefault;
-                        [toolbar setTintColor:_shouldToolbarUsesTextFieldTintColor?[textField tintColor]:_defaultToolbarTintColor];
+                        
+#ifdef NSFoundationVersionNumber_iOS_6_1
+                        if ([toolbar respondsToSelector:@selector(tintColor)])
+                            [toolbar setTintColor:_shouldToolbarUsesTextFieldTintColor?[textField tintColor]:_defaultToolbarTintColor];
+#endif
                     }
                         break;
                 }
@@ -1671,22 +1677,26 @@ void _IQShowLog(NSString *logString);
                 IQToolbar *toolbar = (IQToolbar*)[textField inputAccessoryView];
                 
                 //Bar style according to keyboard appearance
-                if ([textField respondsToSelector:@selector(keyboardAppearance)])
+                if (IQ_IS_IOS7_OR_GREATER && [textField respondsToSelector:@selector(keyboardAppearance)])
                 {
                     switch ([(UITextField*)textField keyboardAppearance])
                     {
                         case UIKeyboardAppearanceAlert:
                         {
                             toolbar.barStyle = UIBarStyleBlack;
-                            [toolbar setTintColor:[UIColor whiteColor]];
+                            if ([toolbar respondsToSelector:@selector(tintColor)])
+                                [toolbar setTintColor:[UIColor whiteColor]];
                         }
                             break;
                         default:
                         {
                             toolbar.barStyle = UIBarStyleDefault;
                             
+#ifdef NSFoundationVersionNumber_iOS_6_1
                             //Setting toolbar tintColor //  (Enhancement ID: #30)
-                            [toolbar setTintColor:_shouldToolbarUsesTextFieldTintColor?[textField tintColor]:_defaultToolbarTintColor];
+                            if ([toolbar respondsToSelector:@selector(tintColor)])
+                                [toolbar setTintColor:_shouldToolbarUsesTextFieldTintColor?[textField tintColor]:_defaultToolbarTintColor];
+#endif
                             
                         }
                             break;
@@ -1833,10 +1843,10 @@ void _IQShowLog(NSString *logString);
     [_disabledClasses removeObject:disabledClass];
 }
 
-//Returns all disabled classes
--(NSSet*)disabledInViewControllerClasses
+/** Returns YES if ViewController class is disabled for library, otherwise returns NO. */
+-(BOOL)isDisableInViewControllerClass:(Class)disabledClass
 {
-    return [_disabledClasses copy];
+    return [_disabledClasses containsObject:disabledClass];
 }
 
 /** Disable automatic toolbar creation in in toolbarDisabledClass   */
@@ -1851,10 +1861,10 @@ void _IQShowLog(NSString *logString);
     [_disabledToolbarClasses removeObject:toolbarDisabledClass];
 }
 
-//Returns all toolbar disabled classes
--(NSSet *)disabledToolbarInViewControllerClasses
+/** Returns YES if toolbar is disabled in ViewController class, otherwise returns NO.   */
+-(BOOL)isDisableToolbarInViewControllerClass:(Class)toolbarDisabledClass
 {
-    return [_disabledToolbarClasses copy];
+    return [_disabledToolbarClasses containsObject:toolbarDisabledClass];
 }
 
 /** Consider provided customView class as superView of all inner textField for calculating next/previous button logic.  */
@@ -1869,12 +1879,10 @@ void _IQShowLog(NSString *logString);
     [_toolbarPreviousNextConsideredClass removeObject:toolbarPreviousNextConsideredClass];
 }
 
-/**
- Returns All toolbar considered classes
- */
--(NSSet* _Nonnull)consideredToolbarPreviousNextViewClasses
+/** Returns YES if inner hierarchy is considered for previous/next in class, otherwise returns NO.  */
+-(BOOL)isConsiderToolbarPreviousNextInViewClass:(Class)toolbarPreviousNextConsideredClass
 {
-    return [_toolbarPreviousNextConsideredClass copy];
+    return [_toolbarPreviousNextConsideredClass containsObject:toolbarPreviousNextConsideredClass];
 }
 
 @end

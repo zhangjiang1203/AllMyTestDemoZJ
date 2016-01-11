@@ -29,6 +29,7 @@
 #import "IQKeyboardManager.h"
 #import "IQKeyboardManagerConstants.h"
 #import "IQKeyboardReturnKeyHandler.h"
+#import "IQSegmentedNextPrevious.h"
 #import "IQTextView.h"
 #import "IQTitleBarButtonItem.h"
 #import "IQToolbar.h"

@@ -127,7 +127,7 @@
 - (MASConstraint *)centerY;
 - (MASConstraint *)baseline;
 
-#if TARGET_OS_IPHONE || TARGET_OS_TV
+#if TARGET_OS_IPHONE
 
 - (MASConstraint *)leftMargin;
 - (MASConstraint *)rightMargin;
@@ -178,7 +178,7 @@
 
 // NSLayoutConstraint Installation support
 
-#if TARGET_OS_MAC && !(TARGET_OS_IPHONE || TARGET_OS_TV)
+#if TARGET_OS_MAC && !TARGET_OS_IPHONE
 /**
  *  Whether or not to go through the animator proxy when modifying the constraint
  */

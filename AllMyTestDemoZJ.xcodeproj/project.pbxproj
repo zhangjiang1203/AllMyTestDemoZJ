@@ -22,14 +22,6 @@
 		54441B301C2AA76D006DC0CF /* ZJRouteSearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 54441B261C2AA76D006DC0CF /* ZJRouteSearchViewController.xib */; };
 		54441B311C2AA76D006DC0CF /* ZJLocationAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 54441B291C2AA76D006DC0CF /* ZJLocationAnnotation.m */; };
 		544ED9561C3CAAF500F53526 /* NSString+URLCode.m in Sources */ = {isa = PBXBuildFile; fileRef = 544ED9551C3CAAF500F53526 /* NSString+URLCode.m */; };
-		544FC7CB1C4372730004C836 /* ZJOpenFileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 544FC7C91C4372730004C836 /* ZJOpenFileViewController.m */; };
-		544FC7CC1C4372730004C836 /* ZJOpenFileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 544FC7CA1C4372730004C836 /* ZJOpenFileViewController.xib */; };
-		544FC7CE1C437C210004C836 /* QuickLook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 544FC7CD1C437C210004C836 /* QuickLook.framework */; };
-		544FC7D21C43813B0004C836 /* 研发部员工通讯录.xls in Resources */ = {isa = PBXBuildFile; fileRef = 544FC7D11C43813B0004C836 /* 研发部员工通讯录.xls */; };
-		544FC7D51C4385A80004C836 /* ZJFileDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 544FC7D41C4385A80004C836 /* ZJFileDetailViewController.m */; };
-		544FC7D71C4386E00004C836 /* Swift学习笔记.doc in Resources */ = {isa = PBXBuildFile; fileRef = 544FC7D61C4386E00004C836 /* Swift学习笔记.doc */; };
-		544FC7D91C43870D0004C836 /* ppt文档.ppt in Resources */ = {isa = PBXBuildFile; fileRef = 544FC7D81C43870D0004C836 /* ppt文档.ppt */; };
-		544FC7DB1C4387510004C836 /* pdf文档的翻译.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 544FC7DA1C4387510004C836 /* pdf文档的翻译.pdf */; };
 		545B7FFF1C1674CA00C0365E /* ZJNavMagicMoveAnination.m in Sources */ = {isa = PBXBuildFile; fileRef = 545B7FFE1C1674CA00C0365E /* ZJNavMagicMoveAnination.m */; };
 		545B80021C16A15300C0365E /* ZJCircleTransitionAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 545B80011C16A15300C0365E /* ZJCircleTransitionAnimation.m */; };
 		545B80071C16C27B00C0365E /* PortalAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 545B80061C16C27B00C0365E /* PortalAnimation.m */; };
@@ -168,16 +160,6 @@
 		54441B291C2AA76D006DC0CF /* ZJLocationAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZJLocationAnnotation.m; sourceTree = "<group>"; };
 		544ED9541C3CAAF500F53526 /* NSString+URLCode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+URLCode.h"; sourceTree = "<group>"; };
 		544ED9551C3CAAF500F53526 /* NSString+URLCode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+URLCode.m"; sourceTree = "<group>"; };
-		544FC7C81C4372730004C836 /* ZJOpenFileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZJOpenFileViewController.h; sourceTree = "<group>"; };
-		544FC7C91C4372730004C836 /* ZJOpenFileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZJOpenFileViewController.m; sourceTree = "<group>"; };
-		544FC7CA1C4372730004C836 /* ZJOpenFileViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZJOpenFileViewController.xib; sourceTree = "<group>"; };
-		544FC7CD1C437C210004C836 /* QuickLook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuickLook.framework; path = System/Library/Frameworks/QuickLook.framework; sourceTree = SDKROOT; };
-		544FC7D11C43813B0004C836 /* 研发部员工通讯录.xls */ = {isa = PBXFileReference; lastKnownFileType = file; path = "研发部员工通讯录.xls"; sourceTree = "<group>"; };
-		544FC7D31C4385A80004C836 /* ZJFileDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZJFileDetailViewController.h; sourceTree = "<group>"; };
-		544FC7D41C4385A80004C836 /* ZJFileDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZJFileDetailViewController.m; sourceTree = "<group>"; };
-		544FC7D61C4386E00004C836 /* Swift学习笔记.doc */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Swift学习笔记.doc"; sourceTree = "<group>"; };
-		544FC7D81C43870D0004C836 /* ppt文档.ppt */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ppt文档.ppt"; sourceTree = "<group>"; };
-		544FC7DA1C4387510004C836 /* pdf文档的翻译.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "pdf文档的翻译.pdf"; sourceTree = "<group>"; };
 		545B7FFD1C1674CA00C0365E /* ZJNavMagicMoveAnination.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZJNavMagicMoveAnination.h; sourceTree = "<group>"; };
 		545B7FFE1C1674CA00C0365E /* ZJNavMagicMoveAnination.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZJNavMagicMoveAnination.m; sourceTree = "<group>"; };
 		545B80001C16A15300C0365E /* ZJCircleTransitionAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZJCircleTransitionAnimation.h; sourceTree = "<group>"; };
@@ -440,7 +422,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				544FC7CE1C437C210004C836 /* QuickLook.framework in Frameworks */,
 				CFFCFA531C2ACD0100130306 /* AVFoundation.framework in Frameworks */,
 				8D7DC0FB1BF0417800C14F48 /* CoreTelephony.framework in Frameworks */,
 				54441B191C2AA54A006DC0CF /* AudioToolbox.framework in Frameworks */,
@@ -538,46 +519,6 @@
 				5460CFB31C310F7700F563BF /* ZJCustomeSegment.m */,
 				5488F3FE1C2CD05A00773324 /* MANaviAnnotationView.h */,
 				5488F3FF1C2CD05A00773324 /* MANaviAnnotationView.m */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		544FC7C41C4371E90004C836 /* LoadFileOfWord */ = {
-			isa = PBXGroup;
-			children = (
-				544FC7C51C43723B0004C836 /* Controller */,
-				544FC7C61C43723B0004C836 /* Model */,
-				544FC7C71C43723B0004C836 /* View */,
-			);
-			path = LoadFileOfWord;
-			sourceTree = "<group>";
-		};
-		544FC7C51C43723B0004C836 /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-				544FC7C81C4372730004C836 /* ZJOpenFileViewController.h */,
-				544FC7C91C4372730004C836 /* ZJOpenFileViewController.m */,
-				544FC7CA1C4372730004C836 /* ZJOpenFileViewController.xib */,
-				544FC7D31C4385A80004C836 /* ZJFileDetailViewController.h */,
-				544FC7D41C4385A80004C836 /* ZJFileDetailViewController.m */,
-			);
-			path = Controller;
-			sourceTree = "<group>";
-		};
-		544FC7C61C43723B0004C836 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				544FC7DA1C4387510004C836 /* pdf文档的翻译.pdf */,
-				544FC7D81C43870D0004C836 /* ppt文档.ppt */,
-				544FC7D61C4386E00004C836 /* Swift学习笔记.doc */,
-				544FC7D11C43813B0004C836 /* 研发部员工通讯录.xls */,
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		544FC7C71C43723B0004C836 /* View */ = {
-			isa = PBXGroup;
-			children = (
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1117,7 +1058,6 @@
 				8D2EB5D51BEC984200C314B3 /* ZJRootViewController.h */,
 				8D2EB5D61BEC984200C314B3 /* ZJRootViewController.m */,
 				8D2EB5D71BEC984200C314B3 /* ZJRootViewController.xib */,
-				544FC7C41C4371E90004C836 /* LoadFileOfWord */,
 				546804A41C3B5E0F00BC3A3C /* WebViewOperation */,
 				546F9A611C157F660079AD80 /* NavAnimation */,
 				8D2EB5E01BEC9C3600C314B3 /* MainFile */,
@@ -1206,7 +1146,6 @@
 		F25495364DB5E1ECBD7D6165 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				544FC7CD1C437C210004C836 /* QuickLook.framework */,
 				CFFCFA521C2ACD0100130306 /* AVFoundation.framework */,
 				CFFCFA501C2ACCF400130306 /* iflyMSC.framework */,
 				54441B181C2AA54A006DC0CF /* AudioToolbox.framework */,
@@ -1297,21 +1236,16 @@
 				8D5EA9081BF2E4EF00ADFB2A /* AlipaySDK.bundle in Resources */,
 				8D415F331BF18FCE00F41927 /* ZJBaiDuBaseViewController.xib in Resources */,
 				546804AE1C3B8B8D00BC3A3C /* testHTML.png in Resources */,
-				544FC7D71C4386E00004C836 /* Swift学习笔记.doc in Resources */,
-				544FC7CC1C4372730004C836 /* ZJOpenFileViewController.xib in Resources */,
 				5471D5621C0C4859002D25F7 /* ZJTrackViewController.xib in Resources */,
 				CFFCFA581C2AD6A600130306 /* ZJNearByPlaceViewController.xib in Resources */,
 				546804B21C3BA35D00BC3A3C /* AppJsDemo.html in Resources */,
 				546F9A741C157FED0079AD80 /* ZJNavAnimationViewController.xib in Resources */,
-				544FC7DB1C4387510004C836 /* pdf文档的翻译.pdf in Resources */,
-				544FC7D21C43813B0004C836 /* 研发部员工通讯录.xls in Resources */,
 				546804B01C3B91B600BC3A3C /* testJavascript.js in Resources */,
 				8D7DC0EA1BF03FBB00C14F48 /* mapapi.bundle in Resources */,
 				8D5EA9071BF2E4EF00ADFB2A /* read_me.txt in Resources */,
 				8D0052041BF442AC00C3C0D1 /* ZJAreaListViewController.xib in Resources */,
 				54441B2D1C2AA76D006DC0CF /* ZJRouteDetailViewController.xib in Resources */,
 				5471D5671C0C4A15002D25F7 /* WCChildRouteCell.xib in Resources */,
-				544FC7D91C43870D0004C836 /* ppt文档.ppt in Resources */,
 				8D5EA91D1BF3117700ADFB2A /* ZJSetttingAreaViewController.xib in Resources */,
 				5463924C1C0D7A1200C61EB2 /* ZJCalendarViewController.xib in Resources */,
 				C5471F831BEC748F0001CE89 /* Assets.xcassets in Resources */,
@@ -1399,7 +1333,6 @@
 				5471D55C1C0BFF05002D25F7 /* ELGoodBriefCell.m in Sources */,
 				8D659B5D1C05954F00DEC679 /* WCSafeAreaView.m in Sources */,
 				54441B311C2AA76D006DC0CF /* ZJLocationAnnotation.m in Sources */,
-				544FC7CB1C4372730004C836 /* ZJOpenFileViewController.m in Sources */,
 				C5471F941BEC750C0001CE89 /* HUDHelper.m in Sources */,
 				54441B101C2AA4AF006DC0CF /* MBProgressHUD+Add.m in Sources */,
 				8D5EA9181BF2E69200ADFB2A /* WCPaymentModel.m in Sources */,
@@ -1417,7 +1350,6 @@
 				5471D56A1C0C4AB6002D25F7 /* ZJAnimationChooseView.m in Sources */,
 				8D5EA9141BF2E4F000ADFB2A /* RSADataSigner.m in Sources */,
 				546F9A861C1586F40079AD80 /* ZJNavAnimationInfoViewController.m in Sources */,
-				544FC7D51C4385A80004C836 /* ZJFileDetailViewController.m in Sources */,
 				8D5EA9151BF2E4F000ADFB2A /* RSADataVerifier.m in Sources */,
 				8D3C8B401C069B670005CD9A /* ZJSafeAreaDetailViewController.m in Sources */,
 				8DC891DF1BF768710012D04F /* ZJAreaModel.m in Sources */,
