@@ -43,6 +43,7 @@
 #import "UIScrollView+EmptyDataSet.h"
 #import "UITableView+LoadAnimation.h"
 #import "UIView+ZJViewExtension.h"
+#import <AFNetworking/AFNetworking.h>
 
 //多视图滚动
 #import "XTSegmentControl.h"
