@@ -118,7 +118,6 @@
 
 #pragma mark -初始化添加控件
 -(void)addCarouselAndSegmentControl{
-    self.title = @"多视图滚动";
     isStateBar = NO;
     isHiddenBar = NO;
     segmentTitleArr = @[@"美食",@"购物",@"酒店",@"亲子",@"旅游",@"休闲娱乐",@"生活服务",@"美容健身"];

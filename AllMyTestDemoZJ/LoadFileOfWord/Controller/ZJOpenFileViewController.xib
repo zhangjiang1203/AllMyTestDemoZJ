@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ZJOpenFileViewController">
+            <connections>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WDN-C1-0Up">
+                    <rect key="frame" x="93" y="264" width="62" height="40"/>
+                    <color key="backgroundColor" red="0.0" green="0.58823529409999997" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                    <state key="normal" title="excel">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="5"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="openFileClick:" destination="-1" eventType="touchUpInside" id="SPk-Of-gpk"/>
+                    </connections>
+                </button>
+                <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F8Q-zg-sce">
+                    <rect key="frame" x="165" y="264" width="63" height="40"/>
+                    <color key="backgroundColor" red="0.94509803920000002" green="0.2470588235" blue="0.2666666667" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                    <state key="normal" title="ppt">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="5"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="openFileClick:" destination="-1" eventType="touchUpInside" id="Nph-Uu-AAz"/>
+                    </connections>
+                </button>
+                <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fir-Cm-93q">
+                    <rect key="frame" x="238" y="264" width="62" height="40"/>
+                    <color key="backgroundColor" red="1" green="0.55662715517241379" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                    <state key="normal" title="pdf">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="5"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="openFileClick:" destination="-1" eventType="touchUpInside" id="eva-ut-dWn"/>
+                    </connections>
+                </button>
+                <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qSn-OK-Noi">
+                    <rect key="frame" x="20" y="264" width="63" height="40"/>
+                    <color key="backgroundColor" red="1" green="0.64705882349999999" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="90e-ct-nJ4"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                    <state key="normal" title="word">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="5"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="openFileClick:" destination="-1" eventType="touchUpInside" id="8Ox-SL-1In"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="F8Q-zg-sce" firstAttribute="centerY" secondItem="qSn-OK-Noi" secondAttribute="centerY" id="1WY-60-IF2"/>
+                <constraint firstItem="F8Q-zg-sce" firstAttribute="width" secondItem="qSn-OK-Noi" secondAttribute="width" id="8B2-ES-9vw"/>
+                <constraint firstItem="fir-Cm-93q" firstAttribute="width" secondItem="qSn-OK-Noi" secondAttribute="width" id="8Yo-kg-Q67"/>
+                <constraint firstItem="F8Q-zg-sce" firstAttribute="height" secondItem="qSn-OK-Noi" secondAttribute="height" id="AkZ-gy-FUv"/>
+                <constraint firstItem="WDN-C1-0Up" firstAttribute="width" secondItem="qSn-OK-Noi" secondAttribute="width" id="B7a-pY-ymj"/>
+                <constraint firstItem="F8Q-zg-sce" firstAttribute="centerY" secondItem="qSn-OK-Noi" secondAttribute="centerY" id="B8z-Qd-as1"/>
+                <constraint firstItem="WDN-C1-0Up" firstAttribute="centerY" secondItem="qSn-OK-Noi" secondAttribute="centerY" id="OOX-xg-UTb"/>
+                <constraint firstItem="WDN-C1-0Up" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="b8B-xP-HRM"/>
+                <constraint firstItem="WDN-C1-0Up" firstAttribute="leading" secondItem="qSn-OK-Noi" secondAttribute="trailing" constant="10" id="c5h-9o-8OP"/>
+                <constraint firstItem="fir-Cm-93q" firstAttribute="height" secondItem="qSn-OK-Noi" secondAttribute="height" id="cKM-Vd-T0W"/>
+                <constraint firstItem="F8Q-zg-sce" firstAttribute="leading" secondItem="WDN-C1-0Up" secondAttribute="trailing" constant="10" id="dtP-dl-Lhk"/>
+                <constraint firstItem="WDN-C1-0Up" firstAttribute="height" secondItem="qSn-OK-Noi" secondAttribute="height" id="gJv-Gw-GtI"/>
+                <constraint firstItem="qSn-OK-Noi" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="gRn-Vq-X5d"/>
+                <constraint firstItem="WDN-C1-0Up" firstAttribute="centerY" secondItem="qSn-OK-Noi" secondAttribute="centerY" id="gYF-2P-i7a"/>
+                <constraint firstItem="fir-Cm-93q" firstAttribute="centerY" secondItem="qSn-OK-Noi" secondAttribute="centerY" id="pLy-ge-OAK"/>
+                <constraint firstItem="fir-Cm-93q" firstAttribute="leading" secondItem="F8Q-zg-sce" secondAttribute="trailing" constant="10" id="q6b-oX-ig3"/>
+                <constraint firstAttribute="trailing" secondItem="fir-Cm-93q" secondAttribute="trailing" constant="20" id="ty2-yD-6NF"/>
+                <constraint firstItem="fir-Cm-93q" firstAttribute="centerY" secondItem="qSn-OK-Noi" secondAttribute="centerY" id="xlI-2o-fuS"/>
+            </constraints>
+            <point key="canvasLocation" x="352" y="318"/>
+        </view>
+    </objects>
+</document>

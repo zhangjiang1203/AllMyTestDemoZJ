@@ -24,7 +24,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.title = @"webView交互";
     [self initwebViewUIData];
     
 }

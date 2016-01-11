@@ -19,7 +19,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.title = @"日历选择";
     self.view.clipsToBounds = YES;
     [self setRightButtonItem];
     

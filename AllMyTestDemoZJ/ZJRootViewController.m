@@ -12,6 +12,7 @@
 #import "ZJMulScrollViewController.h"
 #import "ZJCalendarViewController.h"
 #import "ZJWebOperationViewController.h"
+#import "ZJOpenFileViewController.h"
 
 #import "ZJBaseMapViewController.h"
 #import "AppDelegate.h"
@@ -29,8 +30,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"功能选择";
-    viewControllerArr = @[@"ZJBaiDuBaseViewController",@"ZJBaseMapViewController",@"ZJPaymentViewController",@"ZJMulScrollViewController",@"ZJCalendarViewController",@"ZJWebOperationViewController"];
-    titleControllerArr = @[@"百度地图",@"高德地图",@"移动支付",@"多视图滚动",@"自定义日历",@"webView交互"];
+    viewControllerArr = @[@"ZJBaiDuBaseViewController",@"ZJBaseMapViewController",@"ZJPaymentViewController",@"ZJMulScrollViewController",@"ZJCalendarViewController",@"ZJWebOperationViewController",@"ZJOpenFileViewController"];
+    titleControllerArr = @[@"百度地图",@"高德地图",@"移动支付",@"多视图滚动",@"自定义日历",@"webView交互",@"应用内预览word，ppt，Excel功能"];
     
 }
 
@@ -62,6 +63,7 @@
     NSString *name =  viewControllerArr[indexPath.row];
     Class class = NSClassFromString(name);
     UIViewController *controller = [[class alloc]init];
+    controller.title = titleControllerArr[indexPath.row];
     [self.navigationController pushViewController:controller animated:YES];
 
 }
