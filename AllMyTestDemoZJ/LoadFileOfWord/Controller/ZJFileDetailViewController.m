@@ -9,6 +9,8 @@
 #import "ZJFileDetailViewController.h"
 #import <QuickLook/QuickLook.h>
 
+typedef void(^DownLoadSuccess)(NSString *filePathString);
+
 @interface ZJFileDetailViewController ()<QLPreviewControllerDataSource>
 {
     QLPreviewController *previewController;
@@ -55,14 +57,12 @@
 
 #pragma mark -下载文件
 -(void)downLoadFile:(UIButton*)sender{
-   
-    [self downloadFileWithRequestURL:KDefaultFileURL downloadSuccess:^(NSURL *fileFullPAth) {
-        //显示文件下载地址
-        self.filePath = [NSString stringWithFormat:@"%@",fileFullPAth];
-        [previewController reloadData];
-    } downloadFailure:^(NSError *error) {
-        //显示错误信息
-    }];
+    if ([sender.titleLabel.text isEqualToString:@"下载"]) {
+        [self downloadFileSuccess:^(NSString *filePathString) {
+            sender.hidden = YES;
+            [previewController reloadData];
+        }];
+    }
     
 }
 
@@ -71,45 +71,52 @@
 }
 
 -(id<QLPreviewItem>)previewController:(QLPreviewController *)controller previewItemAtIndex:(NSInteger)index{
-    NSURL *itemURL ;
-    if ([self.filePath isEqualToString:@"网络资源加载"]) {
-        itemURL = [NSURL URLWithString:self.filePath];
-    }else{
-        itemURL = [NSURL fileURLWithPath:self.filePath];
-    }
+    NSURL *itemURL = [NSURL fileURLWithPath:self.filePath];
     return itemURL;
 }
 
-
-/*  @author Jakey
-*  @brief  下载文件
-*  @param requestURL 请求地址
-*  @param success    下载成功回调
-*  @param failure    下载失败回调
-*/
-- (void)downloadFileWithRequestURL:(NSString*)requestURL
-               downloadSuccess:(void (^)(NSURL *fileFullPAth))success
-               downloadFailure:(void (^)(NSError *error))failure{
-    
-    NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
-    
-    AFURLSessionManager *manager = [[AFURLSessionManager alloc]initWithSessionConfiguration:configuration];
-    
-    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:requestURL]];
-    
-    NSURLSessionDownloadTask *downloadTask = [manager downloadTaskWithRequest:request progress:nil destination:^NSURL *(NSURL *targetPath,NSURLResponse *response) {
-        
-        NSURL *downloadURL = [[NSFileManager defaultManager] URLForDirectory:NSDocumentDirectory inDomain:NSUserDomainMask appropriateForURL:nil create:NO error:nil];
-        return [downloadURL URLByAppendingPathComponent:[response suggestedFilename]];
-        
-    } completionHandler:^(NSURLResponse *response,NSURL *filePath, NSError *error) {
-        //此处已经在主线程了
-       //开始显示下载文件
-        success(filePath);
+#pragma mark -开始下载网络资源文件
+- (void)downloadFileSuccess:(DownLoadSuccess)successBlock{
+    //初始化进度条
+    MBProgressHUD *HUD = [[MBProgressHUD alloc]initWithView:self.view];
+    [self.view addSubview:HUD];
+    HUD.mode = MBProgressHUDModeDeterminate;
+    HUD.labelText = @"Downloading...";
+    HUD.square = YES;
+    [HUD show:YES];
+    //初始化队列
+    NSOperationQueue *queue = [[NSOperationQueue alloc ]init];
+    //下载地址
+    NSURL *url = [NSURL URLWithString:KDefaultFileURL];
+    //保存路径
+    NSString *rootPath = [self dirDoc];
+    NSString *fileName = [KDefaultFileURL lastPathComponent];
+    self.filePath = [rootPath  stringByAppendingPathComponent:fileName];
+    AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc]initWithRequest:[NSURLRequest requestWithURL:url]];
+    operation.outputStream = [NSOutputStream outputStreamToFileAtPath:_filePath append:NO];
+    // 根据下载量设置进度条的百分比
+    [operation setDownloadProgressBlock:^(NSUInteger bytesRead, long long totalBytesRead, long long totalBytesExpectedToRead) {
+        CGFloat precent = (CGFloat)totalBytesRead / totalBytesExpectedToRead;
+        HUD.progress = precent;
     }];
-    
-    [downloadTask resume];
-    
+
+    [operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
+        successBlock(_filePath);
+        [HUD removeFromSuperview];
+
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"下载失败");
+        [HUD removeFromSuperview];
+    }];
+    //开始下载
+    [queue addOperation:operation];
+}
+
+//获取Documents目录
+-(NSString *)dirDoc{
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *documentsDirectory = [paths objectAtIndex:0];
+    return documentsDirectory;
 }
 
 @end

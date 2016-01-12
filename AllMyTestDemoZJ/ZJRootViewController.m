@@ -32,7 +32,7 @@
     [super viewDidLoad];
     self.title = @"功能选择";
     viewControllerArr = @[@"ZJBaiDuBaseViewController",@"ZJBaseMapViewController",@"ZJPaymentViewController",@"ZJMulScrollViewController",@"ZJCalendarViewController",@"ZJWebOperationViewController",@"ZJLoadFileViewController"];
-    titleControllerArr = @[@"百度地图",@"高德地图",@"移动支付",@"多视图滚动",@"自定义日历",@"webView交互",@"预览word,ppt,Excel,PDF"];
+    titleControllerArr = @[@"百度地图",@"高德地图",@"移动支付",@"多视图滚动",@"自定义日历",@"WebView交互",@"预览Word,PPT,Excel,PDF"];
     
 }
 
