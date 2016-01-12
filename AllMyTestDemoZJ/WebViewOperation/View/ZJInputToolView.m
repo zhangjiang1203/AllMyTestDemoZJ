@@ -26,7 +26,7 @@
         lineLabel.backgroundColor = [UIColor groupTableViewBackgroundColor];
         [self addSubview:lineLabel];
         
-        CGFloat leftPadding = 15.0,topPadding = 5,buttonW = 80.0;
+        CGFloat leftPadding = 15.0,topPadding = 5,buttonW = 70.0;
         CGFloat inputH = frame.size.height - 2*topPadding;
         CGFloat inputW = frame.size.width - 3*leftPadding - buttonW;
         self.inputField = [[UITextField alloc]initWithFrame:CGRectMake(leftPadding, topPadding, inputW, inputH)];
@@ -38,13 +38,12 @@
         [self addSubview:self.inputField];
         
         self.sendBtn = [[UIButton alloc]initWithFrame:CGRectMake(CGRectGetMaxX(self.inputField.frame)+leftPadding, topPadding, buttonW, inputH)];
-        [self.sendBtn setTitle:@"发送消息" forState:UIControlStateNormal];
-        [self.sendBtn setTitleColor:KRGBA(0, 0, 0, 1) forState:UIControlStateNormal];
+        [self.sendBtn setTitle:@"发送" forState:UIControlStateNormal];
+        [self.sendBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+        [self.sendBtn setBackgroundColor:KRGBA(0, 150, 250, 1)];
         self.sendBtn.titleLabel.font = KDefaultFont(15);
         self.sendBtn.layer.masksToBounds = YES;
         self.sendBtn.layer.cornerRadius = 5;
-        self.sendBtn.layer.borderColor = KRGBA(30, 30, 30, 1).CGColor;
-        self.sendBtn.layer.borderWidth = 0.5;
         [self.sendBtn addTarget:self action:@selector(buttonClickToNotice:) forControlEvents:UIControlEventTouchUpInside];
         [self addSubview:self.sendBtn];
         
