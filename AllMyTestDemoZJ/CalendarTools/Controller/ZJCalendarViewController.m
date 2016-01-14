@@ -8,6 +8,7 @@
 
 #import "ZJCalendarViewController.h"
 #import "UIView+PopViewAnimation.h"
+
 @interface ZJCalendarViewController ()
 
 @property (strong,nonatomic)UIView *testView;
@@ -21,6 +22,9 @@
     [super viewDidLoad];
     self.view.clipsToBounds = YES;
     [self setRightButtonItem];
+    
+    [HUDHelper CheckPhoneNumInput:@"1399089787"];
+    [[HUDHelper getInstance] showLabelHUDOnScreen];
     
     
     self.backTestView = [[UIView alloc]initWithFrame:CGRectMake(-(ScreenWidth-150), 0, ScreenWidth-150, ScreenHeight - 64)];

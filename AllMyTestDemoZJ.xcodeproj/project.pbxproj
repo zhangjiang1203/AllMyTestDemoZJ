@@ -30,6 +30,7 @@
 		544FC7EE1C438D4A0004C836 /* ZJFileDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 544FC7ED1C438D4A0004C836 /* ZJFileDetailViewController.m */; };
 		544FC7F01C438D6A0004C836 /* QuickLook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 544FC7EF1C438D6A0004C836 /* QuickLook.framework */; };
 		544FC7F21C4393C80004C836 /* ppt文档.ppt in Resources */ = {isa = PBXBuildFile; fileRef = 544FC7F11C4393C80004C836 /* ppt文档.ppt */; };
+		545435191C4793B9008925A7 /* AppDelegate+Hook.m in Sources */ = {isa = PBXBuildFile; fileRef = 545435181C4793B9008925A7 /* AppDelegate+Hook.m */; };
 		545B7FFF1C1674CA00C0365E /* ZJNavMagicMoveAnination.m in Sources */ = {isa = PBXBuildFile; fileRef = 545B7FFE1C1674CA00C0365E /* ZJNavMagicMoveAnination.m */; };
 		545B80021C16A15300C0365E /* ZJCircleTransitionAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 545B80011C16A15300C0365E /* ZJCircleTransitionAnimation.m */; };
 		545B80071C16C27B00C0365E /* PortalAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 545B80061C16C27B00C0365E /* PortalAnimation.m */; };
@@ -178,6 +179,8 @@
 		544FC7ED1C438D4A0004C836 /* ZJFileDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZJFileDetailViewController.m; sourceTree = "<group>"; };
 		544FC7EF1C438D6A0004C836 /* QuickLook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuickLook.framework; path = System/Library/Frameworks/QuickLook.framework; sourceTree = SDKROOT; };
 		544FC7F11C4393C80004C836 /* ppt文档.ppt */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ppt文档.ppt"; sourceTree = "<group>"; };
+		545435171C4793B9008925A7 /* AppDelegate+Hook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AppDelegate+Hook.h"; sourceTree = "<group>"; };
+		545435181C4793B9008925A7 /* AppDelegate+Hook.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AppDelegate+Hook.m"; sourceTree = "<group>"; };
 		545B7FFD1C1674CA00C0365E /* ZJNavMagicMoveAnination.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZJNavMagicMoveAnination.h; sourceTree = "<group>"; };
 		545B7FFE1C1674CA00C0365E /* ZJNavMagicMoveAnination.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZJNavMagicMoveAnination.m; sourceTree = "<group>"; };
 		545B80001C16A15300C0365E /* ZJCircleTransitionAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZJCircleTransitionAnimation.h; sourceTree = "<group>"; };
@@ -1179,6 +1182,8 @@
 				546804B51C3BB42800BC3A3C /* UIView+ZJViewExtension.m */,
 				544ED9541C3CAAF500F53526 /* NSString+URLCode.h */,
 				544ED9551C3CAAF500F53526 /* NSString+URLCode.m */,
+				545435171C4793B9008925A7 /* AppDelegate+Hook.h */,
+				545435181C4793B9008925A7 /* AppDelegate+Hook.m */,
 			);
 			path = CommonTools;
 			sourceTree = "<group>";
@@ -1395,6 +1400,7 @@
 				8D2EB5E31BEC9CB300C314B3 /* ZJBaseNavViewController.m in Sources */,
 				5471D5551C0BF95D002D25F7 /* XTSegmentControl.m in Sources */,
 				5488F4001C2CD05A00773324 /* MANaviAnnotationView.m in Sources */,
+				545435191C4793B9008925A7 /* AppDelegate+Hook.m in Sources */,
 				5460CFB41C310F7700F563BF /* ZJCustomeSegment.m in Sources */,
 				5471D55C1C0BFF05002D25F7 /* ELGoodBriefCell.m in Sources */,
 				8D659B5D1C05954F00DEC679 /* WCSafeAreaView.m in Sources */,
