@@ -8,7 +8,7 @@
 
 #import "ZJCalendarViewController.h"
 #import "UIView+PopViewAnimation.h"
-
+#import "UIScrollView+ZJEmptyData.h"
 @interface ZJCalendarViewController ()
 
 @property (strong,nonatomic)UIView *testView;
@@ -23,15 +23,11 @@
     self.view.clipsToBounds = YES;
     [self setRightButtonItem];
     
-    [HUDHelper CheckPhoneNumInput:@"1399089787"];
-    [[HUDHelper getInstance] showLabelHUDOnScreen];
-    
     
     self.backTestView = [[UIView alloc]initWithFrame:CGRectMake(-(ScreenWidth-150), 0, ScreenWidth-150, ScreenHeight - 64)];
     self.backTestView.backgroundColor = [UIColor redColor];
     
     UIPanGestureRecognizer *swipeReco1 = [[UIPanGestureRecognizer alloc]initWithTarget:self action:@selector(showViewFromRight:)];
-//    swipeReco1.direction = UISwipeGestureRecognizerDirectionLeft;
     [self.backTestView addGestureRecognizer:swipeReco1];
     [self.view addSubview:self.backTestView];
     

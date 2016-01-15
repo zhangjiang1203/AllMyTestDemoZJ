@@ -10,7 +10,14 @@
 #import <UIKit/UIKit.h>
 #import <CoreLocation/CoreLocation.h>
 
+
+#define MSG_VIDEO_NO_AUTH    @"e校信未获得授权使用摄像头\n请退出e校信,在iOS“设置”－“隐私” - “相机”中打开,然后回到e校信。"
+#define MSG_VIDEO_NO         @"抱歉，暂不支持该手机系统版本"
+#define IOS7_OR_LATER   ( [[[UIDevice currentDevice] systemVersion] compare:@"7.0"] != NSOrderedAscending )
+#define IOS8_OR_LATER  ([[[UIDevice currentDevice] systemVersion] floatValue] >= 8.0)
 typedef void (^AnimationSuccessBlock)(BOOL isFinish);
+typedef void (^continueBlock)();//确定
+typedef void (^cancelBlock)();//返回
 
 typedef enum {
     NETWORK_TYPE_NONE= 0,
@@ -99,6 +106,36 @@ typedef NS_ENUM(NSInteger,NETWORK_STATE) {
  */
 +(CGSize)getSuitSizeWithString:(NSString *)text fontSize:(float)fontSize bold:(BOOL)bold sizeOfX:(float)x;
 
+/**
+ *  是否有摄像头使用权限
+ *
+ *  @param authorized 有权限回调
+ *  @param restricted 无权限回调
+ */
++(void)videoAuthorizationStatusAuthorized:(void(^)(void))authorized;
+
+
+#pragma mark------带Block的弹出框提示
+/*!
+ @brief 带Block的弹出框提示
+ */
++(void)confirmMsg:(NSString *)msg continueBlock:(continueBlock)continueBlock;
+
++(void)confirmMsg:(NSString *)msg
+    continueBlock:(continueBlock)continueBlock
+      cancelBlock:(continueBlock)cancelBlock
+          noTitle:(NSString*)noTitle
+         yesTitle:(NSString*)yesTitle
+            title:(NSString*)title;
+
++(void)confirmMsg:(NSString *)msg
+    continueBlock:(continueBlock)continueBlock
+      cancelBlock:(continueBlock)cancelBlock
+          noTitle:(NSString*)noTitle
+         yesTitle:(NSString*)yesTitle;
+
++(void)showBlockMsg:(NSString*)msg continueBlock:(continueBlock)continueBlock;
+
 
 /**
  * 返回两个日期之间的天数
@@ -161,6 +198,8 @@ typedef NS_ENUM(NSInteger,NETWORK_STATE) {
  */
 +(NSString*)getCurrentDateWithFormat:(NSString*)format;
 
+#pragma mark------对图片处理
++ (UIImage *) captureScreen;
 
 /**
  * 裁剪图片
@@ -190,10 +229,6 @@ typedef NS_ENUM(NSInteger,NETWORK_STATE) {
  *  添加控件来回动画
  */
 +(void)floatAnimator:(UIView *)animator;
-/**
- *  截取当前屏幕
- */
-+ (UIImage *) captureScreen;
 
 
 /**

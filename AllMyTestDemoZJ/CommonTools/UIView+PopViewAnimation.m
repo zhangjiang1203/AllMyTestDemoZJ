@@ -74,6 +74,10 @@ static const char popAnimation;
     [popView.layer pop_addAnimation:rotationAnim forKey:@"AnimateRotation1"];
 
 }
+
+/**
+ *  动画的代理方法
+ */
 -(void)pop_animationDidStop:(POPAnimation *)anim finished:(BOOL)finished{
     if (finished) {
         AnimationSuccessBlock animation = (AnimationSuccessBlock)objc_getAssociatedObject(anim, &popAnimation);

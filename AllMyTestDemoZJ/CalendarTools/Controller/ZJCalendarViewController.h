@@ -10,4 +10,5 @@
 
 @interface ZJCalendarViewController : ZJBaseViewController
 
+@property (weak, nonatomic) IBOutlet UITableView *myTableview;
 @end

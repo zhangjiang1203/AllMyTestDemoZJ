@@ -10,6 +10,7 @@
 #include <arpa/inet.h>
 #include <ifaddrs.h>
 #import "AppDelegate.h"
+#import <AVFoundation/AVFoundation.h>/*相机*/
 #define _IPHONE70_ 70000
 static const double _x_pi = 3.14159265358979324 * 3000.0 / 180.0;
 static const char popAnimation;
@@ -270,6 +271,108 @@ static const char popAnimation;
     return address;
 }
 
+/**
+ *  摄像头是否有使用权限
+ */
++(void)videoAuthorizationStatusAuthorized:(void(^)(void))authorized
+{
+    NSString *mediaType = AVMediaTypeVideo;
+    AVAuthorizationStatus authStatus = [AVCaptureDevice authorizationStatusForMediaType:mediaType];
+    //授权的返回
+    if(authStatus == AVAuthorizationStatusAuthorized){
+        if (!IOS7_OR_LATER) {
+            [HUDHelper confirmMsg:MSG_VIDEO_NO continueBlock:^{
+                
+            }];
+        }else{
+            authorized();
+        }
+    }else{
+        [HUDHelper confirmMsg:MSG_VIDEO_NO_AUTH continueBlock:^{
+            if (IOS8_OR_LATER) {
+                NSURL *url = [NSURL URLWithString:UIApplicationOpenSettingsURLString];
+                if ([[UIApplication sharedApplication] canOpenURL:url]) {
+                    [[UIApplication sharedApplication] openURL:url];
+                }
+            }
+        }];
+
+    }
+}
+
+
+#pragma mark------带Block的弹出框提示
+/*!
+ @brief 带Block的弹出框提示
+ */
+static const char continueBlockkey;
+static const char cancelBlockkey;
++(void)confirmMsg:(NSString *)msg continueBlock:(continueBlock)continueBlock
+{
+    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"提示" message:msg delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确定", nil];
+    objc_removeAssociatedObjects(alertView);
+    alertView.delegate=self;
+    objc_setAssociatedObject(alertView, &continueBlockkey, continueBlock, OBJC_ASSOCIATION_COPY);
+    [alertView show];
+}
+
++(void)confirmMsg:(NSString *)msg
+    continueBlock:(continueBlock)continueBlock
+      cancelBlock:(continueBlock)cancelBlock
+          noTitle:(NSString*)noTitle
+         yesTitle:(NSString*)yesTitle
+            title:(NSString*)title
+{
+    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:title message:msg delegate:self cancelButtonTitle:noTitle otherButtonTitles:yesTitle, nil];
+    objc_removeAssociatedObjects(alertView);
+    alertView.delegate=self;
+    objc_setAssociatedObject(alertView, &continueBlockkey, continueBlock, OBJC_ASSOCIATION_COPY);
+    objc_setAssociatedObject(alertView, &cancelBlockkey, cancelBlock, OBJC_ASSOCIATION_COPY);
+    [alertView show];
+}
+
+
++(void)confirmMsg:(NSString *)msg
+    continueBlock:(continueBlock)continueBlock
+      cancelBlock:(continueBlock)cancelBlock
+          noTitle:(NSString*)noTitle
+         yesTitle:(NSString*)yesTitle
+{
+    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"提示" message:msg delegate:self cancelButtonTitle:noTitle otherButtonTitles:yesTitle, nil];
+    objc_removeAssociatedObjects(alertView);
+    alertView.delegate=self;
+    objc_setAssociatedObject(alertView, &continueBlockkey, continueBlock, OBJC_ASSOCIATION_COPY);
+    objc_setAssociatedObject(alertView, &cancelBlockkey, cancelBlock, OBJC_ASSOCIATION_COPY);
+    [alertView show];
+}
+
++(void)showBlockMsg:(NSString*)msg continueBlock:(continueBlock)continueBlock
+{
+    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"提示" message:msg delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
+    objc_removeAssociatedObjects(alertView);
+    alertView.delegate=self;
+    objc_setAssociatedObject(alertView, &cancelBlockkey, continueBlock, OBJC_ASSOCIATION_COPY);
+    [alertView show];
+}
+
+
++(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    if(buttonIndex==1)
+    {
+        continueBlock  messageString =(continueBlock)objc_getAssociatedObject(alertView, &continueBlockkey);
+        if(messageString!=nil)
+            messageString();
+    }
+    else if(buttonIndex==0)
+    {
+        cancelBlock  cancelString =(cancelBlock)objc_getAssociatedObject(alertView, &cancelBlockkey);
+        if(cancelString!=nil)
+            cancelString();
+    }
+}
+
+
 #pragma mark - 计算两个日期之间的年数
 +(NSInteger)calculateAgeFromDate:(NSDate *)date1 toDate:(NSDate *)date2{
     NSCalendar *userCalendar = [NSCalendar currentCalendar];
@@ -441,7 +544,6 @@ static const char popAnimation;
     NSString *time = [dateformatter stringFromDate:date];
     return time;
 }
-
 
 #pragma mark - 裁剪图片
 + (UIImage *)clipsToRect:(CGRect)rect image:(UIImage*)orangeImage{
