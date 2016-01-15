@@ -41,6 +41,7 @@
 		5460CFB41C310F7700F563BF /* ZJCustomeSegment.m in Sources */ = {isa = PBXBuildFile; fileRef = 5460CFB31C310F7700F563BF /* ZJCustomeSegment.m */; };
 		54618E5D1C48DB0900E1E685 /* UIScrollView+ZJEmptyData.m in Sources */ = {isa = PBXBuildFile; fileRef = 54618E5C1C48DB0900E1E685 /* UIScrollView+ZJEmptyData.m */; };
 		54618E601C48DD1100E1E685 /* NSDate+ZJDateFormat.m in Sources */ = {isa = PBXBuildFile; fileRef = 54618E5F1C48DD1100E1E685 /* NSDate+ZJDateFormat.m */; };
+		54618E631C48F55900E1E685 /* ZJGCDHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 54618E621C48F55900E1E685 /* ZJGCDHelper.m */; };
 		5463924B1C0D7A1200C61EB2 /* ZJCalendarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 546392491C0D7A1200C61EB2 /* ZJCalendarViewController.m */; };
 		5463924C1C0D7A1200C61EB2 /* ZJCalendarViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5463924A1C0D7A1200C61EB2 /* ZJCalendarViewController.xib */; };
 		5463924F1C0D7CA600C61EB2 /* WCChooseTimeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5463924E1C0D7CA600C61EB2 /* WCChooseTimeView.m */; };
@@ -203,6 +204,8 @@
 		54618E5C1C48DB0900E1E685 /* UIScrollView+ZJEmptyData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+ZJEmptyData.m"; sourceTree = "<group>"; };
 		54618E5E1C48DD1100E1E685 /* NSDate+ZJDateFormat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+ZJDateFormat.h"; sourceTree = "<group>"; };
 		54618E5F1C48DD1100E1E685 /* NSDate+ZJDateFormat.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+ZJDateFormat.m"; sourceTree = "<group>"; };
+		54618E611C48F55900E1E685 /* ZJGCDHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZJGCDHelper.h; sourceTree = "<group>"; };
+		54618E621C48F55900E1E685 /* ZJGCDHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZJGCDHelper.m; sourceTree = "<group>"; };
 		546392481C0D7A1200C61EB2 /* ZJCalendarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZJCalendarViewController.h; sourceTree = "<group>"; };
 		546392491C0D7A1200C61EB2 /* ZJCalendarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZJCalendarViewController.m; sourceTree = "<group>"; };
 		5463924A1C0D7A1200C61EB2 /* ZJCalendarViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZJCalendarViewController.xib; sourceTree = "<group>"; };
@@ -1194,6 +1197,8 @@
 				54618E5C1C48DB0900E1E685 /* UIScrollView+ZJEmptyData.m */,
 				54618E5E1C48DD1100E1E685 /* NSDate+ZJDateFormat.h */,
 				54618E5F1C48DD1100E1E685 /* NSDate+ZJDateFormat.m */,
+				54618E611C48F55900E1E685 /* ZJGCDHelper.h */,
+				54618E621C48F55900E1E685 /* ZJGCDHelper.m */,
 			);
 			path = CommonTools;
 			sourceTree = "<group>";
@@ -1444,6 +1449,7 @@
 				CFFCFA571C2AD6A600130306 /* ZJNearByPlaceViewController.m in Sources */,
 				8D659B671C05B2E700DEC679 /* CXCardView.m in Sources */,
 				545FC8671C0EEBF300BD7600 /* UIView+PopViewAnimation.m in Sources */,
+				54618E631C48F55900E1E685 /* ZJGCDHelper.m in Sources */,
 				8D5EA90D1BF2E4F000ADFB2A /* Order.m in Sources */,
 				546F9A731C157FED0079AD80 /* ZJNavAnimationViewController.m in Sources */,
 				54441B2E1C2AA76D006DC0CF /* ZJRoutePlanViewController.m in Sources */,
