@@ -51,7 +51,6 @@
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(keyBoardChangeFrame:) name:UIKeyboardWillChangeFrameNotification object:nil];
 
 }
-
 #pragma mark -监控键盘
 -(void)keyBoardChangeFrame:(NSNotification*)noti{
     
@@ -90,5 +89,4 @@
     
     return YES;
 }
-
 @end

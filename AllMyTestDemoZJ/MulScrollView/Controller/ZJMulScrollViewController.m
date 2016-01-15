@@ -23,7 +23,7 @@
 #import "ZJNavMagicMoveAnination.h"
 #import "ZJNavSliderAnimation.h"
 #import "ZJCustomScaleAnimation.h"
-@interface ZJMulScrollViewController ()<iCarouselDataSource,iCarouselDelegate,ELGoodBriefViewDelegate,UINavigationControllerDelegate,WCFilterAnimationDelegate,ZJNavMagicMoveAninationDelegate>
+@interface ZJMulScrollViewController ()<iCarouselDataSource,iCarouselDelegate,UINavigationControllerDelegate,WCFilterAnimationDelegate,ZJNavMagicMoveAninationDelegate>
 {
     BOOL isHiddenBar;//隐藏导航栏和选项卡
     BOOL isStateBar;//隐藏状态栏
@@ -150,7 +150,7 @@
     if (listView == nil){
         listView = [[ELGoodBriefView alloc]initWithFrame:carousel.bounds];
     }
-    listView.delegate = self;
+//    listView.delegate = self;
     listView.goodType = index+1;
     return listView;
 }
