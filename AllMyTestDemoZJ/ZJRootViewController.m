@@ -13,7 +13,7 @@
 #import "ZJCalendarViewController.h"
 #import "ZJWebOperationViewController.h"
 #import "ZJLoadFileViewController.h"
-
+#import "ZJCollectionViewController.h"
 
 #import "ZJBaseMapViewController.h"
 #import "AppDelegate.h"
@@ -31,8 +31,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"功能选择";
-    viewControllerArr = @[@"ZJBaiDuBaseViewController",@"ZJBaseMapViewController",@"ZJPaymentViewController",@"ZJMulScrollViewController",@"ZJCalendarViewController",@"ZJWebOperationViewController",@"ZJLoadFileViewController"];
-    titleControllerArr = @[@"百度地图",@"高德地图",@"移动支付",@"多视图滚动",@"自定义日历",@"WebView交互",@"预览Word,PPT,Excel,PDF"];
+    viewControllerArr = @[@"ZJBaiDuBaseViewController",@"ZJBaseMapViewController",@"ZJPaymentViewController",@"ZJMulScrollViewController",@"ZJCalendarViewController",@"ZJWebOperationViewController",@"ZJLoadFileViewController",@"ZJCollectionViewController"];
+    titleControllerArr = @[@"百度地图",@"高德地图",@"移动支付",@"多视图滚动",@"自定义日历",@"WebView交互",@"预览Word,PPT,Excel,PDF",@"OC-Swift互掉"];
     
 }
 
