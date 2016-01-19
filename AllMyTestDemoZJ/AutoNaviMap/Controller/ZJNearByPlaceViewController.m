@@ -41,6 +41,41 @@
     [self initMyMapData];
     [self initNaviViewController];
     [self initIFlySpeech];
+    [self setRightButtonItem];
+}
+
+
+#pragma mark -直接返回上一层
+-(void)setRightButtonItem{
+    UIButton *right = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, 40, 30)];
+    [right setTitle:@"截屏" forState:UIControlStateNormal];
+    right.titleLabel.font = KDefaultFont(15);
+    right.imageView.contentMode = UIViewContentModeLeft;
+    [right addTarget:self action:@selector(nearByPlace) forControlEvents:UIControlEventTouchUpInside];
+    UIBarButtonItem *rightItem = [[UIBarButtonItem alloc]initWithCustomView:right];
+    
+    
+    self.navigationItem.rightBarButtonItem = rightItem;
+}
+#pragma mark -开始截屏
+-(void)nearByPlace{
+    UIImage *image = [self.mapView takeSnapshotInRect:self.view.bounds];
+
+    UIImageWriteToSavedPhotosAlbum(image, self, @selector(imageSavedToPhotosAlbum:didFinishSavingWithError:contextInfo:), nil);
+}
+
+- (void)imageSavedToPhotosAlbum:(UIImage *)image didFinishSavingWithError:(NSError *)error contextInfo:(void *)contextInfo
+{
+    NSString *message = @"呵呵";
+    if (!error) {
+        [[HUDHelper getInstance]showSuccessTipWithLabel:@"成功保存到相册" font:14 view:nil];
+        
+    }else
+    {
+        [[HUDHelper getInstance]showErrorTipWithLabel:[error description] font:14 view:nil];
+        
+    }
+    
 }
 
 -(void)initMyMapData{

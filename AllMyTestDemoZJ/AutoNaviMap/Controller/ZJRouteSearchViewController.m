@@ -33,7 +33,6 @@
     [self initMySearchBar];
 }
 
-
 -(void)initMySearchBar{
     
     self.resultArr = [NSMutableArray array];
@@ -64,7 +63,6 @@
 
 - (void)searchBarTextDidBeginEditing:(UISearchBar *)searchBar{
     NSLog(@"开始搜索");
-    
 
 }
 
