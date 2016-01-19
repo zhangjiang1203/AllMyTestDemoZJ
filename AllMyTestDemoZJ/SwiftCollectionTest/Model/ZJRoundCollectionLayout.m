@@ -27,9 +27,13 @@
     insertIndexArr = [NSMutableArray array];
     _collectionSize = self.collectionView.frame.size;
     _cellCount = [self.collectionView numberOfItemsInSection:0];
-    _radius = MIN(_collectionSize.width, _collectionSize.height);
-    _centerPoint = CGPointMake(_collectionSize.width/2, _collectionSize.height/2);
+    _radius = MIN(_collectionSize.width, _collectionSize.height)/2.6;
+    _centerPoint = CGPointMake(_collectionSize.width/2.0, (_collectionSize.height-64)/2.0);
     
+}
+
+-(void)setItemSize:(CGSize)itemSize{
+    _itemSize = itemSize;
 }
 
 -(CGSize)collectionViewContentSize{
@@ -52,7 +56,7 @@
     
     UICollectionViewLayoutAttributes *attrs = [UICollectionViewLayoutAttributes layoutAttributesForCellWithIndexPath:indexPath];
     
-    attrs.size = CGSizeMake(KItemSize, KItemSize);
+    attrs.size = self.itemSize;
     CGFloat x = _centerPoint.x + _radius * cos(2*indexPath.item * M_PI / (double)_cellCount);
     CGFloat y = _centerPoint.y + _radius * sin(2*indexPath.item * M_PI / (double)_cellCount);
     attrs.center = CGPointMake(x, y);
@@ -80,11 +84,5 @@
         }
     }
 }
-
-
-
-
-
-
 
 @end

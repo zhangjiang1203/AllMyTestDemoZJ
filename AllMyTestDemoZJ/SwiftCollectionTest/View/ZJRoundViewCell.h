@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+static NSString *identifier = @"ZJRoundViewCell";
+
 @interface ZJRoundViewCell : UICollectionViewCell
 @property (weak, nonatomic) IBOutlet UIImageView *headerImageView;
 

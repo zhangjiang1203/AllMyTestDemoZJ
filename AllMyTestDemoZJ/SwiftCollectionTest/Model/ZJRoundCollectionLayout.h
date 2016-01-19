@@ -10,4 +10,13 @@
 
 @interface ZJRoundCollectionLayout : UICollectionViewLayout
 
+/**
+ *  cell的大小
+ */
+@property (assign,nonatomic)CGSize itemSize;
+
+/**
+ *  cell的中心
+ */
+
 @end

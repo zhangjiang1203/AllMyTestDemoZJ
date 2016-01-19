@@ -16,14 +16,12 @@
 @implementation ZJRoundViewCell
 
 + (instancetype)cellWithCollectionView:(UICollectionView *)collectionView WithIndexPath:(NSIndexPath *)indexPath {
-    static NSString *identifier = @"ZJRoundViewCell";
     ZJRoundViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:identifier forIndexPath:indexPath];
     return cell;
 }
 
 - (void)awakeFromNib {
-    self.layer.cornerRadius = self.bounds.size.width/2;
-    self.layer.masksToBounds = YES;
+    
     
     
 }
