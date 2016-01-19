@@ -1,5 +1,5 @@
 platform :ios ,'7.0'
-pod 'AFNetworking'
+pod 'AFNetworking', '~> 3.0.4'
 pod 'pop', '~> 1.0.8'
 pod 'IQKeyboardManager', '~> 3.3.4'
 pod 'MJExtension', '~> 2.5.16'

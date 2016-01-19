@@ -27,6 +27,8 @@
 
 #ifdef __OBJC__
 
+#import "AFNClientHelper.h"
+
 #import "MBProgressHUD+Add.h"
 #import <UIKit/UIKit.h>
 #import <Foundation/Foundation.h>

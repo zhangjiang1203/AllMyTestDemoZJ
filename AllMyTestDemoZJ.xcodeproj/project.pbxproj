@@ -31,6 +31,9 @@
 		544FC7F01C438D6A0004C836 /* QuickLook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 544FC7EF1C438D6A0004C836 /* QuickLook.framework */; };
 		544FC7F21C4393C80004C836 /* ppt文档.ppt in Resources */ = {isa = PBXBuildFile; fileRef = 544FC7F11C4393C80004C836 /* ppt文档.ppt */; };
 		545435191C4793B9008925A7 /* AppDelegate+Hook.m in Sources */ = {isa = PBXBuildFile; fileRef = 545435181C4793B9008925A7 /* AppDelegate+Hook.m */; };
+		5459B9731C4E124E00503094 /* AFNClientHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 5459B9721C4E124E00503094 /* AFNClientHelper.m */; };
+		5459B97B1C4E276300503094 /* ZJAFNTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5459B9791C4E276200503094 /* ZJAFNTestViewController.m */; };
+		5459B97C1C4E276300503094 /* ZJAFNTestViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5459B97A1C4E276300503094 /* ZJAFNTestViewController.xib */; };
 		545B7FFF1C1674CA00C0365E /* ZJNavMagicMoveAnination.m in Sources */ = {isa = PBXBuildFile; fileRef = 545B7FFE1C1674CA00C0365E /* ZJNavMagicMoveAnination.m */; };
 		545B80021C16A15300C0365E /* ZJCircleTransitionAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 545B80011C16A15300C0365E /* ZJCircleTransitionAnimation.m */; };
 		545B80071C16C27B00C0365E /* PortalAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 545B80061C16C27B00C0365E /* PortalAnimation.m */; };
@@ -190,6 +193,11 @@
 		544FC7F11C4393C80004C836 /* ppt文档.ppt */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ppt文档.ppt"; sourceTree = "<group>"; };
 		545435171C4793B9008925A7 /* AppDelegate+Hook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AppDelegate+Hook.h"; sourceTree = "<group>"; };
 		545435181C4793B9008925A7 /* AppDelegate+Hook.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AppDelegate+Hook.m"; sourceTree = "<group>"; };
+		5459B9711C4E124E00503094 /* AFNClientHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFNClientHelper.h; sourceTree = "<group>"; };
+		5459B9721C4E124E00503094 /* AFNClientHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFNClientHelper.m; sourceTree = "<group>"; };
+		5459B9781C4E276200503094 /* ZJAFNTestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZJAFNTestViewController.h; sourceTree = "<group>"; };
+		5459B9791C4E276200503094 /* ZJAFNTestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZJAFNTestViewController.m; sourceTree = "<group>"; };
+		5459B97A1C4E276300503094 /* ZJAFNTestViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZJAFNTestViewController.xib; sourceTree = "<group>"; };
 		545B7FFD1C1674CA00C0365E /* ZJNavMagicMoveAnination.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZJNavMagicMoveAnination.h; sourceTree = "<group>"; };
 		545B7FFE1C1674CA00C0365E /* ZJNavMagicMoveAnination.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZJNavMagicMoveAnination.m; sourceTree = "<group>"; };
 		545B80001C16A15300C0365E /* ZJCircleTransitionAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZJCircleTransitionAnimation.h; sourceTree = "<group>"; };
@@ -603,6 +611,40 @@
 			sourceTree = "<group>";
 		};
 		544FC7E01C438C2F0004C836 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		5459B9741C4E26A900503094 /* AFNTest3.0 */ = {
+			isa = PBXGroup;
+			children = (
+				5459B9751C4E26A900503094 /* Controller */,
+				5459B9761C4E26A900503094 /* Model */,
+				5459B9771C4E26A900503094 /* View */,
+			);
+			path = AFNTest3.0;
+			sourceTree = "<group>";
+		};
+		5459B9751C4E26A900503094 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				5459B9781C4E276200503094 /* ZJAFNTestViewController.h */,
+				5459B9791C4E276200503094 /* ZJAFNTestViewController.m */,
+				5459B97A1C4E276300503094 /* ZJAFNTestViewController.xib */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		5459B9761C4E26A900503094 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		5459B9771C4E26A900503094 /* View */ = {
 			isa = PBXGroup;
 			children = (
 			);
@@ -1184,6 +1226,7 @@
 				8D2EB5D51BEC984200C314B3 /* ZJRootViewController.h */,
 				8D2EB5D61BEC984200C314B3 /* ZJRootViewController.m */,
 				8D2EB5D71BEC984200C314B3 /* ZJRootViewController.xib */,
+				5459B9741C4E26A900503094 /* AFNTest3.0 */,
 				548012C31C4CDA840002D9BA /* SwiftCollectionTest */,
 				544FC7DC1C438C2F0004C836 /* LoadFileOfWord */,
 				546804A41C3B5E0F00BC3A3C /* WebViewOperation */,
@@ -1255,6 +1298,8 @@
 				54618E5F1C48DD1100E1E685 /* NSDate+ZJDateFormat.m */,
 				54618E611C48F55900E1E685 /* ZJGCDHelper.h */,
 				54618E621C48F55900E1E685 /* ZJGCDHelper.m */,
+				5459B9711C4E124E00503094 /* AFNClientHelper.h */,
+				5459B9721C4E124E00503094 /* AFNClientHelper.m */,
 			);
 			path = CommonTools;
 			sourceTree = "<group>";
@@ -1383,6 +1428,7 @@
 				CFFCFA581C2AD6A600130306 /* ZJNearByPlaceViewController.xib in Resources */,
 				546804B21C3BA35D00BC3A3C /* AppJsDemo.html in Resources */,
 				546F9A741C157FED0079AD80 /* ZJNavAnimationViewController.xib in Resources */,
+				5459B97C1C4E276300503094 /* ZJAFNTestViewController.xib in Resources */,
 				548012CB1C4CDB600002D9BA /* ZJCollectionViewController.xib in Resources */,
 				546804B01C3B91B600BC3A3C /* testJavascript.js in Resources */,
 				8D7DC0EA1BF03FBB00C14F48 /* mapapi.bundle in Resources */,
@@ -1519,9 +1565,11 @@
 				545B800A1C16CFA400C0365E /* FoldAnimation.m in Sources */,
 				548012D01C4CDC9F0002D9BA /* RoundCollectionLayout.swift in Sources */,
 				54441B2B1C2AA76D006DC0CF /* ZJBaseMapViewController.m in Sources */,
+				5459B97B1C4E276300503094 /* ZJAFNTestViewController.m in Sources */,
 				8DFA18421BF9D417005CBA53 /* ZJMulScrollViewController.m in Sources */,
 				546F9A801C15838F0079AD80 /* ZJNavScaleAnimation.m in Sources */,
 				548012D81C4CE4820002D9BA /* ZJRoundCollectionLayout.m in Sources */,
+				5459B9731C4E124E00503094 /* AFNClientHelper.m in Sources */,
 				545B80101C16DB4700C0365E /* ZJNatGeoAnimation.m in Sources */,
 				8DC891E21BF76E270012D04F /* ZJAreaDataManager.m in Sources */,
 				5463924B1C0D7A1200C61EB2 /* ZJCalendarViewController.m in Sources */,
