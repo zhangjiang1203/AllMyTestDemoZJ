@@ -28,6 +28,7 @@
 #import "iflyMSC/IFlySetting.h"
 
 #define _IPHONE70_ 70000
+#define NetWorking_NoReachable @"请退出ZJTest,在iOS“设置”－“Wi-Fi”或“蜂窝移动数据”打开网络,然后回到ZJTest。"
 //高德地图导航
 static const NSString *KGaoDeAPIKey = @"34d5745e9a952db4b323c762c12bb9c0";
 
@@ -79,6 +80,27 @@ static const NSString *KGaoDeAPIKey = @"34d5745e9a952db4b323c762c12bb9c0";
     if (!ret) {
         NSLog(@"manager start failed!");
     }
+    
+    //监控网络
+    [[AFNetworkReachabilityManager sharedManager] setReachabilityStatusChangeBlock:^(AFNetworkReachabilityStatus status) {
+        if (status == AFNetworkReachabilityStatusNotReachable) {
+            if (IOS8_OR_LATER) {
+                [HUDHelper confirmMsg:@"亲,请先联网哦" continueBlock:^{
+                    NSURL *url = [NSURL URLWithString:UIApplicationOpenSettingsURLString];
+                    if ([[UIApplication sharedApplication] canOpenURL:url]) {
+                        [[UIApplication sharedApplication] openURL:url];
+                    }
+                }];
+            }else{
+                
+                [HUDHelper showBlockMsg:NetWorking_NoReachable continueBlock:nil];
+            }
+            
+        }
+        NSLog(@"Reachability: %@", AFStringFromNetworkReachabilityStatus(status));
+    }];
+    [[AFNetworkReachabilityManager sharedManager] startMonitoring];
+    
     //创建数据库
     [self openDBDataBase];
     //初始化微信支付

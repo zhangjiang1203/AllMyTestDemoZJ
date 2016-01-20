@@ -317,28 +317,13 @@ static const char cancelBlockkey;
 }
 
 +(void)confirmMsg:(NSString *)msg
+            title:(NSString*)title
     continueBlock:(continueBlock)continueBlock
       cancelBlock:(continueBlock)cancelBlock
           noTitle:(NSString*)noTitle
          yesTitle:(NSString*)yesTitle
-            title:(NSString*)title
 {
     UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:title message:msg delegate:self cancelButtonTitle:noTitle otherButtonTitles:yesTitle, nil];
-    objc_removeAssociatedObjects(alertView);
-    alertView.delegate=self;
-    objc_setAssociatedObject(alertView, &continueBlockkey, continueBlock, OBJC_ASSOCIATION_COPY);
-    objc_setAssociatedObject(alertView, &cancelBlockkey, cancelBlock, OBJC_ASSOCIATION_COPY);
-    [alertView show];
-}
-
-
-+(void)confirmMsg:(NSString *)msg
-    continueBlock:(continueBlock)continueBlock
-      cancelBlock:(continueBlock)cancelBlock
-          noTitle:(NSString*)noTitle
-         yesTitle:(NSString*)yesTitle
-{
-    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"提示" message:msg delegate:self cancelButtonTitle:noTitle otherButtonTitles:yesTitle, nil];
     objc_removeAssociatedObjects(alertView);
     alertView.delegate=self;
     objc_setAssociatedObject(alertView, &continueBlockkey, continueBlock, OBJC_ASSOCIATION_COPY);

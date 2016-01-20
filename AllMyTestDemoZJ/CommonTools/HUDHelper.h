@@ -120,20 +120,19 @@ typedef NS_ENUM(NSInteger,NETWORK_STATE) {
  @brief 带Block的弹出框提示
  */
 +(void)confirmMsg:(NSString *)msg continueBlock:(continueBlock)continueBlock;
-
+/**
+ *  自定义alertView的点击按钮
+ */
 +(void)confirmMsg:(NSString *)msg
+    title:(NSString*)title
     continueBlock:(continueBlock)continueBlock
-      cancelBlock:(continueBlock)cancelBlock
-          noTitle:(NSString*)noTitle
-         yesTitle:(NSString*)yesTitle
-            title:(NSString*)title;
+    cancelBlock:(continueBlock)cancelBlock
+    noTitle:(NSString*)noTitle
+    yesTitle:(NSString*)yesTitle;
 
-+(void)confirmMsg:(NSString *)msg
-    continueBlock:(continueBlock)continueBlock
-      cancelBlock:(continueBlock)cancelBlock
-          noTitle:(NSString*)noTitle
-         yesTitle:(NSString*)yesTitle;
-
+/**
+ *  只有一个确认的按钮的alertView
+ */
 +(void)showBlockMsg:(NSString*)msg continueBlock:(continueBlock)continueBlock;
 
 

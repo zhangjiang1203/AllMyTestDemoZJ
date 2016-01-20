@@ -13,6 +13,12 @@
 +(void)getWithURLString:(NSString*)urlString param:(NSDictionary*)params success:(RequestSuccessBlock)successBlock fail:(RequestFailureBlock)failBlock{
     
     AFHTTPSessionManager *sessionManager = [AFHTTPSessionManager manager];
+    //设置请求体
+    sessionManager.requestSerializer = [AFJSONRequestSerializer serializer];
+    sessionManager.responseSerializer = [AFJSONResponseSerializer serializer];
+    [sessionManager.requestSerializer setValue:@"text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8" forHTTPHeaderField:@"Accept"];
+    [sessionManager.requestSerializer setValue:@"en-us,en;q=0.5" forHTTPHeaderField:@"Accept-Language"];
+    [sessionManager.requestSerializer setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
     
     [sessionManager GET:urlString parameters:nil progress:^(NSProgress * _Nonnull downloadProgress) {
         
@@ -25,7 +31,15 @@
 }
 
 +(void)postWithURLString:(NSString *)urlString param:(NSDictionary *)params success:(RequestSuccessBlock)successBlock fail:(RequestFailureBlock)failBlock{
+    
     AFHTTPSessionManager *sessionManager = [AFHTTPSessionManager manager];
+    //设置请求体
+    sessionManager.requestSerializer = [AFJSONRequestSerializer serializer];
+    sessionManager.responseSerializer = [AFJSONResponseSerializer serializer];
+    [sessionManager.requestSerializer setValue:@"text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8" forHTTPHeaderField:@"Accept"];
+    [sessionManager.requestSerializer setValue:@"en-us,en;q=0.5" forHTTPHeaderField:@"Accept-Language"];
+    [sessionManager.requestSerializer setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+    
     [sessionManager POST:urlString parameters:params progress:^(NSProgress * _Nonnull uploadProgress) {
         
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
