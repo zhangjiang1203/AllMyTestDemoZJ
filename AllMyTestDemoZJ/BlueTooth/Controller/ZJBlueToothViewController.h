@@ -1,13 +1,13 @@
 //
-//  ZJAFNTestViewController.h
+//  ZJBlueToothViewController.h
 //  AllMyTestDemoZJ
 //
-//  Created by zjhaha on 16/1/19.
+//  Created by zjhaha on 16/1/21.
 //  Copyright © 2016年 zhangjiang. All rights reserved.
 //
 
 #import "ZJBaseViewController.h"
 
-@interface ZJAFNTestViewController : ZJBaseViewController
+@interface ZJBlueToothViewController : ZJBaseViewController
 
 @end

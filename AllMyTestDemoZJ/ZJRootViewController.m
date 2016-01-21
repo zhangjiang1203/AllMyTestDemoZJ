@@ -14,7 +14,7 @@
 #import "ZJWebOperationViewController.h"
 #import "ZJLoadFileViewController.h"
 #import "ZJCollectionViewController.h"
-#import "ZJAFNTestViewController.h"
+#import "ZJBlueToothViewController.h"
 
 #import "ZJBaseMapViewController.h"
 #import "AppDelegate.h"
@@ -32,13 +32,13 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"功能选择";
-    viewControllerArr = @[@"ZJBaiDuBaseViewController",@"ZJBaseMapViewController",@"ZJPaymentViewController",@"ZJMulScrollViewController",@"ZJCalendarViewController",@"ZJWebOperationViewController",@"ZJLoadFileViewController",@"ZJCollectionViewController",@"ZJAFNTestViewController"];
-    titleControllerArr = @[@"百度地图",@"高德地图",@"移动支付",@"多视图滚动",@"自定义日历",@"WebView交互",@"预览Word,PPT,Excel,PDF",@"Collection样式",@"AFN3.0测试"];
+    viewControllerArr = @[@"ZJBaiDuBaseViewController",@"ZJBaseMapViewController",@"ZJPaymentViewController",@"ZJMulScrollViewController",@"ZJCalendarViewController",@"ZJWebOperationViewController",@"ZJLoadFileViewController",@"ZJCollectionViewController",@"ZJBlueToothViewController"];
+    titleControllerArr = @[@"百度地图",@"高德地图",@"移动支付",@"多视图滚动",@"自定义日历",@"WebView交互",@"预览Word,PPT,Excel,PDF",@"Collection样式",@"蓝牙测试",@"app传值"];
     
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return viewControllerArr.count;
+    return titleControllerArr.count;
 }
 
 -(UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -62,11 +62,23 @@
     AppDelegate *application = (AppDelegate*)[UIApplication sharedApplication].delegate;
     [application init3DTouchActionShow:NO];
     
-    NSString *name =  viewControllerArr[indexPath.row];
-    Class class = NSClassFromString(name);
-    UIViewController *controller = [[class alloc]init];
-    controller.title = titleControllerArr[indexPath.row];
-    [self.navigationController pushViewController:controller animated:YES];
+    if (indexPath.row != (titleControllerArr.count - 1)){
+        NSString *name =  viewControllerArr[indexPath.row];
+        Class class = NSClassFromString(name);
+        UIViewController *controller = [[class alloc]init];
+        controller.title = titleControllerArr[indexPath.row];
+        [self.navigationController pushViewController:controller animated:YES];
+    }else{
+        NSURL *url = [NSURL URLWithString:@"moviePlayerTest://hahahah"];
+        if ([[UIApplication sharedApplication]canOpenURL:url]) {
+            [[UIApplication sharedApplication] openURL:url];
+        }else{
+            [HUDHelper confirmMsg:@"亲，您还没有下砸该应用,点击确定去下载" continueBlock:^{
+                NSLog(@"去下载");
+            }];
+        }
+    }
+    
 
 }
 

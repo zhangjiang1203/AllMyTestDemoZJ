@@ -173,6 +173,11 @@ typedef NS_ENUM(NSInteger,NETWORK_STATE) {
  */
 + (BOOL)isBlankString:(NSString *)string;
 
+/**
+ *  两个字符串是否是包含关系
+ */
++(BOOL)isContainsString:(NSString *)firstStr second:(NSString*)secondStr;
+
 
 /**
  *  截取字符；

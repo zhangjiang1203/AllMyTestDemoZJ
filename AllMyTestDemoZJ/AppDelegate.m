@@ -169,25 +169,46 @@ static const NSString *KGaoDeAPIKey = @"34d5745e9a952db4b323c762c12bb9c0";
 
 - (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation
 {
+    //取出scheme
+    NSArray *schemeArr = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleURLTypes"];
+    NSString *schemeStr;
+    for (NSDictionary *tempDict in schemeArr) {
+        NSArray *keyArr =  tempDict.allKeys;
+        for (NSString *tempStr in keyArr) {
+            if ([tempStr isEqualToString:@"CFBundleURLSchemes"]) {
+                schemeStr = tempDict[@"CFBundleURLSchemes"][0];
+            }
+        }
+    }
     NSString *str=[NSString stringWithFormat:@"%@",url];
-    NSString *Str=[str substringWithRange:NSMakeRange(0, 2)];
-    if ([url.host isEqualToString:@"safepay"]) {
-        [[AlipaySDK defaultService] processOrderWithPaymentResult:url standbyCallback:^(NSDictionary *resultDic) {
-            NSLog(@"result = %@",resultDic);
+    if ([HUDHelper isContainsString:str second:schemeStr]) {
+        //传递的数据过来
+        NSArray *tempArr = [str componentsSeparatedByString:@"://"];
+        NSString *decodeStr = tempArr[1];
+        
+        [HUDHelper confirmMsg:[decodeStr URLDecodeString] continueBlock:^{
+            
         }];
+        
+    }else{
+        NSString *subStr=[str substringWithRange:NSMakeRange(0, 2)];
+        if ([url.host isEqualToString:@"safepay"]) {
+            [[AlipaySDK defaultService] processOrderWithPaymentResult:url standbyCallback:^(NSDictionary *resultDic) {
+                NSLog(@"result = %@",resultDic);
+            }];
+        }
+        if ([url.host isEqualToString:@"platformapi"]){//支付宝钱包快登授权返回 authCode
+            [[AlipaySDK defaultService] processAuthResult:url standbyCallback:^(NSDictionary *resultDic) {
+                NSLog(@"result = %@",resultDic);
+            }];
+        }
+        if ([subStr isEqualToString:@"wx"])
+        {
+            BOOL isSuc = [WXApi handleOpenURL:url delegate:self];
+            NSLog(@"url %@ isSuc %d",url,isSuc == YES ? 1 : 0);
+            return  isSuc;
+        }
     }
-    if ([url.host isEqualToString:@"platformapi"]){//支付宝钱包快登授权返回 authCode
-        [[AlipaySDK defaultService] processAuthResult:url standbyCallback:^(NSDictionary *resultDic) {
-            NSLog(@"result = %@",resultDic);
-        }];
-    }
-    if ([Str isEqualToString:@"wx"])
-    {
-        BOOL isSuc = [WXApi handleOpenURL:url delegate:self];
-        NSLog(@"url %@ isSuc %d",url,isSuc == YES ? 1 : 0);
-        return  isSuc;
-    }
-   
     return YES;
 }
 

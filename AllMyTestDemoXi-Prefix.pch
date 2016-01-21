@@ -43,9 +43,11 @@
 #import "WCPaymentModel.h"
 #import "MJExtension.h"
 #import "UIScrollView+EmptyDataSet.h"
+#import "UIScrollView+ZJEmptyData.h"
 #import "UITableView+LoadAnimation.h"
 #import "UIView+ZJViewExtension.h"
 #import <AFNetworking/AFNetworking.h>
+#import "NSString+URLCode.h"
 
 //多视图滚动
 #import "XTSegmentControl.h"

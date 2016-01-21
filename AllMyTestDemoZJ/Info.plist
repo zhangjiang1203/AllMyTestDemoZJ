@@ -10,7 +10,7 @@
 	<string>AllMyTestDemoZJ</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
-    <key>CFBundleName</key>
+	<key>CFBundleName</key>
 	<string>ZJTest</string>
 	<key>CFBundleDisplayName</key>
 	<string>ZJTest</string>
@@ -31,6 +31,7 @@
 	</dict>
 	<key>LSApplicationQueriesSchemes</key>
 	<array>
+		<string>moviePlayerTest</string>
 		<string>weixin</string>
 		<string>wechat</string>
 		<string>baidumap</string>

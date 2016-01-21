@@ -475,15 +475,26 @@ static const char cancelBlockkey;
     return NO;
 }
 
+//两个字符串是否是包含关系
++(BOOL)isContainsString:(NSString *)firstStr second:(NSString*)secondStr{
+    
+    if (IOS8_OR_LATER) {
+        return [firstStr containsString:secondStr];
+    }else{
+        NSRange lengthRange = [firstStr rangeOfString:secondStr];
+       return  lengthRange.length?YES: NO;
+    }
+}
+
+
 
 //截取字符；
 +(NSString *)timeString:(NSString *)timeStr range:(NSUInteger)range
 {
     if (![self isBlankString:timeStr]) {
-        if (timeStr.length>range) {
+        if (timeStr.length > range) {
             return [timeStr substringToIndex:range];
-        }else
-        {
+        }else{
             return timeStr;
         }
     }else{
