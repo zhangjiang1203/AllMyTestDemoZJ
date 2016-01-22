@@ -9,6 +9,9 @@
 #import "ZJAnimationChooseView.h"
 
 @interface ZJAnimationChooseView ()<UITableViewDataSource,UITableViewDelegate>
+{
+    NSString *infoString;
+}
 @property (nonatomic,strong)UITableView *myTableView;
 
 @property (nonatomic,strong)NSArray *animationArr;
@@ -17,37 +20,15 @@
 
 @implementation ZJAnimationChooseView
 
--(instancetype)initWithFrame:(CGRect)frame nameAction:(AnimationHandleAction)animationAction{
+-(instancetype)initWithFrame:(CGRect)frame info:(NSString*)infoStr titles:(NSArray*)titles nameAction:(AnimationHandleAction)animationAction{
     self = [super initWithFrame:frame];
     if (self) {
-        //        iCarouselTypeLinear = 0,//正常，滑到头就不滑了
-        //        iCarouselTypeRotary,//圆形播放，循环
-        //        iCarouselTypeInvertedRotary,//还是圆形，和上一个相反
-        //        iCarouselTypeCylinder,////圆形播放，循环
-        //        iCarouselTypeInvertedCylinder,///还是圆形，和上一个相反
-        //        iCarouselTypeWheel,//向下的圆
-        //        iCarouselTypeInvertedWheel,//向上的圆
-        //        iCarouselTypeCoverFlow,////正常，滑到头就不滑了
-        //        iCarouselTypeCoverFlow2,//正常，滑到头就不滑了
-        //        iCarouselTypeTimeMachine,//左方向进
-        //        iCarouselTypeInvertedTimeMachine,//右方向出
-        
+        infoString = infoStr;
         self.backgroundColor = [UIColor whiteColor];
         self.layer.cornerRadius = 5;
         self.layer.masksToBounds = YES;
         self.animationAction = animationAction;
-        self.animationArr = @[@"iCarouselTypeLinear",
-                              @"iCarouselTypeRotary",
-                              @"iCarouselTypeInvertedRotary",
-                              @"iCarouselTypeCylinder",
-                              @"iCarouselTypeInvertedCylinder",
-                              @"iCarouselTypeWheel",
-                              @"iCarouselTypeInvertedWheel",
-                              @"iCarouselTypeCoverFlow",
-                              @"iCarouselTypeCoverFlow2",
-                              @"iCarouselTypeTimeMachine",
-                              @"iCarouselTypeInvertedTimeMachine"];
-        
+        self.animationArr = titles;        
         [self initMyTableViewUI];
     }
     return self;
@@ -61,7 +42,7 @@
     
     UILabel *infoLabel = [[UILabel alloc]initWithFrame:CGRectMake(15, 5, ViewW-30 , 18)];
     infoLabel.textColor = KRGBA(76, 76, 105, 1);
-    infoLabel.text = @"请选择动画类型";
+    infoLabel.text = infoString;
     infoLabel.font = KDefaultFont(15);
     infoLabel.textAlignment = NSTextAlignmentCenter;
     [self addSubview:infoLabel];

@@ -66,7 +66,10 @@
 
 - (void)imageSavedToPhotosAlbum:(UIImage *)image didFinishSavingWithError:(NSError *)error contextInfo:(void *)contextInfo
 {
+//#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wunused-variable"
     NSString *message = @"呵呵";
+//#pragma clang diagnostic pop
     if (!error) {
         [[HUDHelper getInstance]showSuccessTipWithLabel:@"成功保存到相册" font:14 view:nil];
         

@@ -78,6 +78,8 @@
 		548012D41C4CE1630002D9BA /* ZJRoundViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 548012D21C4CE1630002D9BA /* ZJRoundViewCell.m */; };
 		548012D51C4CE1630002D9BA /* ZJRoundViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 548012D31C4CE1630002D9BA /* ZJRoundViewCell.xib */; };
 		548012D81C4CE4820002D9BA /* ZJRoundCollectionLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 548012D71C4CE4820002D9BA /* ZJRoundCollectionLayout.m */; };
+		5484571F1C5222CD001608B4 /* ZJChartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5484571D1C5222CD001608B4 /* ZJChartViewController.m */; };
+		548457201C5222CD001608B4 /* ZJChartViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5484571E1C5222CD001608B4 /* ZJChartViewController.xib */; };
 		5488F4001C2CD05A00773324 /* MANaviAnnotationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5488F3FF1C2CD05A00773324 /* MANaviAnnotationView.m */; };
 		635F7A9B27989B4D4CB893F3 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 35D0674DEFAF7C0A5C12620A /* libPods.a */; };
 		8D0052031BF442AC00C3C0D1 /* ZJAreaListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D0052011BF442AC00C3C0D1 /* ZJAreaListViewController.m */; };
@@ -274,6 +276,9 @@
 		548012D31C4CE1630002D9BA /* ZJRoundViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZJRoundViewCell.xib; sourceTree = "<group>"; };
 		548012D61C4CE4820002D9BA /* ZJRoundCollectionLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZJRoundCollectionLayout.h; sourceTree = "<group>"; };
 		548012D71C4CE4820002D9BA /* ZJRoundCollectionLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZJRoundCollectionLayout.m; sourceTree = "<group>"; };
+		5484571C1C5222CD001608B4 /* ZJChartViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZJChartViewController.h; sourceTree = "<group>"; };
+		5484571D1C5222CD001608B4 /* ZJChartViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZJChartViewController.m; sourceTree = "<group>"; };
+		5484571E1C5222CD001608B4 /* ZJChartViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZJChartViewController.xib; sourceTree = "<group>"; };
 		5488F3FE1C2CD05A00773324 /* MANaviAnnotationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MANaviAnnotationView.h; sourceTree = "<group>"; };
 		5488F3FF1C2CD05A00773324 /* MANaviAnnotationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MANaviAnnotationView.m; sourceTree = "<group>"; };
 		8D0052001BF442AC00C3C0D1 /* ZJAreaListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZJAreaListViewController.h; sourceTree = "<group>"; };
@@ -789,6 +794,40 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		548457181C522280001608B4 /* ChartView */ = {
+			isa = PBXGroup;
+			children = (
+				548457191C5222BD001608B4 /* Controller */,
+				5484571A1C5222BD001608B4 /* Model */,
+				5484571B1C5222BD001608B4 /* View */,
+			);
+			path = ChartView;
+			sourceTree = "<group>";
+		};
+		548457191C5222BD001608B4 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				5484571C1C5222CD001608B4 /* ZJChartViewController.h */,
+				5484571D1C5222CD001608B4 /* ZJChartViewController.m */,
+				5484571E1C5222CD001608B4 /* ZJChartViewController.xib */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		5484571A1C5222BD001608B4 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		5484571B1C5222BD001608B4 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		8D2EB5E01BEC9C3600C314B3 /* MainFile */ = {
 			isa = PBXGroup;
 			children = (
@@ -1222,6 +1261,7 @@
 				8D2EB5D51BEC984200C314B3 /* ZJRootViewController.h */,
 				8D2EB5D61BEC984200C314B3 /* ZJRootViewController.m */,
 				8D2EB5D71BEC984200C314B3 /* ZJRootViewController.xib */,
+				548457181C522280001608B4 /* ChartView */,
 				545D12851C507B4000E3E208 /* blueTooth */,
 				548012C31C4CDA840002D9BA /* SwiftCollectionTest */,
 				544FC7DC1C438C2F0004C836 /* LoadFileOfWord */,
@@ -1436,6 +1476,7 @@
 				8D5EA91D1BF3117700ADFB2A /* ZJSetttingAreaViewController.xib in Resources */,
 				5463924C1C0D7A1200C61EB2 /* ZJCalendarViewController.xib in Resources */,
 				C5471F831BEC748F0001CE89 /* Assets.xcassets in Resources */,
+				548457201C5222CD001608B4 /* ZJChartViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1517,6 +1558,7 @@
 				5471D5551C0BF95D002D25F7 /* XTSegmentControl.m in Sources */,
 				5488F4001C2CD05A00773324 /* MANaviAnnotationView.m in Sources */,
 				545435191C4793B9008925A7 /* AppDelegate+Hook.m in Sources */,
+				5484571F1C5222CD001608B4 /* ZJChartViewController.m in Sources */,
 				548012D41C4CE1630002D9BA /* ZJRoundViewCell.m in Sources */,
 				5460CFB41C310F7700F563BF /* ZJCustomeSegment.m in Sources */,
 				5471D55C1C0BFF05002D25F7 /* ELGoodBriefCell.m in Sources */,

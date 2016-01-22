@@ -92,7 +92,7 @@
 
 -(void)setRightButtonItem{
     UIButton *rigthBtn = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, 30, 30)];
-    [rigthBtn setBackgroundImage:[UIImage imageNamed:@"animationChoose"] forState:UIControlStateNormal];
+    [rigthBtn setBackgroundImage:[UIImage imageNamed:@"rightIcon"] forState:UIControlStateNormal];
     rigthBtn.titleLabel.font = [UIFont systemFontOfSize:15];
     [rigthBtn addTarget:self action:@selector(areaListView:) forControlEvents:UIControlEventTouchUpInside];
     UIBarButtonItem *right = [[UIBarButtonItem alloc]initWithCustomView:rigthBtn];
@@ -107,10 +107,22 @@
 
 #pragma mark -动画改变视图
 -(void)areaListView:(UIButton*)sender{
-    ZJAnimationChooseView *zjView = [[ZJAnimationChooseView alloc]initWithFrame:CGRectMake(0, 0, ScreenWidth-60, 300) nameAction:^(NSInteger animationType) {
+    NSArray *animations = @[@"iCarouselTypeLinear",
+                            @"iCarouselTypeRotary",
+                            @"iCarouselTypeInvertedRotary",
+                            @"iCarouselTypeCylinder",
+                            @"iCarouselTypeInvertedCylinder",
+                            @"iCarouselTypeWheel",
+                            @"iCarouselTypeInvertedWheel",
+                            @"iCarouselTypeCoverFlow",
+                            @"iCarouselTypeCoverFlow2",
+                            @"iCarouselTypeTimeMachine",
+                            @"iCarouselTypeInvertedTimeMachine"];
+    ZJAnimationChooseView *zjView = [[ZJAnimationChooseView alloc]initWithFrame:CGRectMake(0, 0, ScreenWidth-60, 300) info:@"请选择动画类型" titles:animations nameAction:^(NSInteger animationType) {
         [CXCardView dismissCurrent];
         _myCarousel.type = animationType;
     }];
+
     [CXCardView showWithView:zjView draggable:YES];
     
 }

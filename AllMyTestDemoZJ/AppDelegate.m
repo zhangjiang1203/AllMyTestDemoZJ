@@ -103,6 +103,7 @@ static const NSString *KGaoDeAPIKey = @"34d5745e9a952db4b323c762c12bb9c0";
     
     //创建数据库
     [self openDBDataBase];
+
     //初始化微信支付
     [WXApi registerApp:WXAPP_ID withDescription:@"e校信"];
     //设置全局的键盘处理,不显示工具条
@@ -117,6 +118,7 @@ static const NSString *KGaoDeAPIKey = @"34d5745e9a952db4b323c762c12bb9c0";
     [self.window makeKeyAndVisible];
     return YES;
 }
+
 
 /**
  *  手动添加3D touch功能

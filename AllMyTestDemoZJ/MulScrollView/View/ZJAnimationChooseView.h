@@ -16,6 +16,6 @@ typedef void(^AnimationHandleAction)(NSInteger animationType);
 
 @property (nonatomic,copy)AnimationHandleAction animationAction;
 
--(instancetype)initWithFrame:(CGRect)frame nameAction:(AnimationHandleAction)animationAction;
+-(instancetype)initWithFrame:(CGRect)frame info:(NSString*)infoStr titles:(NSArray*)titles nameAction:(AnimationHandleAction)animationAction;
 
 @end
