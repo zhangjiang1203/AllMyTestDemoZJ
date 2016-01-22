@@ -90,22 +90,57 @@
 
 #pragma mark -线性图表
 -(void)addLineChartView{
-    self.lineChart = [[PNLineChart alloc]initWithFrame:CGRectMake(0, 60, ScreenWidth, 200.0)];
-    [self.lineChart setXLabels:@[@"1月",@"2月",@"3月",@"4月",@"5月",@"6月"]];
-    self.lineChart.delegate = self;
-    NSArray *dataArr1 = @[@60.1,@160.0,@120.0,@110.0,@90.0,@100.0];
-    PNLineChartData *data1 = [PNLineChartData new];
-    data1.color = PNFreshGreen;
-    data1.itemCount = self.lineChart.xLabels.count;
-    data1.getData = ^(NSUInteger index){
-        CGFloat yValue = [dataArr1[index] floatValue];
+    self.lineChart = [[PNLineChart alloc] initWithFrame:CGRectMake(0, 135.0, SCREEN_WIDTH, 200.0)];
+    self.lineChart.yLabelFormat = @"%1.1f";
+    self.lineChart.backgroundColor = [UIColor clearColor];
+    [self.lineChart setXLabels:@[@"SEP 1",@"SEP 2",@"SEP 3",@"SEP 4",@"SEP 5",@"SEP 6",@"SEP 7"]];
+    self.lineChart.showCoordinateAxis = YES;
+    
+    self.lineChart.yFixedValueMax = 300.0;
+    self.lineChart.yFixedValueMin = 0.0;
+    
+    [self.lineChart setYLabels:@[@"0 min",@"50 min",@"100 min",@"150 min",@"200 min",@"250 min",@"300 min"]];
+    
+
+    NSArray * data01Array = @[@60.1, @160.1, @126.4, @0.0, @186.2, @127.2, @176.2];
+    PNLineChartData *data01 = [PNLineChartData new];
+    data01.dataTitle = @"Alpha";
+    data01.color = PNFreshGreen;
+    data01.alpha = 0.3f;
+    data01.itemCount = data01Array.count;
+    data01.inflexionPointStyle = PNLineChartPointStyleTriangle;
+    data01.getData = ^(NSUInteger index) {
+        CGFloat yValue = [data01Array[index] floatValue];
         return [PNLineChartDataItem dataItemWithY:yValue];
     };
     
-    self.lineChart.chartData = @[data1];
+
+    NSArray * data02Array = @[@0.0, @180.1, @26.4, @202.2, @126.2, @167.2, @276.2];
+    PNLineChartData *data02 = [PNLineChartData new];
+    data02.dataTitle = @"Beta";
+    data02.color = PNTwitterColor;
+    data02.alpha = 0.5f;
+    data02.itemCount = data02Array.count;
+    data02.inflexionPointStyle = PNLineChartPointStyleCircle;
+    data02.getData = ^(NSUInteger index) {
+        CGFloat yValue = [data02Array[index] floatValue];
+        return [PNLineChartDataItem dataItemWithY:yValue];
+    };
+    
+    self.lineChart.chartData = @[data01, data02];
     [self.lineChart strokeChart];
+    self.lineChart.delegate = self;
+    
     [self.view addSubview:self.lineChart];
-     
+    
+    self.lineChart.legendStyle = PNLegendItemStyleStacked;
+    self.lineChart.legendFont = [UIFont boldSystemFontOfSize:12.0f];
+    self.lineChart.legendFontColor = [UIColor redColor];
+    
+    UIView *legend = [self.lineChart getLegendWithMaxWidth:ScreenWidth];
+    [legend setFrame:CGRectMake(30, 340, legend.frame.size.width, legend.frame.size.width)];
+    [self.view addSubview:legend];
+    
 }
 
 #pragma mark -柱状图
