@@ -7,7 +7,7 @@
 //
 
 #import "ZJPopAnimationViewController.h"
-
+#import "ZJCustomCardView.h"
 
 #define KAnimationTime 0.25
 @interface ZJPopAnimationViewController ()
@@ -27,12 +27,17 @@
         view.bounds = CGRectMake(0, 0, 200, 200);
         view.center = CGPointMake(ScreenWidth/2, 200+i*5);
         view.backgroundColor = [self getRandomColor];
+        [self setScale:1+i*0.01 duration:0.25 view:view];
         [self.view addSubview:view];
         [self.viewsArr addObject:view];
     }
     UIPanGestureRecognizer *pan = [[UIPanGestureRecognizer alloc]initWithTarget:self action:@selector(panChange:)];
     [self.view addGestureRecognizer:pan];
     
+//    ZJCustomCardView *customView = [[ZJCustomCardView alloc]initWithFrame:self.view.bounds finish:^{
+//        
+//    }];
+//    [self.view addSubview:customView];
 }
 
 -(void)panChange:(UIPanGestureRecognizer*)recongizer{
@@ -96,6 +101,14 @@
     }];
     [view pop_addAnimation:centerAnim forKey:@"center"];
     
+}
+
+
+-(void)setScale:(CGFloat)present duration:(CGFloat)duration view:(UIView*)view{
+    POPBasicAnimation *scale = [POPBasicAnimation animationWithPropertyNamed:kPOPLayerScaleXY];
+    scale.toValue = [NSValue valueWithCGSize:CGSizeMake(present, present)];
+    scale.duration = duration;
+    [view.layer pop_addAnimation:scale forKey:@"scale"];
 }
 
 //获取随机颜色

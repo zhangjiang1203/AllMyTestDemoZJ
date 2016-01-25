@@ -15,7 +15,9 @@
     CGFloat viewH ;
 }
 
-@property (nonatomic,strong)NSMutableArray *cardViewsArr;
+@property (nonatomic,strong)NSMutableArray *viewsArr;
+
+
 
 @end
 
@@ -24,7 +26,7 @@
 -(instancetype)initWithFrame:(CGRect)frame finish:(AnimationFinishBlock)finishBlock{
     self = [super initWithFrame:frame];
     if (self) {
-        self.cardViewsArr = [NSMutableArray array];
+        self.viewsArr = [NSMutableArray array];
         self.finishBlock = finishBlock;
         self.backgroundColor = [UIColor whiteColor];
         self.clipsToBounds = YES;
@@ -35,15 +37,14 @@
         self.layer.cornerRadius = 5;
         self.layer.masksToBounds = YES;
         
-        for (int i = 0; i < 4; i++) {
-            ZJCardView *cardView = [[[NSBundle mainBundle]loadNibNamed:@"ZJCardView" owner:self options:nil]lastObject];
-            cardView.bounds = CGRectMake(0, 0, viewW, viewH);
-//            cardView.center = CGPointMake(viewW/2, viewH/2 + i*10);
-            [self setScaleWithPercent:(1-sizePercent*(3-i)) duration:0.25 view:cardView];
-            CGPoint targetCenter = CGPointMake(CGRectGetWidth(self.bounds)/2, CGRectGetHeight(self.bounds)/2-(sizePercent*i*40));
-            [self setCardCenter:targetCenter duration:0.25 view:cardView];
-            [self.cardViewsArr addObject:cardView];
-            [self addSubview:cardView];
+        for (int i = 0; i<4; i++) {
+            UIView *view = [[UIView alloc]init];
+            view.bounds = CGRectMake(0, 0, 200, 200);
+            view.center = CGPointMake(ScreenWidth/2, 200+i*5);
+            view.backgroundColor = [self getRandomColor];
+//            [self setScale:0.01 duration:0.25 view:view];
+            [self addSubview:view];
+            [self.viewsArr addObject:view];
         }
         
         UIPanGestureRecognizer *pan = [[UIPanGestureRecognizer alloc]initWithTarget:self action:@selector(panGestureRecognizerAction:)];
@@ -56,37 +57,32 @@
 
 -(void)panGestureRecognizerAction:(UIPanGestureRecognizer*)recognizer{
     
-    CGPoint transLcation = [recognizer translationInView:self];
-    ZJCardView *cardView = self.cardViewsArr[self.cardViewsArr.count-1];
-    cardView.center = CGPointMake(cardView.center.x+transLcation.x, cardView.center.y+transLcation.y);
-    CGFloat XOffPercent = (cardView.center.x-CGRectGetWidth(self.bounds)/2)/(CGRectGetWidth(self.bounds)/2);
-    CGFloat scalePercent =1-fabs(XOffPercent)*0.3;
-    CGFloat rotation = M_PI_2/4*XOffPercent;
-    
-    [self setScaleWithPercent:scalePercent duration:0.25 view:cardView];
-    [self setRotationWithAngle:rotation duration:0.25 view:cardView];
+    UIView *view = self.viewsArr[self.viewsArr.count-1];
+    CGPoint point = [recognizer translationInView:view];
+    view.center = CGPointMake(view.center.x+point.x, view.center.y+point.y);
+    //偏移的百分比
+    CGFloat XOffPercent = (view.center.x-CGRectGetWidth(self.bounds)/2)/(CGRectGetWidth(self.bounds)/2);
+    CGFloat rotationAngle = M_PI_2/4*XOffPercent;
+    NSLog(@"输出的百分比----===%f",rotationAngle);
+    CGFloat alpha = fabs(rotationAngle);
+    //    [self setViewAlpha:(1-alpha) view:view];
+    [self setViewAlpha:(1-alpha) duration:0.001f view:view];
+    [self setRotationWithAngle:rotationAngle duration:0.001f view:view];
+    //重置刚才的那个point为零
     [recognizer setTranslation:CGPointZero inView:self];
-    for (int i = 1; i<self.cardViewsArr.count-1; i++) {
-        CGFloat persent = fabs(XOffPercent);
-        if (persent > 1) {
-            persent = 1;
-        }
-        ZJCardView *subCard = self.cardViewsArr[i];
-        [self setScaleWithPercent:1-(sizePercent*(self.cardViewsArr.count-1-i)-sizePercent*fabs(persent)) duration:0.25 view:subCard];
-        CGPoint subCardCenter = CGPointMake(CGRectGetWidth(self.bounds)/2, CGRectGetHeight(self.bounds)/2+150-20-sizePercent*400*(i-1+(fabs(persent))));
-        [self setCardCenter:subCardCenter duration:0.25 view:subCard];
-    }
     
-    if (recognizer.state == UIGestureRecognizerStateEnded) {
-        if (cardView.center.x>60&&cardView.center.x<CGRectGetWidth(self.bounds)-60) {
-            ZJCardView * firstView = [self.cardViewsArr firstObject];
-            [firstView removeFromSuperview];
-            [self.cardViewsArr removeObjectAtIndex:0];
-            [self cardRecenterOrDismiss:NO View:cardView];
-        }
-        else
-        {
-            [self cardRecenterOrDismiss:YES View:cardView];
+    if (recognizer.state == UIGestureRecognizerStateEnded){
+        if (view.center.x > 60 && view.center.x<CGRectGetWidth(self.bounds)-60) {
+            //回到原来的位置
+            [self setViewAlpha:1 duration:0.001f view:view];
+            [self setRotationWithAngle:0 duration:0.001f view:view];
+            CGPoint centerP = CGPointMake(CGRectGetWidth(self.frame)/2, 200+3*5);
+            [self setCenter:centerP duration:0.15 view:view];
+            
+        }else{
+            //删除view下一个view替换
+            [view removeFromSuperview];
+            [self.viewsArr removeLastObject];
             
         }
     }
@@ -95,41 +91,8 @@
 }
 
 
--(void)cardRecenterOrDismiss:(BOOL)isDismiss View:(ZJCardView*)cardView{
-    if (isDismiss) {
-        [self setRotationWithAngle:0 duration:0.25 view:cardView];
-        if (cardView.center.x<CGRectGetWidth(self.bounds)/2) {
-            [self setCardCenter:CGPointMake(0-150, cardView.center.y) duration:0.25f view:cardView];
-        }else{
-            [self setCardCenter:CGPointMake(CGRectGetWidth(self.bounds)+cardView.bounds.size.width/2,cardView.center.y) duration:0.25f view:cardView ];
-        }
-    }else
-    {
-        
-        [self setScaleWithPercent:1 duration:0.25 view:cardView];
-        [self setRotationWithAngle:0 duration:0.25 view:cardView];
-
-        CGPoint targetCenter = CGPointMake(CGRectGetWidth(self.bounds)/2, CGRectGetHeight(self.bounds)/2+150-20-(sizePercent*3*400));
-        [self setCardCenter:targetCenter duration:0.25 view:cardView];
-//        [self setCenter:targetCenter Duration:0.25 Card:card Index:3];
-//        [self performSelector:@selector(cardRemove:) withObject:nil afterDelay:0.25];
-        
-    }
-}
-
-
-
-#pragma mark -放缩动画
--(void)setScaleWithPercent:(CGFloat)percent duration:(CGFloat)duration view:(ZJCardView*)cardView{
-    POPBasicAnimation *scale = [POPBasicAnimation animationWithPropertyNamed:kPOPLayerScaleXY];
-    scale.toValue = @(percent);
-    scale.duration = duration;
-    [cardView.layer pop_addAnimation:scale forKey:@"scale"];
-    
-}
-
 #pragma mark -旋转动画
--(void)setRotationWithAngle:(CGFloat)angle duration:(CGFloat)duration view:(ZJCardView*)cardView{
+-(void)setRotationWithAngle:(CGFloat)angle duration:(CGFloat)duration view:(UIView*)cardView{
     POPBasicAnimation *rotation = [POPBasicAnimation animationWithPropertyNamed:kPOPLayerRotation];
     rotation.duration = duration;
     rotation.toValue = @(angle);
@@ -137,16 +100,24 @@
     [cardView.layer pop_addAnimation:rotation forKey:@"rotation"];
 }
 
+-(void)setViewAlpha:(CGFloat)alpha duration:(CGFloat)duration view:(UIView*)view{
+    POPBasicAnimation *alphaAnim = [POPBasicAnimation animationWithPropertyNamed:kPOPViewAlpha];
+    alphaAnim.toValue = @(alpha);
+    alphaAnim.duration = duration;
+    alphaAnim.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
+    [view pop_addAnimation:alphaAnim forKey:@"alpha"];
+    
+}
 
-#pragma mark -设置中心点
--(void)setCardCenter:(CGPoint)center duration:(CGFloat)duration view:(ZJCardView*)cardView{
-    POPBasicAnimation *basic = [POPBasicAnimation animationWithPropertyNamed:kPOPViewCenter];
-    basic.toValue = [NSValue valueWithCGPoint:center];
-    basic.duration = duration;
-    [basic setCompletionBlock:^(POPAnimation *anim, BOOL is) {
-        cardView.hidden = NO;
+-(void)setCenter:(CGPoint)center duration:(CGFloat)duration view:(UIView*)view{
+    POPBasicAnimation *centerAnim = [POPBasicAnimation animationWithPropertyNamed:kPOPViewCenter];
+    centerAnim.toValue = [NSValue valueWithCGPoint:center];
+    centerAnim.duration = duration;
+    [centerAnim setCompletionBlock:^(POPAnimation *animation, BOOL is) {
+        view.hidden = NO;
     }];
-    [cardView pop_addAnimation:basic forKey:@"center"];
+    [view pop_addAnimation:centerAnim forKey:@"center"];
+    
 }
 
 //获取随机颜色
