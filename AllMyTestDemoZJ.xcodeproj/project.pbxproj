@@ -72,6 +72,11 @@
 		5471D5661C0C4A15002D25F7 /* WCChildRouteCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5471D5641C0C4A15002D25F7 /* WCChildRouteCell.m */; };
 		5471D5671C0C4A15002D25F7 /* WCChildRouteCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5471D5651C0C4A15002D25F7 /* WCChildRouteCell.xib */; };
 		5471D56A1C0C4AB6002D25F7 /* ZJAnimationChooseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5471D5691C0C4AB6002D25F7 /* ZJAnimationChooseView.m */; };
+		547715701C56135400B4B9EB /* ZJPopAnimationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5477156E1C56135400B4B9EB /* ZJPopAnimationViewController.m */; };
+		547715711C56135400B4B9EB /* ZJPopAnimationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5477156F1C56135400B4B9EB /* ZJPopAnimationViewController.xib */; };
+		547715771C5613A800B4B9EB /* ZJCardView.m in Sources */ = {isa = PBXBuildFile; fileRef = 547715731C5613A800B4B9EB /* ZJCardView.m */; };
+		547715781C5613A800B4B9EB /* ZJCardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 547715741C5613A800B4B9EB /* ZJCardView.xib */; };
+		547715791C5613A800B4B9EB /* ZJCustomCardView.m in Sources */ = {isa = PBXBuildFile; fileRef = 547715761C5613A800B4B9EB /* ZJCustomCardView.m */; };
 		548012CA1C4CDB600002D9BA /* ZJCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 548012C81C4CDB600002D9BA /* ZJCollectionViewController.m */; };
 		548012CB1C4CDB600002D9BA /* ZJCollectionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 548012C91C4CDB600002D9BA /* ZJCollectionViewController.xib */; };
 		548012D01C4CDC9F0002D9BA /* RoundCollectionLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 548012CF1C4CDC9F0002D9BA /* RoundCollectionLayout.swift */; };
@@ -267,6 +272,14 @@
 		5471D5651C0C4A15002D25F7 /* WCChildRouteCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WCChildRouteCell.xib; sourceTree = "<group>"; };
 		5471D5681C0C4AB6002D25F7 /* ZJAnimationChooseView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZJAnimationChooseView.h; sourceTree = "<group>"; };
 		5471D5691C0C4AB6002D25F7 /* ZJAnimationChooseView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZJAnimationChooseView.m; sourceTree = "<group>"; };
+		5477156D1C56135400B4B9EB /* ZJPopAnimationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZJPopAnimationViewController.h; sourceTree = "<group>"; };
+		5477156E1C56135400B4B9EB /* ZJPopAnimationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZJPopAnimationViewController.m; sourceTree = "<group>"; };
+		5477156F1C56135400B4B9EB /* ZJPopAnimationViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZJPopAnimationViewController.xib; sourceTree = "<group>"; };
+		547715721C5613A800B4B9EB /* ZJCardView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZJCardView.h; sourceTree = "<group>"; };
+		547715731C5613A800B4B9EB /* ZJCardView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZJCardView.m; sourceTree = "<group>"; };
+		547715741C5613A800B4B9EB /* ZJCardView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZJCardView.xib; sourceTree = "<group>"; };
+		547715751C5613A800B4B9EB /* ZJCustomCardView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZJCustomCardView.h; sourceTree = "<group>"; };
+		547715761C5613A800B4B9EB /* ZJCustomCardView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZJCustomCardView.m; sourceTree = "<group>"; };
 		548012C71C4CDB600002D9BA /* ZJCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZJCollectionViewController.h; sourceTree = "<group>"; };
 		548012C81C4CDB600002D9BA /* ZJCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZJCollectionViewController.m; sourceTree = "<group>"; };
 		548012C91C4CDB600002D9BA /* ZJCollectionViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZJCollectionViewController.xib; sourceTree = "<group>"; };
@@ -924,6 +937,9 @@
 		8D415F371BF1902800F41927 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				5477156D1C56135400B4B9EB /* ZJPopAnimationViewController.h */,
+				5477156E1C56135400B4B9EB /* ZJPopAnimationViewController.m */,
+				5477156F1C56135400B4B9EB /* ZJPopAnimationViewController.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -938,6 +954,11 @@
 		8D415F391BF1902800F41927 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				547715721C5613A800B4B9EB /* ZJCardView.h */,
+				547715731C5613A800B4B9EB /* ZJCardView.m */,
+				547715741C5613A800B4B9EB /* ZJCardView.xib */,
+				547715751C5613A800B4B9EB /* ZJCustomCardView.h */,
+				547715761C5613A800B4B9EB /* ZJCustomCardView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1445,6 +1466,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				547715781C5613A800B4B9EB /* ZJCardView.xib in Resources */,
 				8DFA18431BF9D417005CBA53 /* ZJMulScrollViewController.xib in Resources */,
 				546804AC1C3B875D00BC3A3C /* testHTML.html in Resources */,
 				54441B111C2AA4AF006DC0CF /* MBProgressHUD.bundle in Resources */,
@@ -1463,6 +1485,7 @@
 				5471D5621C0C4859002D25F7 /* ZJTrackViewController.xib in Resources */,
 				544FC7EB1C438D380004C836 /* ZJLoadFileViewController.xib in Resources */,
 				CFFCFA581C2AD6A600130306 /* ZJNearByPlaceViewController.xib in Resources */,
+				547715711C56135400B4B9EB /* ZJPopAnimationViewController.xib in Resources */,
 				546804B21C3BA35D00BC3A3C /* AppJsDemo.html in Resources */,
 				546F9A741C157FED0079AD80 /* ZJNavAnimationViewController.xib in Resources */,
 				548012CB1C4CDB600002D9BA /* ZJCollectionViewController.xib in Resources */,
@@ -1560,6 +1583,7 @@
 				545435191C4793B9008925A7 /* AppDelegate+Hook.m in Sources */,
 				5484571F1C5222CD001608B4 /* ZJChartViewController.m in Sources */,
 				548012D41C4CE1630002D9BA /* ZJRoundViewCell.m in Sources */,
+				547715701C56135400B4B9EB /* ZJPopAnimationViewController.m in Sources */,
 				5460CFB41C310F7700F563BF /* ZJCustomeSegment.m in Sources */,
 				5471D55C1C0BFF05002D25F7 /* ELGoodBriefCell.m in Sources */,
 				8D659B5D1C05954F00DEC679 /* WCSafeAreaView.m in Sources */,
@@ -1585,6 +1609,7 @@
 				54618E5D1C48DB0900E1E685 /* UIScrollView+ZJEmptyData.m in Sources */,
 				8D5EA9151BF2E4F000ADFB2A /* RSADataVerifier.m in Sources */,
 				544FC7EE1C438D4A0004C836 /* ZJFileDetailViewController.m in Sources */,
+				547715791C5613A800B4B9EB /* ZJCustomCardView.m in Sources */,
 				8D3C8B401C069B670005CD9A /* ZJSafeAreaDetailViewController.m in Sources */,
 				8DC891DF1BF768710012D04F /* ZJAreaModel.m in Sources */,
 				8D415F321BF18FCE00F41927 /* ZJBaiDuBaseViewController.mm in Sources */,
@@ -1596,6 +1621,7 @@
 				545FC8671C0EEBF300BD7600 /* UIView+PopViewAnimation.m in Sources */,
 				54618E631C48F55900E1E685 /* ZJGCDHelper.m in Sources */,
 				8D5EA90D1BF2E4F000ADFB2A /* Order.m in Sources */,
+				547715771C5613A800B4B9EB /* ZJCardView.m in Sources */,
 				546F9A731C157FED0079AD80 /* ZJNavAnimationViewController.m in Sources */,
 				54441B2E1C2AA76D006DC0CF /* ZJRoutePlanViewController.m in Sources */,
 				545B7FFF1C1674CA00C0365E /* ZJNavMagicMoveAnination.m in Sources */,

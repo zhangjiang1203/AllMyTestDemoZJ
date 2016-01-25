@@ -22,8 +22,7 @@
     [super viewDidLoad];
     self.view.clipsToBounds = YES;
     [self setRightButtonItem];
-    
-    
+
     self.backTestView = [[UIView alloc]initWithFrame:CGRectMake(-(ScreenWidth-150), 0, ScreenWidth-150, ScreenHeight - 64)];
     self.backTestView.backgroundColor = [UIColor redColor];
     
@@ -37,7 +36,6 @@
     
 }
 
-
 -(void)showViewFromLeft:(UISwipeGestureRecognizer*)recognizer{
     CGPoint location = [recognizer locationInView:self.view];
     if (recognizer.direction == UISwipeGestureRecognizerDirectionRight) {
@@ -45,14 +43,12 @@
             [UIView animateWithDuration:0.1 animations:^{
                 self.backTestView.frame = CGRectMake(0, 0, ScreenWidth-150, ScreenHeight-64);
             }];
-            
         }
     }else{
         [UIView animateWithDuration:0.1 animations:^{
             self.backTestView.frame = CGRectMake(-(ScreenWidth-150), 0, ScreenWidth-150, ScreenHeight-64);
         }];
     }
-  
 }
 
 -(void)showViewFromRight:(UIPanGestureRecognizer*)recognizer{
