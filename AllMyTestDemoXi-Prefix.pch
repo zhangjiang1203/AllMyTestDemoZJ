@@ -37,7 +37,7 @@
 #import <pop/POP.h>
 #import <AFNetworking/AFNetworking.h>
 #import <PNChart/PNChart.h>
-
+#import "ZJAnimationHelper.h"
 
 //使用不带前缀的约束
 #define MAS_SHORTHAND

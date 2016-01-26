@@ -266,18 +266,6 @@ typedef NS_ENUM(NSInteger,NETWORK_STATE) {
 + (NSString *)generateTradeNO;
 
 
-/**
- *  改变label上的数字的变化
- *
- *  @param label  添加的label
- *  @param suffix 文字前缀或者后缀
- *  @param from   开始的值
- *  @param to     结束值
- *  @param time   持续时间
- */
-+(void)makeNumChangeWithView:(UILabel*)label string:(NSString*)suffix FromValue:(CGFloat)from toValue:(CGFloat)to time:(CGFloat)time;
-
-
 /*!
  @brief 简单绘制线性渐变效果 从上至下
  @param topColor 上色
@@ -291,24 +279,4 @@ typedef NS_ENUM(NSInteger,NETWORK_STATE) {
                    endpoint:(CGPoint)endPoint
                       frame:(CGRect)frame;
 
-
-
-/**
- *  视图弹出动画,针对的只是view的frame中的y值变化
- *  可以自定义视图从上还是从下弹出
- *  @param view 添加的视图
- *  @param from 开始的y值
- *  @param to   结束的y值
- */
-+(void)popAnimationFlyInWithView:(UIView*)popView from:(CGFloat)from to:(CGFloat)to finish:(AnimationSuccessBlock)animationBlock;
-
-
-/**
- *  视图弹出动画,针对的只是view的frame中的y值变化
- *  可以自定义视图从上还是从下消失
- *  @param view 添加的视图
- *  @param from 开始的y值
- *  @param to   结束的y值
- */
-+(void)popAnimationFlyOutWithView:(UIView*)popView from:(CGFloat)from to:(CGFloat)to finish:(AnimationSuccessBlock)animationBlock;
 @end

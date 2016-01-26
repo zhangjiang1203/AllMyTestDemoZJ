@@ -8,18 +8,17 @@
 
 #import <UIKit/UIKit.h>
 
-typedef void (^AnimationFinishBlock)();
 
 @interface ZJCardView : UIView
 
-
-@property (nonatomic,copy)AnimationFinishBlock finishBlock;
+@property (weak, nonatomic) IBOutlet UIImageView *showFlagImage;
+@property (weak, nonatomic) IBOutlet UILabel *showFlagTitleLabel;
 /**
  *  显示的card总数
  */
-//@property (nonatomic,strong)NSMutableArray *cardsArr;
+@property (nonatomic,strong)NSMutableArray *cardsArr;
 
--(instancetype)initWithFrame:(CGRect)frame finish:(AnimationFinishBlock)finishBlock;
+
 
 
 

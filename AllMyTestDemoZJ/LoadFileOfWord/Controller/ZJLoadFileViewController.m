@@ -8,6 +8,7 @@
 
 #import "ZJLoadFileViewController.h"
 #import "ZJFileDetailViewController.h"
+#import "ZJPlaceHolderTextView.h"
 @interface ZJLoadFileViewController ()
 
 @end

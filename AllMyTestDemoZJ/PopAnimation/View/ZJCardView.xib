@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
@@ -8,52 +8,31 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="ZJCardView">
-            <rect key="frame" x="0.0" y="0.0" width="280" height="240"/>
+            <rect key="frame" x="0.0" y="0.0" width="280" height="300"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="就是喜欢你" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CnS-QL-roT">
-                    <rect key="frame" x="15" y="30" width="250" height="21"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="21" id="xHt-WL-JNN"/>
-                    </constraints>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ytN-O1-Z5v">
-                    <rect key="frame" x="15" y="61" width="250" height="30"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="30" id="bTV-ur-alu"/>
-                    </constraints>
-                    <state key="normal" title="我还是我就是你自己"/>
-                </button>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="还能怎么样的来解决的事情" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0KB-F2-ILQ">
-                    <rect key="frame" x="15" y="111" width="250" height="21"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="21" id="0K7-y9-4PU"/>
-                    </constraints>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="1RK-ZU-s9T">
+                    <rect key="frame" x="100" y="90" width="80" height="80"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="暂不考虑" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="E4d-Pb-XY2">
+                    <rect key="frame" x="90" y="176" width="100" height="18"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <color key="textColor" red="0.94509803920000002" green="0.2470588235" blue="0.2666666667" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-            <constraints>
-                <constraint firstItem="ytN-O1-Z5v" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="15" id="3hb-we-zht"/>
-                <constraint firstAttribute="trailing" secondItem="0KB-F2-ILQ" secondAttribute="trailing" constant="15" id="452-YH-4s0"/>
-                <constraint firstItem="CnS-QL-roT" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="15" id="Fgu-27-Kez"/>
-                <constraint firstItem="ytN-O1-Z5v" firstAttribute="top" secondItem="CnS-QL-roT" secondAttribute="bottom" constant="10" id="JPj-1p-F2e"/>
-                <constraint firstAttribute="trailing" secondItem="CnS-QL-roT" secondAttribute="trailing" constant="15" id="Ofe-4k-TkD"/>
-                <constraint firstAttribute="trailing" secondItem="ytN-O1-Z5v" secondAttribute="trailing" constant="15" id="Tov-jh-leN"/>
-                <constraint firstItem="0KB-F2-ILQ" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="15" id="U9U-rX-GlW"/>
-                <constraint firstItem="0KB-F2-ILQ" firstAttribute="top" secondItem="ytN-O1-Z5v" secondAttribute="bottom" constant="20" id="hfV-XI-rEY"/>
-                <constraint firstItem="CnS-QL-roT" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="30" id="uJe-76-6sP"/>
-            </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <nil key="simulatedTopBarMetrics"/>
             <nil key="simulatedBottomBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="325" y="464"/>
+            <connections>
+                <outlet property="showFlagImage" destination="1RK-ZU-s9T" id="Dv3-ZD-ItL"/>
+                <outlet property="showFlagTitleLabel" destination="E4d-Pb-XY2" id="AFe-tE-SeB"/>
+            </connections>
+            <point key="canvasLocation" x="325" y="499.5"/>
         </view>
     </objects>
 </document>

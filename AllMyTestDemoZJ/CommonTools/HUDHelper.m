@@ -576,7 +576,7 @@ static const char cancelBlockkey;
 +(void)makeScale:(UIView*)scaleView delegate:(id)delegate scale:(CGFloat)scale duration:(CFTimeInterval)duration
 {
     
-    scaleView.layer.transform=CATransform3DIdentity;
+    scaleView.layer.transform = CATransform3DIdentity;
     
     CAKeyframeAnimation *animation = [CAKeyframeAnimation animationWithKeyPath:@"transform"];
     CATransform3D tr0 = CATransform3DMakeScale(1, 1, 1);
@@ -588,9 +588,9 @@ static const char cancelBlockkey;
                             [NSValue valueWithCATransform3D:tr2],
                             nil];
     [animation setValues:frameValues];
-    animation.timingFunction=[CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionLinear];
+    animation.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionLinear];
     animation.duration = duration;
-    animation.delegate=delegate;
+    animation.delegate = delegate;
     [scaleView.layer addAnimation:animation forKey:@"ShakedAnimation"];
 }
 
@@ -779,83 +779,4 @@ double radians(float degrees) {
     
 }
 
-+(void)popAnimationFlyInWithView:(UIView *)popView from:(CGFloat)from to:(CGFloat)to finish:(AnimationSuccessBlock)animationBlock{
-    [popView pop_removeAllAnimations];
-    [[[UIApplication sharedApplication] delegate].window addSubview:popView];
-    
-    popView.layer.transform = CATransform3DIdentity;
-    [popView.layer setCornerRadius:5.0f];
-    CGAffineTransform rotateTransform = CGAffineTransformMakeRotation(-M_PI_4/8.0);
-    [popView.layer setAffineTransform:rotateTransform];
-    
-    POPSpringAnimation *anim = [POPSpringAnimation animationWithPropertyNamed:kPOPLayerPositionY];
-    anim.springBounciness = 6;
-    anim.springSpeed = 10;
-    anim.fromValue = @(from);
-    anim.toValue = @(to);
-    objc_removeAssociatedObjects(anim);
-    anim.delegate = self;
-    objc_setAssociatedObject(anim, &popAnimation, animationBlock, OBJC_ASSOCIATION_COPY);
-    
-    POPBasicAnimation *opacityAnim = [POPBasicAnimation animationWithPropertyNamed:kPOPLayerOpacity];
-    opacityAnim.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
-    opacityAnim.duration = 0.25;
-    opacityAnim.toValue = @1.0;
-    
-    POPBasicAnimation *rotationAnim = [POPBasicAnimation animationWithPropertyNamed:kPOPLayerRotation];
-    rotationAnim.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
-    rotationAnim.beginTime = CACurrentMediaTime() + 0.1;
-    rotationAnim.duration = 0.3;
-    rotationAnim.toValue = @(0);
-    
-    [popView.layer pop_addAnimation:anim forKey:@"AnimationScale"];
-    [popView.layer pop_addAnimation:opacityAnim forKey:@"AnimateOpacity"];
-    [popView.layer pop_addAnimation:rotationAnim forKey:@"AnimateRotation"];
-}
-
-
-+(void)popAnimationFlyOutWithView:(UIView *)popView from:(CGFloat)from to:(CGFloat)to finish:(AnimationSuccessBlock)animationBlock{
-    
-    
-    [popView pop_removeAllAnimations];
-    
-    [popView.layer setCornerRadius:5.0f];
-//    [popView setBounds:CGRectMake(0.0f, 0.0f, 160.0f, 230.0f)];
-    CGAffineTransform rotateTransform = CGAffineTransformMakeRotation(-M_PI_4/8.0);
-    [popView.layer setAffineTransform:rotateTransform];
-    
-    POPSpringAnimation *anim = [POPSpringAnimation animationWithPropertyNamed:kPOPLayerPositionY];
-    anim.springBounciness = 6;
-    anim.springSpeed = 10;
-    anim.fromValue = @(from);
-    anim.toValue = @(to);
-    anim.delegate = self;
-    objc_removeAssociatedObjects(anim);
-    
-    objc_setAssociatedObject(anim, &popAnimation, animationBlock, OBJC_ASSOCIATION_COPY);
-    
-    POPBasicAnimation *opacityAnim = [POPBasicAnimation animationWithPropertyNamed:kPOPLayerOpacity];
-    opacityAnim.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
-    opacityAnim.duration = 0.25;
-    opacityAnim.toValue = @0.0;
-    
-    POPBasicAnimation *rotationAnim = [POPBasicAnimation animationWithPropertyNamed:kPOPLayerRotation];
-    rotationAnim.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
-    rotationAnim.beginTime = CACurrentMediaTime() + 0.1;
-    rotationAnim.duration = 0.3;
-    rotationAnim.toValue = @(0);
-    
-    [popView.layer pop_addAnimation:anim forKey:@"AnimationScale1"];
-    [popView.layer pop_addAnimation:opacityAnim forKey:@"AnimateOpacity1"];
-    [popView.layer pop_addAnimation:rotationAnim forKey:@"AnimateRotation1"];
-    [popView removeFromSuperview];
-    
-}
-
--(void)pop_animationDidStop:(POPAnimation *)anim finished:(BOOL)finished{
-    if (finished) {
-        AnimationSuccessBlock animation = (AnimationSuccessBlock)objc_getAssociatedObject(anim, &popAnimation);
-        animation(finished);
-    }
-}
 @end

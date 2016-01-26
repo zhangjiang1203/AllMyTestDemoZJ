@@ -7,9 +7,10 @@
 //
 
 #import "ZJPopAnimationViewController.h"
-#import "ZJCustomCardView.h"
+#import "ZJCardView.h"
 
 #define KAnimationTime 0.25
+#define KPaddingLeft 8
 @interface ZJPopAnimationViewController ()
 
 @property (nonatomic,strong)NSMutableArray *viewsArr;
@@ -23,93 +24,81 @@
     self.viewsArr = [NSMutableArray array];
     
     for (int i = 0; i<4; i++) {
-        UIView *view = [[UIView alloc]init];
-        view.bounds = CGRectMake(0, 0, 200, 200);
-        view.center = CGPointMake(ScreenWidth/2, 200+i*5);
-        view.backgroundColor = [self getRandomColor];
-        [self setScale:1+i*0.01 duration:0.25 view:view];
-        [self.view addSubview:view];
-        [self.viewsArr addObject:view];
+        ZJCardView *cardView = [[[NSBundle mainBundle]loadNibNamed:@"ZJCardView" owner:nil options:nil]lastObject];
+        cardView.backgroundColor = [UIColor whiteColor];
+        cardView.bounds = CGRectMake(0, 0, 240, 300);
+        cardView.center = CGPointMake(ScreenWidth/2, 200+i*KPaddingLeft);
+        [ZJAnimationHelper setCenter:CGPointMake(ScreenWidth/2, 200+i*KPaddingLeft) duration:KAnimationTime view:cardView];
+        [ZJAnimationHelper setScale:1+i*0.01 duration:KAnimationTime view:cardView];
+        [self.view addSubview:cardView];
+        [self.viewsArr addObject:cardView];
     }
     UIPanGestureRecognizer *pan = [[UIPanGestureRecognizer alloc]initWithTarget:self action:@selector(panChange:)];
     [self.view addGestureRecognizer:pan];
-    
-//    ZJCustomCardView *customView = [[ZJCustomCardView alloc]initWithFrame:self.view.bounds finish:^{
-//        
-//    }];
-//    [self.view addSubview:customView];
+
 }
 
 -(void)panChange:(UIPanGestureRecognizer*)recongizer{
     
-    UIView *view = self.viewsArr[self.viewsArr.count-1];
-    CGPoint point = [recongizer translationInView:view];
-    view.center = CGPointMake(view.center.x+point.x, view.center.y+point.y);
+    ZJCardView *cardView = self.viewsArr[self.viewsArr.count-1];
+    CGPoint point = [recongizer translationInView:cardView];
+    cardView.center = CGPointMake(cardView.center.x+point.x, cardView.center.y+point.y);
     //偏移的百分比
-    CGFloat XOffPercent = (view.center.x-CGRectGetWidth(self.view.bounds)/2)/(CGRectGetWidth(self.view.bounds)/2);
+    CGFloat XOffPercent = (cardView.center.x-CGRectGetWidth(self.view.bounds)/2)/(CGRectGetWidth(self.view.bounds)/2);
     CGFloat rotationAngle = M_PI_2/4*XOffPercent;
-    NSLog(@"输出的百分比----===%f",rotationAngle);
     CGFloat alpha = fabs(rotationAngle);
-//    [self setViewAlpha:(1-alpha) view:view];
-    [self setViewAlpha:(1-alpha) duration:0.001f view:view];
-    [self setRotationWithAngle:rotationAngle duration:0.001f view:view];
+    if (rotationAngle>0) {
+        cardView.showFlagTitleLabel.hidden = NO;
+        cardView.showFlagImage.hidden = NO;
+        cardView.showFlagImage.image = [UIImage imageNamed:@"shoucang"];
+        cardView.showFlagTitleLabel.text = @"感兴趣";
+        cardView.showFlagTitleLabel.textColor = KRGBA(70, 198, 88, 1);
+        
+    }else{
+        cardView.showFlagImage.image = [UIImage imageNamed:@"delete"];
+        cardView.showFlagTitleLabel.text = @"暂不考虑";
+        cardView.showFlagTitleLabel.textColor = KRGBA(198, 70, 88, 1);
+        cardView.showFlagTitleLabel.hidden = NO;
+        cardView.showFlagImage.hidden = NO;
+    }
+    
+    NSLog(@"添加上变化的值---%f",alpha);
+    [ZJAnimationHelper setViewAlpha:alpha+0.4 duration:0.001f view:cardView.showFlagImage];
+    [ZJAnimationHelper setViewAlpha:alpha+0.4 duration:0.001f view:cardView.showFlagTitleLabel];
+//    [self setViewAlpha:(1-alpha) duration:0.001f view:cardView];
+    [ZJAnimationHelper setRotationWithAngle:rotationAngle duration:0.001f view:cardView];
     //重置刚才的那个point为零
     [recongizer setTranslation:CGPointZero inView:self.view];
     
     if (recongizer.state == UIGestureRecognizerStateEnded){
-        if (view.center.x > 60 && view.center.x<CGRectGetWidth(self.view.bounds)-60) {
+        if (cardView.center.x > 60 && cardView.center.x<CGRectGetWidth(self.view.bounds)-60) {
             //回到原来的位置
-            [self setViewAlpha:1 duration:0.001f view:view];
-            [self setRotationWithAngle:0 duration:0.001f view:view];
+            [ZJAnimationHelper setViewAlpha:1 duration:0.001f view:cardView];
+            [ZJAnimationHelper setRotationWithAngle:0 duration:0.001f view:cardView];
             CGPoint centerP = CGPointMake(CGRectGetWidth(self.view.frame)/2, 200+3*5);
-            [self setCenter:centerP duration:0.15 view:view];
+            [ZJAnimationHelper setCenter:centerP duration:0.15 view:cardView];
+            cardView.showFlagTitleLabel.hidden = YES;
+            cardView.showFlagImage.hidden = YES;
             
         }else{
             //删除view下一个view替换
-            [view removeFromSuperview];
+            if (rotationAngle > 0) {
+                //表示喜欢这个，添加到喜欢栏
+            }
+            [cardView removeFromSuperview];
             [self.viewsArr removeLastObject];
-            
+            if (self.viewsArr.count > 0) {
+                ZJCardView *view1 = self.viewsArr[self.viewsArr.count-1];
+                [ZJAnimationHelper setCenter:CGPointMake(ScreenWidth/2, 200+3*KPaddingLeft) duration:KAnimationTime view:view1];
+            }else{
+                //删除完毕之后在请求数据
+                NSLog(@"最后一张");
+            }
         }
     }
     
 }
 
-#pragma mark -旋转动画
--(void)setRotationWithAngle:(CGFloat)angle duration:(CGFloat)duration view:(UIView*)cardView{
-    POPBasicAnimation *rotation = [POPBasicAnimation animationWithPropertyNamed:kPOPLayerRotation];
-    rotation.duration = duration;
-    rotation.toValue = @(angle);
-    rotation.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
-    [cardView.layer pop_addAnimation:rotation forKey:@"rotation"];
-}
-
--(void)setViewAlpha:(CGFloat)alpha duration:(CGFloat)duration view:(UIView*)view{
-    POPBasicAnimation *alphaAnim = [POPBasicAnimation animationWithPropertyNamed:kPOPViewAlpha];
-    alphaAnim.toValue = @(alpha);
-    alphaAnim.duration = duration;
-    alphaAnim.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
-    [view pop_addAnimation:alphaAnim forKey:@"alpha"];
-    
-}
-
--(void)setCenter:(CGPoint)center duration:(CGFloat)duration view:(UIView*)view{
-    POPBasicAnimation *centerAnim = [POPBasicAnimation animationWithPropertyNamed:kPOPViewCenter];
-    centerAnim.toValue = [NSValue valueWithCGPoint:center];
-    centerAnim.duration = duration;
-    [centerAnim setCompletionBlock:^(POPAnimation *animation, BOOL is) {
-        view.hidden = NO;
-    }];
-    [view pop_addAnimation:centerAnim forKey:@"center"];
-    
-}
-
-
--(void)setScale:(CGFloat)present duration:(CGFloat)duration view:(UIView*)view{
-    POPBasicAnimation *scale = [POPBasicAnimation animationWithPropertyNamed:kPOPLayerScaleXY];
-    scale.toValue = [NSValue valueWithCGSize:CGSizeMake(present, present)];
-    scale.duration = duration;
-    [view.layer pop_addAnimation:scale forKey:@"scale"];
-}
 
 //获取随机颜色
 -(UIColor*)getRandomColor{
