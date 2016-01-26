@@ -8,13 +8,15 @@
 
 #import "ZJPopAnimationViewController.h"
 #import "ZJCardView.h"
-
+#import "ZJCircleView.h"
 #define KAnimationTime 0.25
 #define KPaddingLeft 8
 @interface ZJPopAnimationViewController ()
 
 @property (nonatomic,strong)NSMutableArray *viewsArr;
 
+
+//@property (nonatomic,strong)ZJCircleView *circleView;
 @end
 
 @implementation ZJPopAnimationViewController
@@ -23,6 +25,14 @@
     [super viewDidLoad];
     self.viewsArr = [NSMutableArray array];
     
+#pragma mark -代码添加circleView
+//    _circleView = [[ZJCircleView alloc]initWithFrame:CGRectMake(0, 0, 150, 150)];
+//    _circleView.center = self.view.center;
+//    _circleView.circlePercentage = 0.9;
+//    _circleView.circleWidth = 4;
+//    _circleView.titleColor = KRGBA(55, 76, 155, 1);
+//    [self.view addSubview:_circleView];
+
     for (int i = 0; i<4; i++) {
         ZJCardView *cardView = [[[NSBundle mainBundle]loadNibNamed:@"ZJCardView" owner:nil options:nil]lastObject];
         cardView.backgroundColor = [UIColor whiteColor];
@@ -37,6 +47,7 @@
     [self.view addGestureRecognizer:pan];
 
 }
+
 
 -(void)panChange:(UIPanGestureRecognizer*)recongizer{
     
@@ -84,6 +95,7 @@
             //删除view下一个view替换
             if (rotationAngle > 0) {
                 //表示喜欢这个，添加到喜欢栏
+                NSLog(@"对这个感兴趣");
             }
             [cardView removeFromSuperview];
             [self.viewsArr removeLastObject];

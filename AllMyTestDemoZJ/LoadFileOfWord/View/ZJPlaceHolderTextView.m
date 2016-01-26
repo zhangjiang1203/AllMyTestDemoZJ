@@ -22,6 +22,15 @@
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(textValueChange) name:UITextViewTextDidChangeNotification object:nil];
 }
 
+- (instancetype)initWithCoder:(NSCoder *)coder
+{
+    self = [super initWithCoder:coder];
+    if (self) {
+        [self awakeFromNib];
+    }
+    return self;
+}
+
 -(instancetype)initWithFrame:(CGRect)frame{
     self = [super initWithFrame:frame];
     if (self) {

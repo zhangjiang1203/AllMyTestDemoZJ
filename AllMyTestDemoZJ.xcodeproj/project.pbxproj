@@ -86,8 +86,9 @@
 		548457201C5222CD001608B4 /* ZJChartViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5484571E1C5222CD001608B4 /* ZJChartViewController.xib */; };
 		5488A9351C571BD7008681CB /* ZJAnimationHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 5488A9341C571BD7008681CB /* ZJAnimationHelper.m */; };
 		5488A9381C5725DD008681CB /* ZJPlaceHolderTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5488A9371C5725DD008681CB /* ZJPlaceHolderTextView.m */; };
+		5488A93E1C57492F008681CB /* ZJCircleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5488A93D1C57492F008681CB /* ZJCircleView.m */; };
 		5488F4001C2CD05A00773324 /* MANaviAnnotationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5488F3FF1C2CD05A00773324 /* MANaviAnnotationView.m */; };
-		635F7A9B27989B4D4CB893F3 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 35D0674DEFAF7C0A5C12620A /* libPods.a */; };
+		792280E0F6D0A60A81088F81 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2934BB22DD57F311F8F18DBB /* Pods.framework */; };
 		8D0052031BF442AC00C3C0D1 /* ZJAreaListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D0052011BF442AC00C3C0D1 /* ZJAreaListViewController.m */; };
 		8D0052041BF442AC00C3C0D1 /* ZJAreaListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8D0052021BF442AC00C3C0D1 /* ZJAreaListViewController.xib */; };
 		8D2EB5D81BEC984200C314B3 /* ZJRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D2EB5D61BEC984200C314B3 /* ZJRootViewController.m */; };
@@ -165,7 +166,7 @@
 
 /* Begin PBXFileReference section */
 		167CCDC1F1B13651C98C97A9 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
-		35D0674DEFAF7C0A5C12620A /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		2934BB22DD57F311F8F18DBB /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5421514C1C17FA8600B04253 /* ZJNavSliderAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZJNavSliderAnimation.h; sourceTree = "<group>"; };
 		5421514D1C17FA8600B04253 /* ZJNavSliderAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZJNavSliderAnimation.m; sourceTree = "<group>"; };
 		5421514F1C17FC9E00B04253 /* ZJCustomScaleAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZJCustomScaleAnimation.h; sourceTree = "<group>"; };
@@ -295,6 +296,8 @@
 		5488A9341C571BD7008681CB /* ZJAnimationHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZJAnimationHelper.m; sourceTree = "<group>"; };
 		5488A9361C5725DD008681CB /* ZJPlaceHolderTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZJPlaceHolderTextView.h; sourceTree = "<group>"; };
 		5488A9371C5725DD008681CB /* ZJPlaceHolderTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZJPlaceHolderTextView.m; sourceTree = "<group>"; };
+		5488A93C1C57492F008681CB /* ZJCircleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZJCircleView.h; sourceTree = "<group>"; };
+		5488A93D1C57492F008681CB /* ZJCircleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZJCircleView.m; sourceTree = "<group>"; };
 		5488F3FE1C2CD05A00773324 /* MANaviAnnotationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MANaviAnnotationView.h; sourceTree = "<group>"; };
 		5488F3FF1C2CD05A00773324 /* MANaviAnnotationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MANaviAnnotationView.m; sourceTree = "<group>"; };
 		8D0052001BF442AC00C3C0D1 /* ZJAreaListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZJAreaListViewController.h; sourceTree = "<group>"; };
@@ -518,7 +521,6 @@
 				8D7DC0F11BF0411600C14F48 /* OpenGLES.framework in Frameworks */,
 				8D7DC0EF1BF040F900C14F48 /* QuartzCore.framework in Frameworks */,
 				8D7DC0ED1BF040EA00C14F48 /* CoreLocation.framework in Frameworks */,
-				635F7A9B27989B4D4CB893F3 /* libPods.a in Frameworks */,
 				8D7DC0E61BF030F700C14F48 /* BaiduMapAPI_Radar.framework in Frameworks */,
 				8D7DC0E21BF030F700C14F48 /* BaiduMapAPI_Base.framework in Frameworks */,
 				8D7DC0E31BF030F700C14F48 /* BaiduMapAPI_Cloud.framework in Frameworks */,
@@ -526,6 +528,7 @@
 				8D7DC0E51BF030F700C14F48 /* BaiduMapAPI_Map.framework in Frameworks */,
 				8D7DC0E41BF030F700C14F48 /* BaiduMapAPI_Location.framework in Frameworks */,
 				8D7DC0E71BF030F700C14F48 /* BaiduMapAPI_Search.framework in Frameworks */,
+				792280E0F6D0A60A81088F81 /* Pods.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -962,6 +965,8 @@
 				547715721C5613A800B4B9EB /* ZJCardView.h */,
 				547715731C5613A800B4B9EB /* ZJCardView.m */,
 				547715741C5613A800B4B9EB /* ZJCardView.xib */,
+				5488A93C1C57492F008681CB /* ZJCircleView.h */,
+				5488A93D1C57492F008681CB /* ZJCircleView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1404,7 +1409,7 @@
 				8D7DC0F01BF0411600C14F48 /* OpenGLES.framework */,
 				8D7DC0EE1BF040F900C14F48 /* QuartzCore.framework */,
 				8D7DC0EC1BF040EA00C14F48 /* CoreLocation.framework */,
-				35D0674DEFAF7C0A5C12620A /* libPods.a */,
+				2934BB22DD57F311F8F18DBB /* Pods.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -1589,6 +1594,7 @@
 				5484571F1C5222CD001608B4 /* ZJChartViewController.m in Sources */,
 				548012D41C4CE1630002D9BA /* ZJRoundViewCell.m in Sources */,
 				547715701C56135400B4B9EB /* ZJPopAnimationViewController.m in Sources */,
+				5488A93E1C57492F008681CB /* ZJCircleView.m in Sources */,
 				5460CFB41C310F7700F563BF /* ZJCustomeSegment.m in Sources */,
 				5471D55C1C0BFF05002D25F7 /* ELGoodBriefCell.m in Sources */,
 				8D659B5D1C05954F00DEC679 /* WCSafeAreaView.m in Sources */,
