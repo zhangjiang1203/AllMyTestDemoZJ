@@ -10,6 +10,7 @@ pod 'Masonry', '~> 0.6.3'#一个轻量级的布局框架
 pod 'FMDB', '~> 2.5'
 pod 'AMapSearch', '~> 3.1.0'
 pod 'AMapNavi', '~> 1.4.0'
+pod 'Aspects', '~> 1.4.1' #Aspect库是对面向切面编程(Aspect Oriented Programming)的实现，里面封装了Runtime的方法 https://github.com/steipete/Aspects
 pod 'PNChart', '~> 0.8.8' #该项目是一个带动画效果的图表控件  https://github.com/kevinzhow/PNChart
 pod 'JVFloatLabeledTextField', '~> 1.1.0' #主要实现输入框标签浮动效果 https://github.com/jverdi/JVFloatLabeledTextField
 #pod 'TSMessages', '~> 0.9.12'	#一个用来弹出显示警告和通知的轻量级库 https://github.com/KrauseFx/TSMessages

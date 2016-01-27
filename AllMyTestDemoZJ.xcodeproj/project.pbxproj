@@ -30,6 +30,7 @@
 		544FC7EE1C438D4A0004C836 /* ZJFileDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 544FC7ED1C438D4A0004C836 /* ZJFileDetailViewController.m */; };
 		544FC7F01C438D6A0004C836 /* QuickLook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 544FC7EF1C438D6A0004C836 /* QuickLook.framework */; };
 		544FC7F21C4393C80004C836 /* ppt文档.ppt in Resources */ = {isa = PBXBuildFile; fileRef = 544FC7F11C4393C80004C836 /* ppt文档.ppt */; };
+		5450AC521C58683C00A75000 /* UIViewController+Swizzing.m in Sources */ = {isa = PBXBuildFile; fileRef = 5450AC511C58683C00A75000 /* UIViewController+Swizzing.m */; };
 		545435191C4793B9008925A7 /* AppDelegate+Hook.m in Sources */ = {isa = PBXBuildFile; fileRef = 545435181C4793B9008925A7 /* AppDelegate+Hook.m */; };
 		5459B9731C4E124E00503094 /* AFNClientHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 5459B9721C4E124E00503094 /* AFNClientHelper.m */; };
 		545B7FFF1C1674CA00C0365E /* ZJNavMagicMoveAnination.m in Sources */ = {isa = PBXBuildFile; fileRef = 545B7FFE1C1674CA00C0365E /* ZJNavMagicMoveAnination.m */; };
@@ -201,6 +202,8 @@
 		544FC7ED1C438D4A0004C836 /* ZJFileDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZJFileDetailViewController.m; sourceTree = "<group>"; };
 		544FC7EF1C438D6A0004C836 /* QuickLook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuickLook.framework; path = System/Library/Frameworks/QuickLook.framework; sourceTree = SDKROOT; };
 		544FC7F11C4393C80004C836 /* ppt文档.ppt */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ppt文档.ppt"; sourceTree = "<group>"; };
+		5450AC501C58683C00A75000 /* UIViewController+Swizzing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Swizzing.h"; sourceTree = "<group>"; };
+		5450AC511C58683C00A75000 /* UIViewController+Swizzing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Swizzing.m"; sourceTree = "<group>"; };
 		545435171C4793B9008925A7 /* AppDelegate+Hook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AppDelegate+Hook.h"; sourceTree = "<group>"; };
 		545435181C4793B9008925A7 /* AppDelegate+Hook.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AppDelegate+Hook.m"; sourceTree = "<group>"; };
 		5459B9711C4E124E00503094 /* AFNClientHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFNClientHelper.h; sourceTree = "<group>"; };
@@ -1344,6 +1347,8 @@
 		C5471F8F1BEC750C0001CE89 /* CommonTools */ = {
 			isa = PBXGroup;
 			children = (
+				5450AC501C58683C00A75000 /* UIViewController+Swizzing.h */,
+				5450AC511C58683C00A75000 /* UIViewController+Swizzing.m */,
 				C5471F901BEC750C0001CE89 /* HUDHelper.h */,
 				C5471F911BEC750C0001CE89 /* HUDHelper.m */,
 				8DFA182D1BF9C633005CBA53 /* UITableView+LoadAnimation.h */,
@@ -1645,6 +1650,7 @@
 				546F9A801C15838F0079AD80 /* ZJNavScaleAnimation.m in Sources */,
 				548012D81C4CE4820002D9BA /* ZJRoundCollectionLayout.m in Sources */,
 				5459B9731C4E124E00503094 /* AFNClientHelper.m in Sources */,
+				5450AC521C58683C00A75000 /* UIViewController+Swizzing.m in Sources */,
 				545B80101C16DB4700C0365E /* ZJNatGeoAnimation.m in Sources */,
 				8DC891E21BF76E270012D04F /* ZJAreaDataManager.m in Sources */,
 				5463924B1C0D7A1200C61EB2 /* ZJCalendarViewController.m in Sources */,

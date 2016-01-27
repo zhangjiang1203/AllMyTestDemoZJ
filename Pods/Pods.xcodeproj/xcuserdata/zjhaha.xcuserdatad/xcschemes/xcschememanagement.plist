@@ -9,6 +9,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Aspects.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>FMDB.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -97,12 +102,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>713F6E6E149A6ABEF2D3573D3E66E9D5</key>
+		<key>735882DA95E7FCCEC084FC1C5384FF8A</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>735882DA95E7FCCEC084FC1C5384FF8A</key>
+		<key>9C123B8549B44A776002BB1235A60F30</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -112,12 +117,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>E61CE3B6DFA1FE6B3E296965C76C0E10</key>
+		<key>B4FA9D3A68C5E7259E0A040FCF0A3E64</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>EB204C244BD57807AC260E96B8790DF3</key>
+		<key>C766897D56D8A815526A1B61D99EA0CA</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>E61CE3B6DFA1FE6B3E296965C76C0E10</key>
 		<dict>
 			<key>primary</key>
 			<true/>
