@@ -6,10 +6,11 @@ pod 'IQKeyboardManager', '~> 3.3.4'
 pod 'MJExtension', '~> 2.5.16'
 pod 'MJRefresh', '~> 3.0.0'
 pod 'MBProgressHUD', '~> 0.9.1'
-pod 'Masonry', '~> 0.6.3'#一个轻量级的布局框架
+pod 'Masonry', '~> 0.6.3' #一个轻量级的布局框架
 pod 'FMDB', '~> 2.5'
 pod 'AMapSearch', '~> 3.1.0'
 pod 'AMapNavi', '~> 1.4.0'
+pod 'CocoaAsyncSocket', '~> 7.4.2' #套接字框架 https://github.com/robbiehanson/CocoaAsyncSocket
 pod 'Aspects', '~> 1.4.1' #Aspect库是对面向切面编程(Aspect Oriented Programming)的实现，里面封装了Runtime的方法 https://github.com/steipete/Aspects
 pod 'PNChart', '~> 0.8.8' #该项目是一个带动画效果的图表控件  https://github.com/kevinzhow/PNChart
 pod 'JVFloatLabeledTextField', '~> 1.1.0' #主要实现输入框标签浮动效果 https://github.com/jverdi/JVFloatLabeledTextField

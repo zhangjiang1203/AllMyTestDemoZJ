@@ -17,6 +17,7 @@ PODS:
   - AMapNavi (1.4.0)
   - AMapSearch (3.1.0)
   - Aspects (1.4.1)
+  - CocoaAsyncSocket (7.4.2)
   - FMDB (2.6):
     - FMDB/standard (= 2.6)
   - FMDB/standard (2.6)
@@ -36,6 +37,7 @@ DEPENDENCIES:
   - AMapNavi (~> 1.4.0)
   - AMapSearch (~> 3.1.0)
   - Aspects (~> 1.4.1)
+  - CocoaAsyncSocket (~> 7.4.2)
   - FMDB (~> 2.5)
   - IQKeyboardManager (~> 3.3.4)
   - JVFloatLabeledTextField (~> 1.1.0)
@@ -51,6 +53,7 @@ SPEC CHECKSUMS:
   AMapNavi: 096aef30201ca092c40a60f35795ad949824c8d4
   AMapSearch: aa7621ae8aec9cb8df116710b26e3fe3d09dc0ff
   Aspects: 7595ba96a6727a58ebcbfc954497fc5d2fdde546
+  CocoaAsyncSocket: f5783bdedd232d91b89769bc4b5a1580aed518ad
   FMDB: c1968bab3ab0aed38f66cb778ae1e7fa9a652b6e
   IQKeyboardManager: 128bcb96b3ec03ff87942cdd7fa7f44491aa3d08
   JVFloatLabeledTextField: ea4a3d8387ddd43724c472bb2b8ab39b79af05d4

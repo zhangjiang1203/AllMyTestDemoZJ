@@ -14,6 +14,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>CocoaAsyncSocket.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>FMDB.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -77,6 +82,11 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>0510436D84A5425D5EB7DBE66AA7062F</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>1A8B1E47CA40EE73BBEB55F118208114</key>
 		<dict>
 			<key>primary</key>
@@ -88,6 +98,11 @@
 			<true/>
 		</dict>
 		<key>23CF27B2BA6AC7125EFFEDA8C5AA819F</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>4E2A58AF7EF34D5943BFBE6675A94CA1</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -107,17 +122,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>9C123B8549B44A776002BB1235A60F30</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>A9A83F63385AA43314397B8DD375464B</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>B4FA9D3A68C5E7259E0A040FCF0A3E64</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -133,6 +138,11 @@
 			<true/>
 		</dict>
 		<key>EDDB924C8A7B0849AAD64F27BC91D854</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>F7D0798FD84A68D558F84856F53EF0A6</key>
 		<dict>
 			<key>primary</key>
 			<true/>

@@ -86,6 +86,7 @@ strip_invalid_archs() {
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "Pods/AFNetworking.framework"
   install_framework "Pods/Aspects.framework"
+  install_framework "Pods/CocoaAsyncSocket.framework"
   install_framework "Pods/FMDB.framework"
   install_framework "Pods/IQKeyboardManager.framework"
   install_framework "Pods/JVFloatLabeledTextField.framework"
@@ -100,6 +101,7 @@ fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "Pods/AFNetworking.framework"
   install_framework "Pods/Aspects.framework"
+  install_framework "Pods/CocoaAsyncSocket.framework"
   install_framework "Pods/FMDB.framework"
   install_framework "Pods/IQKeyboardManager.framework"
   install_framework "Pods/JVFloatLabeledTextField.framework"
