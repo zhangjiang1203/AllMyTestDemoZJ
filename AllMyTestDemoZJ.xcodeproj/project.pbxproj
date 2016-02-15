@@ -89,6 +89,7 @@
 		5488A9381C5725DD008681CB /* ZJPlaceHolderTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5488A9371C5725DD008681CB /* ZJPlaceHolderTextView.m */; };
 		5488A93E1C57492F008681CB /* ZJCircleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5488A93D1C57492F008681CB /* ZJCircleView.m */; };
 		5488F4001C2CD05A00773324 /* MANaviAnnotationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5488F3FF1C2CD05A00773324 /* MANaviAnnotationView.m */; };
+		549F21E41C71D82D0085454C /* MaskAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 549F21E31C71D82D0085454C /* MaskAnimation.m */; };
 		792280E0F6D0A60A81088F81 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2934BB22DD57F311F8F18DBB /* Pods.framework */; };
 		8D0052031BF442AC00C3C0D1 /* ZJAreaListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D0052011BF442AC00C3C0D1 /* ZJAreaListViewController.m */; };
 		8D0052041BF442AC00C3C0D1 /* ZJAreaListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8D0052021BF442AC00C3C0D1 /* ZJAreaListViewController.xib */; };
@@ -303,6 +304,8 @@
 		5488A93D1C57492F008681CB /* ZJCircleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZJCircleView.m; sourceTree = "<group>"; };
 		5488F3FE1C2CD05A00773324 /* MANaviAnnotationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MANaviAnnotationView.h; sourceTree = "<group>"; };
 		5488F3FF1C2CD05A00773324 /* MANaviAnnotationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MANaviAnnotationView.m; sourceTree = "<group>"; };
+		549F21E21C71D82D0085454C /* MaskAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MaskAnimation.h; sourceTree = "<group>"; };
+		549F21E31C71D82D0085454C /* MaskAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MaskAnimation.m; sourceTree = "<group>"; };
 		8D0052001BF442AC00C3C0D1 /* ZJAreaListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZJAreaListViewController.h; sourceTree = "<group>"; };
 		8D0052011BF442AC00C3C0D1 /* ZJAreaListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZJAreaListViewController.m; sourceTree = "<group>"; };
 		8D0052021BF442AC00C3C0D1 /* ZJAreaListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZJAreaListViewController.xib; sourceTree = "<group>"; };
@@ -767,6 +770,8 @@
 				5421514D1C17FA8600B04253 /* ZJNavSliderAnimation.m */,
 				5421514F1C17FC9E00B04253 /* ZJCustomScaleAnimation.h */,
 				542151501C17FC9E00B04253 /* ZJCustomScaleAnimation.m */,
+				549F21E21C71D82D0085454C /* MaskAnimation.h */,
+				549F21E31C71D82D0085454C /* MaskAnimation.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1639,6 +1644,7 @@
 				8D5EA90D1BF2E4F000ADFB2A /* Order.m in Sources */,
 				547715771C5613A800B4B9EB /* ZJCardView.m in Sources */,
 				546F9A731C157FED0079AD80 /* ZJNavAnimationViewController.m in Sources */,
+				549F21E41C71D82D0085454C /* MaskAnimation.m in Sources */,
 				54441B2E1C2AA76D006DC0CF /* ZJRoutePlanViewController.m in Sources */,
 				545B7FFF1C1674CA00C0365E /* ZJNavMagicMoveAnination.m in Sources */,
 				8D5EA91C1BF3117700ADFB2A /* ZJSetttingAreaViewController.m in Sources */,
@@ -1709,7 +1715,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -1746,7 +1752,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -1786,7 +1792,7 @@
 					"$(SRCROOT)/AllMyTestDemoZJ/ZhifubaoAndWeiXin/View/zhifubao/OpenSSL/include",
 				);
 				INFOPLIST_FILE = AllMyTestDemoZJ/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1833,7 +1839,7 @@
 					"$(SRCROOT)/AllMyTestDemoZJ/ZhifubaoAndWeiXin/View/zhifubao/OpenSSL/include",
 				);
 				INFOPLIST_FILE = AllMyTestDemoZJ/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",

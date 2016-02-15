@@ -23,7 +23,7 @@
 #import "ZJNavMagicMoveAnination.h"
 #import "ZJNavSliderAnimation.h"
 #import "ZJCustomScaleAnimation.h"
-@interface ZJMulScrollViewController ()<iCarouselDataSource,iCarouselDelegate,UINavigationControllerDelegate,WCFilterAnimationDelegate,ZJNavMagicMoveAninationDelegate>
+@interface ZJMulScrollViewController ()<iCarouselDataSource,iCarouselDelegate,UINavigationControllerDelegate,WCFilterAnimationDelegate,ZJNavMagicMoveAninationDelegate,ELGoodBriefViewDelegate>
 {
     BOOL isHiddenBar;//隐藏导航栏和选项卡
     BOOL isStateBar;//隐藏状态栏
@@ -162,7 +162,7 @@
     if (listView == nil){
         listView = [[ELGoodBriefView alloc]initWithFrame:carousel.bounds];
     }
-//    listView.delegate = self;
+    listView.delegate = self;
     listView.goodType = index+1;
     return listView;
 }
@@ -271,16 +271,16 @@
 }
 
 
-#pragma mark -跳转开始的协议动画
--(id<UIViewControllerAnimatedTransitioning>)animationControllerForPresentedController:(UIViewController *)presented presentingController:(UIViewController *)presenting sourceController:(UIViewController *)source{
-    ZJNavBaseAnimation *animation = [self getCurrentIndexItemAnimation];
-    return animation;
-}
-#pragma mark -pop回来的动画
--(id<UIViewControllerAnimatedTransitioning>)animationControllerForDismissedController:(UIViewController *)dismissed{
-    ZJNavBaseAnimation *animation = [self getCurrentIndexItemAnimation];
-    return animation;
-}
+//#pragma mark -present跳转开始的协议动画
+//-(id<UIViewControllerAnimatedTransitioning>)animationControllerForPresentedController:(UIViewController *)presented presentingController:(UIViewController *)presenting sourceController:(UIViewController *)source{
+//    ZJNavBaseAnimation *animation = [self getCurrentIndexItemAnimation];
+//    return animation;
+//}
+//#pragma mark -dismiss回来的动画
+//-(id<UIViewControllerAnimatedTransitioning>)animationControllerForDismissedController:(UIViewController *)dismissed{
+//    ZJNavBaseAnimation *animation = [self getCurrentIndexItemAnimation];
+//    return animation;
+//}
 
 -(id<UIViewControllerAnimatedTransitioning>)navigationController:(UINavigationController *)navigationController animationControllerForOperation:(UINavigationControllerOperation)operation fromViewController:(UIViewController *)fromVC toViewController:(UIViewController *)toVC
 {
@@ -300,9 +300,5 @@
     }
     return nil;
 }
-
-
-
-
 
 @end
