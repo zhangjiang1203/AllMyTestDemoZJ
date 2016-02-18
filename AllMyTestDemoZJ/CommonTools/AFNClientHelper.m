@@ -21,7 +21,7 @@
     [sessionManager.requestSerializer setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
     
     [sessionManager GET:urlString parameters:nil progress:^(NSProgress * _Nonnull downloadProgress) {
-        
+//        downloadProgress.fractionCompleted  //当前的下载进度
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         successBlock(responseObject);
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
@@ -41,7 +41,7 @@
     [sessionManager.requestSerializer setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
     
     [sessionManager POST:urlString parameters:params progress:^(NSProgress * _Nonnull uploadProgress) {
-        
+//        uploadProgress.fractionCompleted   //当前完成的进度
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         successBlock(responseObject);
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {

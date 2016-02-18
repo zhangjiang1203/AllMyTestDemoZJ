@@ -72,7 +72,31 @@ static const char popAnimation;
     [popView pop_addAnimation:anim forKey:@"AnimationScale1"];
     [popView.layer pop_addAnimation:opacityAnim forKey:@"AnimateOpacity1"];
     [popView.layer pop_addAnimation:rotationAnim forKey:@"AnimateRotation1"];
+    
+    
+    POPBasicAnimation *rotation1 = [POPBasicAnimation animationWithPropertyNamed:kPOPLayerRotation];
+    rotation1.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
+    rotation1.beginTime = CACurrentMediaTime() + 0.1;
+    rotation1.duration = 0.5;
+    rotation1.toValue = @(M_PI);
+    rotation1.repeatCount = HUGE_VALF;
+    
 
+}
+
+/**
+ *  无限旋转动画
+ */
+-(void)popAnimationRotationWithView:(UIView*)view {
+    
+    POPBasicAnimation *rotation = [POPBasicAnimation animationWithPropertyNamed:kPOPLayerRotation];
+    rotation.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionLinear];
+    rotation.beginTime = CACurrentMediaTime() + 0.1;
+    rotation.duration = 0.5;
+    rotation.toValue = @(M_PI);
+    rotation.repeatCount = HUGE_VALF;
+    [view.layer pop_addAnimation:rotation forKey:@"rotation"];
+    
 }
 
 /**

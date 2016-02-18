@@ -27,4 +27,9 @@
  *  @param to   结束的y值
  */
 -(void)popAnimationFlyOutWithView:(UIView*)popView from:(CGFloat)from to:(CGFloat)to finish:(AnimationSuccessBlock)animationBlock;
+
+/**
+ *  无限旋转动画
+ */
+-(void)popAnimationRotationWithView:(UIView*)view;
 @end

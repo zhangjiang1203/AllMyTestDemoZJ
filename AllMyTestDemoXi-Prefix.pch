@@ -11,6 +11,10 @@
  * 默认字体可以设置字体大小
  */
 #define KDefaultFont(A) [UIFont systemFontOfSize:(A)]
+/**
+ *  角度转弧度
+ */
+#define KAngleToRadians(angle) (angle * M_PI)/180.0
 
 //#define g_App ((AppDelegate*)[[UIApplication sharedApplication] delegate])
 /**
