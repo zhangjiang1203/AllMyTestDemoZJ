@@ -15,19 +15,40 @@ typedef void (^RequestPathBlock)(NSString *pathString);
 @interface AFNClientHelper : NSObject
 
 /**
- *  get请求方法
+*  开启网络监测
+*/
++ (void)startMonitoring;
+
+/**
+ * 关闭网络监测
  */
-+(void)getWithURLString:(NSString*)urlString param:(NSDictionary*)params success:(RequestSuccessBlock)successBlock fail:(RequestFailureBlock)failBlock;
++ (void)stopMonitoring;
+
+/**
+ *  get请求方法
+ *  NSURLSessionDataTask  获取到这个值，可以取消网络请求
+ */
++(NSURLSessionDataTask*)getWithURLString:(NSString*)urlString param:(NSDictionary*)params success:(RequestSuccessBlock)successBlock fail:(RequestFailureBlock)failBlock;
 
 /**
  *  post请求方法
  */
-+(void)postWithURLString:(NSString*)urlString param:(NSDictionary*)params success:(RequestSuccessBlock)successBlock fail:(RequestFailureBlock)failBlock;
++(NSURLSessionDataTask*)postWithURLString:(NSString*)urlString param:(NSDictionary*)params success:(RequestSuccessBlock)successBlock fail:(RequestFailureBlock)failBlock;
+
+/**
+ *  put请求方法
+ */
++(NSURLSessionDataTask*)putWithURLString:(NSString*)urlString param:(NSDictionary*)params success:(RequestSuccessBlock)successBlock fail:(RequestFailureBlock)failBlock;
+
+/**
+ *  delete请求方法
+ */
++(NSURLSessionDataTask*)deleteWithURLString:(NSString*)urlString param:(NSDictionary*)params success:(RequestSuccessBlock)successBlock fail:(RequestFailureBlock)failBlock;
 
 /**
  *  下载方法，返回文件的路径
  */
-+(void)downLoadFileWithURLString:(NSString*)urlString path:(RequestPathBlock)pathStr;
++(NSURLSessionDownloadTask*)downLoadFileWithURLString:(NSString*)urlString path:(RequestPathBlock)pathStr;
 
 /**
  *  上传方法

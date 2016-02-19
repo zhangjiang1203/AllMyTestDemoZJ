@@ -57,6 +57,7 @@
 		546804B21C3BA35D00BC3A3C /* AppJsDemo.html in Resources */ = {isa = PBXBuildFile; fileRef = 546804B11C3BA35D00BC3A3C /* AppJsDemo.html */; };
 		546804B61C3BB42800BC3A3C /* UIView+ZJViewExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 546804B51C3BB42800BC3A3C /* UIView+ZJViewExtension.m */; };
 		546804B91C3BBCBD00BC3A3C /* ZJInputToolView.m in Sources */ = {isa = PBXBuildFile; fileRef = 546804B81C3BBCBD00BC3A3C /* ZJInputToolView.m */; };
+		546D68E61C76EEEB007DD2C9 /* PassKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 546D68E51C76EEEB007DD2C9 /* PassKit.framework */; };
 		546F9A5F1C1572900079AD80 /* ZJCalendarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 546F9A5E1C1572900079AD80 /* ZJCalendarView.m */; };
 		546F9A731C157FED0079AD80 /* ZJNavAnimationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 546F9A711C157FED0079AD80 /* ZJNavAnimationViewController.m */; };
 		546F9A741C157FED0079AD80 /* ZJNavAnimationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 546F9A721C157FED0079AD80 /* ZJNavAnimationViewController.xib */; };
@@ -250,6 +251,8 @@
 		546804B51C3BB42800BC3A3C /* UIView+ZJViewExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+ZJViewExtension.m"; sourceTree = "<group>"; };
 		546804B71C3BBCBD00BC3A3C /* ZJInputToolView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZJInputToolView.h; sourceTree = "<group>"; };
 		546804B81C3BBCBD00BC3A3C /* ZJInputToolView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZJInputToolView.m; sourceTree = "<group>"; };
+		546D68CE1C76A1E0007DD2C9 /* AllMyTestDemoZJ.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = AllMyTestDemoZJ.entitlements; sourceTree = "<group>"; };
+		546D68E51C76EEEB007DD2C9 /* PassKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PassKit.framework; path = System/Library/Frameworks/PassKit.framework; sourceTree = SDKROOT; };
 		546F9A5D1C1572900079AD80 /* ZJCalendarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZJCalendarView.h; sourceTree = "<group>"; };
 		546F9A5E1C1572900079AD80 /* ZJCalendarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZJCalendarView.m; sourceTree = "<group>"; };
 		546F9A701C157FED0079AD80 /* ZJNavAnimationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZJNavAnimationViewController.h; sourceTree = "<group>"; };
@@ -507,6 +510,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				546D68E61C76EEEB007DD2C9 /* PassKit.framework in Frameworks */,
 				545D128F1C507DDB00E3E208 /* CoreBluetooth.framework in Frameworks */,
 				544FC7F01C438D6A0004C836 /* QuickLook.framework in Frameworks */,
 				CFFCFA531C2ACD0100130306 /* AVFoundation.framework in Frameworks */,
@@ -721,6 +725,37 @@
 			children = (
 				546804B71C3BBCBD00BC3A3C /* ZJInputToolView.h */,
 				546804B81C3BBCBD00BC3A3C /* ZJInputToolView.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		546D68D41C76A54E007DD2C9 /* ApplePay */ = {
+			isa = PBXGroup;
+			children = (
+				546D68D51C76A59E007DD2C9 /* Controller */,
+				546D68D61C76A59E007DD2C9 /* Model */,
+				546D68D71C76A59E007DD2C9 /* View */,
+			);
+			path = ApplePay;
+			sourceTree = "<group>";
+		};
+		546D68D51C76A59E007DD2C9 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		546D68D61C76A59E007DD2C9 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		546D68D71C76A59E007DD2C9 /* View */ = {
+			isa = PBXGroup;
+			children = (
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1313,6 +1348,7 @@
 				C5471F921BEC750C0001CE89 /* PopAnimation */,
 				C5471F931BEC750C0001CE89 /* ZhifubaoAndWeiXin */,
 				8D7DC0DA1BF02D7800C14F48 /* OtherLibrary */,
+				546D68D41C76A54E007DD2C9 /* ApplePay */,
 				C5471F761BEC748E0001CE89 /* Supporting Files */,
 			);
 			path = AllMyTestDemoZJ;
@@ -1321,6 +1357,7 @@
 		C5471F761BEC748E0001CE89 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				546D68CE1C76A1E0007DD2C9 /* AllMyTestDemoZJ.entitlements */,
 				C5471F821BEC748F0001CE89 /* Assets.xcassets */,
 				C5471F871BEC748F0001CE89 /* Info.plist */,
 				C5471F951BEC76AD0001CE89 /* AllMyTestDemoXi-Prefix.pch */,
@@ -1403,6 +1440,7 @@
 		F25495364DB5E1ECBD7D6165 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				546D68E51C76EEEB007DD2C9 /* PassKit.framework */,
 				545D128E1C507DDB00E3E208 /* CoreBluetooth.framework */,
 				544FC7EF1C438D6A0004C836 /* QuickLook.framework */,
 				CFFCFA521C2ACD0100130306 /* AVFoundation.framework */,
@@ -1460,6 +1498,15 @@
 				TargetAttributes = {
 					C5471F721BEC748E0001CE89 = {
 						CreatedOnToolsVersion = 7.1;
+						DevelopmentTeam = 3K2472A4AX;
+						SystemCapabilities = {
+							com.apple.OMC = {
+								enabled = 1;
+							};
+							com.apple.Wallet = {
+								enabled = 0;
+							};
+						};
 					};
 				};
 			};
@@ -1766,7 +1813,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = AllMyTestDemoZJ/AllMyTestDemoZJ.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEFINES_MODULE = YES;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1801,6 +1850,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = AllMyTestDemoZJ;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -1813,7 +1863,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = AllMyTestDemoZJ/AllMyTestDemoZJ.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEFINES_MODULE = YES;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1848,6 +1900,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = AllMyTestDemoZJ;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "";
 			};
 			name = Release;

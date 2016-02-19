@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9059" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ZJPaymentViewController">
@@ -18,26 +18,23 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="zhifubao" translatesAutoresizingMaskIntoConstraints="NO" id="9kE-Z7-aJj">
-                    <rect key="frame" x="45" y="140" width="90" height="90"/>
-                    <animations/>
-                    <constraints>
-                        <constraint firstAttribute="width" constant="90" id="0tW-L8-VD1"/>
-                        <constraint firstAttribute="height" constant="90" id="u44-nf-Ltq"/>
-                    </constraints>
+                    <rect key="frame" x="10" y="140" width="90" height="90"/>
                     <connections>
                         <outletCollection property="gestureRecognizers" destination="cEU-SE-pg9" appends="YES" id="ZWO-LD-J8l"/>
                     </connections>
                 </imageView>
                 <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="weixin" translatesAutoresizingMaskIntoConstraints="NO" id="PQL-q5-yvv">
-                    <rect key="frame" x="185" y="140" width="90" height="90"/>
-                    <animations/>
+                    <rect key="frame" x="115" y="140" width="90" height="90"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="90" id="EEd-3o-4mZ"/>
+                        <constraint firstAttribute="width" constant="90" id="aeG-Sj-0wM"/>
+                    </constraints>
                     <connections>
                         <outletCollection property="gestureRecognizers" destination="ROw-rr-Wnb" appends="YES" id="BlI-Cu-mRw"/>
                     </connections>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="请选择支付方式" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6aW-Ga-990">
                     <rect key="frame" x="50" y="50" width="220" height="20"/>
-                    <animations/>
                     <constraints>
                         <constraint firstAttribute="height" constant="20" id="DyM-Mg-Kpu"/>
                     </constraints>
@@ -45,19 +42,28 @@
                     <color key="textColor" red="0.29803921568627451" green="0.29803921568627451" blue="0.29803921568627451" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="applePay" translatesAutoresizingMaskIntoConstraints="NO" id="mzz-g4-fhp" userLabel="Apple pay">
+                    <rect key="frame" x="220" y="140" width="90" height="90"/>
+                    <connections>
+                        <outletCollection property="gestureRecognizers" destination="3q9-3F-LAs" appends="YES" id="FRn-jx-d5z"/>
+                    </connections>
+                </imageView>
             </subviews>
-            <animations/>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstItem="PQL-q5-yvv" firstAttribute="top" secondItem="9kE-Z7-aJj" secondAttribute="top" id="46A-xv-kNy"/>
-                <constraint firstItem="PQL-q5-yvv" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" constant="70" id="M6S-8i-sxT"/>
+                <constraint firstItem="PQL-q5-yvv" firstAttribute="width" secondItem="9kE-Z7-aJj" secondAttribute="width" id="4DJ-Vn-hV6"/>
+                <constraint firstItem="mzz-g4-fhp" firstAttribute="width" secondItem="PQL-q5-yvv" secondAttribute="width" id="Avd-E8-8ZZ"/>
+                <constraint firstItem="mzz-g4-fhp" firstAttribute="centerY" secondItem="PQL-q5-yvv" secondAttribute="centerY" id="BnH-ep-fAi"/>
+                <constraint firstItem="PQL-q5-yvv" firstAttribute="centerY" secondItem="9kE-Z7-aJj" secondAttribute="centerY" id="EHy-UO-GrO"/>
                 <constraint firstItem="6aW-Ga-990" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="50" id="P5v-Gk-b7r"/>
                 <constraint firstAttribute="trailing" secondItem="6aW-Ga-990" secondAttribute="trailing" constant="50" id="Swb-C5-TOJ"/>
-                <constraint firstItem="PQL-q5-yvv" firstAttribute="width" secondItem="9kE-Z7-aJj" secondAttribute="width" id="XZC-ve-alN"/>
                 <constraint firstItem="6aW-Ga-990" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="50" id="ZB7-dK-1gF"/>
-                <constraint firstItem="PQL-q5-yvv" firstAttribute="height" secondItem="9kE-Z7-aJj" secondAttribute="height" id="jlJ-KR-Txu"/>
-                <constraint firstItem="9kE-Z7-aJj" firstAttribute="top" secondItem="6aW-Ga-990" secondAttribute="bottom" constant="70" id="mn9-IA-8sd"/>
-                <constraint firstItem="9kE-Z7-aJj" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" constant="-70" id="snd-RO-dyP"/>
+                <constraint firstItem="PQL-q5-yvv" firstAttribute="height" secondItem="9kE-Z7-aJj" secondAttribute="height" id="e0l-ES-dU2"/>
+                <constraint firstItem="PQL-q5-yvv" firstAttribute="leading" secondItem="9kE-Z7-aJj" secondAttribute="trailing" constant="15" id="fHc-bB-4rU"/>
+                <constraint firstItem="mzz-g4-fhp" firstAttribute="height" secondItem="PQL-q5-yvv" secondAttribute="height" id="jMz-rS-HfU"/>
+                <constraint firstItem="PQL-q5-yvv" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="pfM-vp-5qm"/>
+                <constraint firstItem="PQL-q5-yvv" firstAttribute="top" secondItem="6aW-Ga-990" secondAttribute="bottom" constant="70" id="umB-ZC-Vi0"/>
+                <constraint firstItem="mzz-g4-fhp" firstAttribute="leading" secondItem="PQL-q5-yvv" secondAttribute="trailing" constant="15" id="zGb-zH-sFo"/>
             </constraints>
             <point key="canvasLocation" x="478" y="434"/>
         </view>
@@ -71,8 +77,14 @@
                 <action selector="weiXinPay:" destination="-1" id="6nV-aW-YFb"/>
             </connections>
         </tapGestureRecognizer>
+        <tapGestureRecognizer id="3q9-3F-LAs">
+            <connections>
+                <action selector="ApplePayTap:" destination="-1" id="7bL-tS-z8p"/>
+            </connections>
+        </tapGestureRecognizer>
     </objects>
     <resources>
+        <image name="applePay" width="180" height="180"/>
         <image name="weixin" width="180" height="180"/>
         <image name="zhifubao" width="180" height="180"/>
     </resources>
