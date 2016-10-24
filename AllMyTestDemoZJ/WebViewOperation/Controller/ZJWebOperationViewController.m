@@ -37,6 +37,7 @@
     CGFloat webViewH = ScreenHeight - 64 - KBottomH;
     self.myWebView = [[UIWebView alloc]initWithFrame:CGRectMake(0, 0, ScreenWidth, webViewH)];
     self.myWebView.delegate = self;
+//    self.myWebView 
     [_myWebView loadRequest:[NSURLRequest requestWithURL:[[NSBundle mainBundle]URLForResource:@"AppJsDemo" withExtension:@"html"]]];
     [self.view addSubview:self.myWebView];
     
@@ -86,7 +87,6 @@
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"JS向APP提交数据" message:message delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确定", nil];
         [alert show];
     }
-    
     return YES;
 }
 @end

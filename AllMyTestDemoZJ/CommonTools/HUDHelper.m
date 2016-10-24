@@ -13,7 +13,7 @@
 #import <AVFoundation/AVFoundation.h>/*相机*/
 #define _IPHONE70_ 70000
 static const double _x_pi = 3.14159265358979324 * 3000.0 / 180.0;
-static const char popAnimation;
+//static const char popAnimation;
 @implementation HUDHelper
 + (HUDHelper *) getInstance
 {

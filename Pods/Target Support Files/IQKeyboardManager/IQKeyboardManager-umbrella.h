@@ -1,6 +1,7 @@
 #import <UIKit/UIKit.h>
 
 #import "IQNSArray+Sort.h"
+#import "IQUIScrollView+Additions.h"
 #import "IQUITextFieldView+Additions.h"
 #import "IQUIView+Hierarchy.h"
 #import "IQUIViewController+Additions.h"

@@ -18,7 +18,8 @@
     return cell;
 }
 - (void)awakeFromNib {
-    
+    [super awakeFromNib];
+
     
     self.titleLabel.shadowColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0.8];    //设置文本的阴影色彩和透明度。
     self.titleLabel.shadowOffset = CGSizeMake(0.5f, 0.5f);     //设置阴影的倾斜角度。

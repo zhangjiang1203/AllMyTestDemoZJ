@@ -81,6 +81,15 @@ static const NSString *KGaoDeAPIKey = @"34d5745e9a952db4b323c762c12bb9c0";
         NSLog(@"manager start failed!");
     }
     
+    
+//    for(NSString *familyName in [UIFont familyNames]){
+//        NSLog(@"Font FamilyName = %@",familyName); //*输出字体族科名字
+//        for(NSString *fontName in [UIFont fontNamesForFamilyName:familyName]) {
+//            NSLog(@"\t%@",fontName);         //*输出字体族科下字样名字
+//        }
+//    }
+    
+    
     [AFNClientHelper startMonitoring];
     
     //创建数据库

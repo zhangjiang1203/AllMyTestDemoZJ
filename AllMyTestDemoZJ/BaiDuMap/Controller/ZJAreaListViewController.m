@@ -9,7 +9,7 @@
 #import "ZJAreaListViewController.h"
 #import "ZJSetttingAreaViewController.h"
 #import "ZJSafeAreaDetailViewController.h"
-#import "MJExtension.h"
+//#import "MJExtension.h"
 @interface ZJAreaListViewController ()<UITableViewDataSource,UITableViewDelegate>
 {
     NSArray *areaListArr;

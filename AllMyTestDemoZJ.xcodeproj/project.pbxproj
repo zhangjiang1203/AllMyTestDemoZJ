@@ -161,6 +161,7 @@
 		C5471F7B1BEC748E0001CE89 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C5471F7A1BEC748E0001CE89 /* AppDelegate.m */; };
 		C5471F831BEC748F0001CE89 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C5471F821BEC748F0001CE89 /* Assets.xcassets */; };
 		C5471F941BEC750C0001CE89 /* HUDHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = C5471F911BEC750C0001CE89 /* HUDHelper.m */; };
+		CF0676651CDAF2D200181FB3 /* UILabel+ChangeFont.m in Sources */ = {isa = PBXBuildFile; fileRef = CF0676641CDAF2D200181FB3 /* UILabel+ChangeFont.m */; };
 		CFFCFA511C2ACCF400130306 /* iflyMSC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFFCFA501C2ACCF400130306 /* iflyMSC.framework */; };
 		CFFCFA531C2ACD0100130306 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFFCFA521C2ACD0100130306 /* AVFoundation.framework */; };
 		CFFCFA571C2AD6A600130306 /* ZJNearByPlaceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CFFCFA551C2AD6A600130306 /* ZJNearByPlaceViewController.m */; };
@@ -251,7 +252,6 @@
 		546804B51C3BB42800BC3A3C /* UIView+ZJViewExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+ZJViewExtension.m"; sourceTree = "<group>"; };
 		546804B71C3BBCBD00BC3A3C /* ZJInputToolView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZJInputToolView.h; sourceTree = "<group>"; };
 		546804B81C3BBCBD00BC3A3C /* ZJInputToolView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZJInputToolView.m; sourceTree = "<group>"; };
-		546D68CE1C76A1E0007DD2C9 /* AllMyTestDemoZJ.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = AllMyTestDemoZJ.entitlements; sourceTree = "<group>"; };
 		546D68E51C76EEEB007DD2C9 /* PassKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PassKit.framework; path = System/Library/Frameworks/PassKit.framework; sourceTree = SDKROOT; };
 		546F9A5D1C1572900079AD80 /* ZJCalendarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZJCalendarView.h; sourceTree = "<group>"; };
 		546F9A5E1C1572900079AD80 /* ZJCalendarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZJCalendarView.m; sourceTree = "<group>"; };
@@ -497,6 +497,8 @@
 		C5471F901BEC750C0001CE89 /* HUDHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HUDHelper.h; sourceTree = "<group>"; };
 		C5471F911BEC750C0001CE89 /* HUDHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HUDHelper.m; sourceTree = "<group>"; };
 		C5471F951BEC76AD0001CE89 /* AllMyTestDemoXi-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "AllMyTestDemoXi-Prefix.pch"; path = "../AllMyTestDemoXi-Prefix.pch"; sourceTree = "<group>"; };
+		CF0676631CDAF2D200181FB3 /* UILabel+ChangeFont.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+ChangeFont.h"; sourceTree = "<group>"; };
+		CF0676641CDAF2D200181FB3 /* UILabel+ChangeFont.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+ChangeFont.m"; sourceTree = "<group>"; };
 		CFFCFA501C2ACCF400130306 /* iflyMSC.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = iflyMSC.framework; sourceTree = "<group>"; };
 		CFFCFA521C2ACD0100130306 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		CFFCFA541C2AD6A600130306 /* ZJNearByPlaceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZJNearByPlaceViewController.h; sourceTree = "<group>"; };
@@ -1357,7 +1359,6 @@
 		C5471F761BEC748E0001CE89 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				546D68CE1C76A1E0007DD2C9 /* AllMyTestDemoZJ.entitlements */,
 				C5471F821BEC748F0001CE89 /* Assets.xcassets */,
 				C5471F871BEC748F0001CE89 /* Info.plist */,
 				C5471F951BEC76AD0001CE89 /* AllMyTestDemoXi-Prefix.pch */,
@@ -1413,6 +1414,8 @@
 				5459B9721C4E124E00503094 /* AFNClientHelper.m */,
 				5488A9331C571BD7008681CB /* ZJAnimationHelper.h */,
 				5488A9341C571BD7008681CB /* ZJAnimationHelper.m */,
+				CF0676631CDAF2D200181FB3 /* UILabel+ChangeFont.h */,
+				CF0676641CDAF2D200181FB3 /* UILabel+ChangeFont.m */,
 			);
 			path = CommonTools;
 			sourceTree = "<group>";
@@ -1498,10 +1501,12 @@
 				TargetAttributes = {
 					C5471F721BEC748E0001CE89 = {
 						CreatedOnToolsVersion = 7.1;
-						DevelopmentTeam = 3K2472A4AX;
+						DevelopmentTeam = B2G6WGLXZ7;
+						LastSwiftMigration = 0800;
+						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.OMC = {
-								enabled = 1;
+								enabled = 0;
 							};
 							com.apple.Wallet = {
 								enabled = 0;
@@ -1678,6 +1683,7 @@
 				8D5EA9151BF2E4F000ADFB2A /* RSADataVerifier.m in Sources */,
 				544FC7EE1C438D4A0004C836 /* ZJFileDetailViewController.m in Sources */,
 				8D3C8B401C069B670005CD9A /* ZJSafeAreaDetailViewController.m in Sources */,
+				CF0676651CDAF2D200181FB3 /* UILabel+ChangeFont.m in Sources */,
 				8DC891DF1BF768710012D04F /* ZJAreaModel.m in Sources */,
 				8D415F321BF18FCE00F41927 /* ZJBaiDuBaseViewController.mm in Sources */,
 				8D415F3F1BF190D700F41927 /* MyAnnotation.m in Sources */,
@@ -1813,10 +1819,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_ENTITLEMENTS = AllMyTestDemoZJ/AllMyTestDemoZJ.entitlements;
+				CODE_SIGN_ENTITLEMENTS = "";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = B2G6WGLXZ7;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1841,18 +1848,20 @@
 					"$(SRCROOT)/AllMyTestDemoZJ/ZhifubaoAndWeiXin/View/zhifubao/OpenSSL/include",
 				);
 				INFOPLIST_FILE = AllMyTestDemoZJ/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/AllMyTestDemoZJ/ZhifubaoAndWeiXin/View/WeiXinSDK",
 					"$(PROJECT_DIR)/AllMyTestDemoZJ/ZhifubaoAndWeiXin/View/zhifubao/OpenSSL/ilb",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = AllMyTestDemoZJ;
+				PRODUCT_BUNDLE_IDENTIFIER = zhangjiang.AllMyTestDemoZJ;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -1863,10 +1872,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_ENTITLEMENTS = AllMyTestDemoZJ/AllMyTestDemoZJ.entitlements;
+				CODE_SIGN_ENTITLEMENTS = "";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = B2G6WGLXZ7;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1891,17 +1901,19 @@
 					"$(SRCROOT)/AllMyTestDemoZJ/ZhifubaoAndWeiXin/View/zhifubao/OpenSSL/include",
 				);
 				INFOPLIST_FILE = AllMyTestDemoZJ/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/AllMyTestDemoZJ/ZhifubaoAndWeiXin/View/WeiXinSDK",
 					"$(PROJECT_DIR)/AllMyTestDemoZJ/ZhifubaoAndWeiXin/View/zhifubao/OpenSSL/ilb",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = AllMyTestDemoZJ;
+				PRODUCT_BUNDLE_IDENTIFIER = zhangjiang.AllMyTestDemoZJ;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};

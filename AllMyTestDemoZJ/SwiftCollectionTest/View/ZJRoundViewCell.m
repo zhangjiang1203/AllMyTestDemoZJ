@@ -21,7 +21,8 @@
 }
 
 - (void)awakeFromNib {
-    
+    [super awakeFromNib];
+
     
     
 }

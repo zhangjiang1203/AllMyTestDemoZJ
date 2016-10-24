@@ -33,22 +33,23 @@
     NSMutableString *result = [NSMutableString string];
     [result appendString:@"-----BEGIN PRIVATE KEY-----\n"];
     int index = 0;
-	int count = 0;
+    int count = 0;
     while (index < len) {
         char ch = pstr[index];
-		if (ch == '\r' || ch == '\n') {
-			++index;
-			continue;
-		}
+        if (ch == '\r' || ch == '\n') {
+            ++index;
+            continue;
+        }
         [result appendFormat:@"%c", ch];
         if (++count == 79)
         {
             [result appendString:@"\n"];
-			count = 0;
+            count = 0;
         }
         index++;
     }
     [result appendString:@"\n-----END PRIVATE KEY-----"];
+    return result;
     return result;
 }
 

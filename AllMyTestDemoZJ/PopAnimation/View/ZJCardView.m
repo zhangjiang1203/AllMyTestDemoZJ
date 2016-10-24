@@ -15,6 +15,7 @@
 @implementation ZJCardView
 
 -(void)awakeFromNib{
+    [super awakeFromNib];
     self.showFlagTitleLabel.hidden = YES;
     self.showFlagImage.hidden = YES;
     self.layer.cornerRadius = 5;

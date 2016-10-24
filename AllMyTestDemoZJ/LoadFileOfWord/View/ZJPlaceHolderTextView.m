@@ -15,6 +15,8 @@
 
 @implementation ZJPlaceHolderTextView
 -(void)awakeFromNib{
+    [super awakeFromNib];
+
     self.placeFont = self.font;
     self.placeHolder = @"";
     self.placeColor = [UIColor lightGrayColor];

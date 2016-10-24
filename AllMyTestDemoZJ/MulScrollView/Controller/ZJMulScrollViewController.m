@@ -168,34 +168,34 @@
 }
 #pragma mark -加载view的代理方法
 #pragma mark -隐藏导航栏和tabbar
-//-(void)dragToHiddenNavBar:(BOOL)isHidden{
-//    [self.navigationController setNavigationBarHidden:isHidden animated:YES];
-//    //放在里面只会调用一次去执行，在外面会执行很多次
-//    if (isHidden) {
-//        if (isHiddenBar) {
-//            [self doHiddenStateBar:isHiddenBar];
-//            isHiddenBar = NO;
-//        }
-//    }else{
-//        if (!isHiddenBar) {
-//            [self doHiddenStateBar:isHiddenBar];
-//            isHiddenBar = YES;
-//        }
-//    }
-//}
-//#pragma mark -隐藏状态栏
-//-(BOOL)prefersStatusBarHidden{
-//    return isStateBar;
-//}
-//#pragma mark -调用方法隐藏
-//-(void)doHiddenStateBar:(BOOL)isHidden{
-//    
-//    isStateBar = isHiddenBar;
-//    //这句话加不加好像都一样
-//    //    [self prefersStatusBarHidden];
-//    [self performSelector:@selector(setNeedsStatusBarAppearanceUpdate)];
-//    
-//}
+-(void)dragToHiddenNavBar:(BOOL)isHidden{
+    [self.navigationController setNavigationBarHidden:isHidden animated:YES];
+    //放在里面只会调用一次去执行，在外面会执行很多次
+    if (isHidden) {
+        if (isHiddenBar) {
+            [self doHiddenStateBar:isHiddenBar];
+            isHiddenBar = NO;
+        }
+    }else{
+        if (!isHiddenBar) {
+            [self doHiddenStateBar:isHiddenBar];
+            isHiddenBar = YES;
+        }
+    }
+}
+#pragma mark -隐藏状态栏
+-(BOOL)prefersStatusBarHidden{
+    return isStateBar;
+}
+#pragma mark -调用方法隐藏
+-(void)doHiddenStateBar:(BOOL)isHidden{
+    
+    isStateBar = isHiddenBar;
+    //这句话加不加好像都一样
+    //    [self prefersStatusBarHidden];
+    [self performSelector:@selector(setNeedsStatusBarAppearanceUpdate)];
+    
+}
 -(void)clickCellToPush:(NSInteger)index imageName:(NSString *)imageName frame:(CGRect)cellRect{
     ZJNavAnimationInfoViewController  *VC = [[ZJNavAnimationInfoViewController alloc]init];
     imageNameStr = imageName;

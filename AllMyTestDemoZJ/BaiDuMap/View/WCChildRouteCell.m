@@ -28,7 +28,7 @@
 
 - (void)awakeFromNib {
     
-    
+    [super awakeFromNib];
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

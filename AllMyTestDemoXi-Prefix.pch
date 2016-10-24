@@ -50,7 +50,7 @@
 #import "Masonry.h"
 #import "HUDHelper.h"
 #import "WCPaymentModel.h"
-#import "MJExtension.h"
+//#import "MJExtension.h"
 #import "UIScrollView+EmptyDataSet.h"
 #import "UIScrollView+ZJEmptyData.h"
 #import "UITableView+LoadAnimation.h"
@@ -80,6 +80,8 @@
 #import <AMapSearchKit/AMapSearchKit.h>
 #import <AMapNaviKit/AMapNaviKit.h>
 #import <AMapNaviKit/MAMapKit.h>
+//#import "ReactiveCocoa.h"
+
 
 #pragma mark -通知定义
 #define KPraiseImage @"KChangePraiseImage"

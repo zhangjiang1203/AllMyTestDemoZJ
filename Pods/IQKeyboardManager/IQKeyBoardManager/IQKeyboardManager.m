@@ -29,6 +29,7 @@
 #import "IQToolbar.h"
 #import "IQBarButtonItem.h"
 #import "IQKeyboardManagerConstantsInternal.h"
+#import "IQUIScrollView+Additions.h"
 #import "IQUITextFieldView+Additions.h"
 #import "IQUIViewController+Additions.h"
 
@@ -74,8 +75,8 @@ void _IQShowLog(NSString *logString);
 - (void)tapRecognized:(UITapGestureRecognizer*)gesture;
 
 //  Next/Previous/Done methods
-- (void)previousAction:(id)segmentedControl;
-- (void)nextAction:(id)segmentedControl;
+- (void)previousAction:(IQBarButtonItem*)barButton;
+- (void)nextAction:(IQBarButtonItem*)barButton;
 - (void)doneAction:(IQBarButtonItem*)barButton;
 
 //  Adding Removing IQToolbar methods
@@ -140,11 +141,6 @@ void _IQShowLog(NSString *logString);
 
     /*******************************************/
 
-    /** Default toolbar tintColor to be used within the project. Default is black. */
-    UIColor                 *_defaultToolbarTintColor;
-    
-    /*******************************************/
-
     /** Set of restricted classes for library */
     NSMutableSet            *_disabledClasses;
 
@@ -180,6 +176,7 @@ void _IQShowLog(NSString *logString);
 @synthesize toolbarManageBehaviour              =   _toolbarManageBehaviour;
 
 @synthesize shouldToolbarUsesTextFieldTintColor =   _shouldToolbarUsesTextFieldTintColor;
+@synthesize toolbarTintColor                    =   _toolbarTintColor;
 
 @synthesize shouldShowTextFieldPlaceholder      =   _shouldShowTextFieldPlaceholder;
 @synthesize placeholderFont                     =   _placeholderFont;
@@ -246,7 +243,6 @@ void _IQShowLog(NSString *logString);
             _animationDuration = 0.25;
             _animationCurve = UIViewAnimationCurveEaseInOut;
 			[self setKeyboardDistanceFromTextField:10.0];
-            _defaultToolbarTintColor = [UIColor blackColor];
             [self setCanAdjustTextView:NO];
             [self setShouldPlayInputClicks:NO];
             [self setShouldResignOnTouchOutside:NO];
@@ -571,7 +567,7 @@ void _IQShowLog(NSString *logString);
                 _lastScrollView.scrollIndicatorInsets = _startingScrollIndicatorInsets;
             } completion:NULL];
             
-            if (_shouldRestoreScrollViewContentOffset)
+            if (_lastScrollView.shouldRestoreScrollViewContentOffset)
             {
                 [_lastScrollView setContentOffset:_startingContentOffset animated:YES];
             }
@@ -591,7 +587,7 @@ void _IQShowLog(NSString *logString);
                 _lastScrollView.scrollIndicatorInsets = _startingScrollIndicatorInsets;
             } completion:NULL];
 
-            if (_shouldRestoreScrollViewContentOffset)
+            if (_lastScrollView.shouldRestoreScrollViewContentOffset)
             {
                 [_lastScrollView setContentOffset:_startingContentOffset animated:YES];
             }
@@ -611,7 +607,7 @@ void _IQShowLog(NSString *logString);
         _lastScrollView = superScrollView;
         _startingContentInsets = superScrollView.contentInset;
         _startingContentOffset = superScrollView.contentOffset;
-        _startingScrollIndicatorInsets = superScrollView.contentInset;
+        _startingScrollIndicatorInsets = superScrollView.scrollIndicatorInsets;
 
         _IQShowLog([NSString stringWithFormat:@"Saving %@ contentInset: %@ and contentOffset : %@",[_lastScrollView _IQDescription],NSStringFromUIEdgeInsets(_startingContentInsets),NSStringFromCGPoint(_startingContentOffset)]);
     }
@@ -1068,7 +1064,7 @@ void _IQShowLog(NSString *logString);
             _lastScrollView.contentInset = _startingContentInsets;
             _lastScrollView.scrollIndicatorInsets = _startingScrollIndicatorInsets;
             
-            if (_shouldRestoreScrollViewContentOffset)
+            if (_lastScrollView.shouldRestoreScrollViewContentOffset)
             {
                 _lastScrollView.contentOffset = _startingContentOffset;
             }
@@ -1589,19 +1585,23 @@ void _IQShowLog(NSString *logString);
         //setInputAccessoryView: check   (Bug ID: #307)
         if ([textField respondsToSelector:@selector(setInputAccessoryView:)] && (![textField inputAccessoryView] || ([[textField inputAccessoryView] tag] == kIQPreviousNextButtonToolbarTag)))
         {
-            static UIView *doneToolbar = nil;
-            
-            if (doneToolbar == nil)
+            //Supporting Custom Done button image (Enhancement ID: #366)
+            if (_toolbarDoneBarButtonItemImage)
             {
-                //Now adding textField placeholder text as title of IQToolbar  (Enhancement ID: #27)
-                [textField addDoneOnKeyboardWithTarget:self action:@selector(doneAction:) shouldShowPlaceholder:_shouldShowTextFieldPlaceholder];
-                doneToolbar = textField.inputAccessoryView;
-                doneToolbar.tag = kIQDoneButtonToolbarTag; //  (Bug ID: #78)
+                [textField addRightButtonOnKeyboardWithImage:_toolbarDoneBarButtonItemImage target:self action:@selector(doneAction:) shouldShowPlaceholder:_shouldShowTextFieldPlaceholder];
+            }
+            //Supporting Custom Done button text (Enhancement ID: #209, #411, Bug ID: #376)
+            else if (_toolbarDoneBarButtonItemText)
+            {
+                [textField addRightButtonOnKeyboardWithText:_toolbarDoneBarButtonItemText target:self action:@selector(doneAction:) shouldShowPlaceholder:_shouldShowTextFieldPlaceholder];
             }
             else
             {
-                textField.inputAccessoryView = doneToolbar;
+                //Now adding textField placeholder text as title of IQToolbar  (Enhancement ID: #27)
+                [textField addDoneOnKeyboardWithTarget:self action:@selector(doneAction:) shouldShowPlaceholder:_shouldShowTextFieldPlaceholder];
             }
+
+            textField.inputAccessoryView.tag = kIQDoneButtonToolbarTag; //  (Bug ID: #78)
         }
         
         if ([textField.inputAccessoryView isKindOfClass:[IQToolbar class]] && textField.inputAccessoryView.tag == kIQDoneButtonToolbarTag)
@@ -1622,7 +1622,20 @@ void _IQShowLog(NSString *logString);
                     default:
                     {
                         toolbar.barStyle = UIBarStyleDefault;
-                        [toolbar setTintColor:_shouldToolbarUsesTextFieldTintColor?[textField tintColor]:_defaultToolbarTintColor];
+                        
+                        //Setting toolbar tintColor //  (Enhancement ID: #30)
+                        if (_shouldToolbarUsesTextFieldTintColor)
+                        {
+                            toolbar.tintColor = [textField tintColor];
+                        }
+                        else if (_toolbarTintColor)
+                        {
+                            toolbar.tintColor = _toolbarTintColor;
+                        }
+                        else
+                        {
+                            toolbar.tintColor = [UIColor blackColor];
+                        }
                     }
                         break;
                 }
@@ -1661,8 +1674,22 @@ void _IQShowLog(NSString *logString);
             //setInputAccessoryView: check   (Bug ID: #307)
             if ([textField respondsToSelector:@selector(setInputAccessoryView:)] && (![textField inputAccessoryView] || [[textField inputAccessoryView] tag] == kIQDoneButtonToolbarTag))
             {
-                //Now adding textField placeholder text as title of IQToolbar  (Enhancement ID: #27)
-                [textField addPreviousNextDoneOnKeyboardWithTarget:self previousAction:@selector(previousAction:) nextAction:@selector(nextAction:) doneAction:@selector(doneAction:) shouldShowPlaceholder:_shouldShowTextFieldPlaceholder];
+                //Supporting Custom Done button image (Enhancement ID: #366)
+                if (_toolbarDoneBarButtonItemImage)
+                {
+                    [textField addPreviousNextRightOnKeyboardWithTarget:self rightButtonImage:_toolbarDoneBarButtonItemImage previousAction:@selector(previousAction:) nextAction:@selector(nextAction:) rightButtonAction:@selector(doneAction:) shouldShowPlaceholder:_shouldShowTextFieldPlaceholder];
+                }
+                //Supporting Custom Done button text (Enhancement ID: #209, #411, Bug ID: #376)
+                else if (_toolbarDoneBarButtonItemText)
+                {
+                    [textField addPreviousNextRightOnKeyboardWithTarget:self rightButtonTitle:_toolbarDoneBarButtonItemText previousAction:@selector(previousAction:) nextAction:@selector(nextAction:) rightButtonAction:@selector(doneAction:) shouldShowPlaceholder:_shouldShowTextFieldPlaceholder];
+                }
+                else
+                {
+                    //Now adding textField placeholder text as title of IQToolbar  (Enhancement ID: #27)
+                    [textField addPreviousNextDoneOnKeyboardWithTarget:self previousAction:@selector(previousAction:) nextAction:@selector(nextAction:) doneAction:@selector(doneAction:) shouldShowPlaceholder:_shouldShowTextFieldPlaceholder];
+                }
+
                 textField.inputAccessoryView.tag = kIQPreviousNextButtonToolbarTag; //  (Bug ID: #78)
             }
             
@@ -1686,8 +1713,18 @@ void _IQShowLog(NSString *logString);
                             toolbar.barStyle = UIBarStyleDefault;
                             
                             //Setting toolbar tintColor //  (Enhancement ID: #30)
-                            [toolbar setTintColor:_shouldToolbarUsesTextFieldTintColor?[textField tintColor]:_defaultToolbarTintColor];
-                            
+                            if (_shouldToolbarUsesTextFieldTintColor)
+                            {
+                                toolbar.tintColor = [textField tintColor];
+                            }
+                            else if (_toolbarTintColor)
+                            {
+                                toolbar.tintColor = _toolbarTintColor;
+                            }
+                            else
+                            {
+                                toolbar.tintColor = [UIColor blackColor];
+                            }
                         }
                             break;
                     }
@@ -1824,11 +1861,21 @@ void _IQShowLog(NSString *logString);
 /** Disable adjusting view in disabledClass     */
 -(void)disableInViewControllerClass:(Class)disabledClass
 {
+    [self disableDistanceHandlingInViewControllerClass:disabledClass];
+}
+
+-(void)disableDistanceHandlingInViewControllerClass:(nonnull Class)disabledClass
+{
     [_disabledClasses addObject:disabledClass];
 }
 
 /** Re-enable adjusting textField in disabledClass  */
 -(void)removeDisableInViewControllerClass:(Class)disabledClass
+{
+    [self removeDisableDistanceHandlingInViewControllerClass:disabledClass];
+}
+
+-(void)removeDisableDistanceHandlingInViewControllerClass:(nonnull Class)disabledClass
 {
     [_disabledClasses removeObject:disabledClass];
 }

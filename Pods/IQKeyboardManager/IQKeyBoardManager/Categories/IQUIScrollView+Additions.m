@@ -1,5 +1,5 @@
 //
-//  IQTitleBarButtonItem.h
+//  IQUIScrollView+Additions.m
 // https://github.com/hackiftekhar/IQKeyboardManager
 // Copyright (c) 2013-15 Iftekhar Qurashi.
 //
@@ -21,40 +21,21 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import <Foundation/NSObjCRuntime.h>
-#import "IQKeyboardManagerConstants.h"
-#import "IQBarButtonItem.h"
+#import "IQUIScrollView+Additions.h"
+#import <objc/runtime.h>
 
-/**
- BarButtonItem with title text.
- */
-@interface IQTitleBarButtonItem : IQBarButtonItem
+@implementation UIScrollView (Additions)
 
-/**
- Font to be used in bar button. Default is (system font 12.0 bold).
- */
-@property(nullable, nonatomic, strong) UIFont *font;
+-(void)setShouldRestoreScrollViewContentOffset:(BOOL)shouldRestoreScrollViewContentOffset
+{
+    objc_setAssociatedObject(self, @selector(shouldRestoreScrollViewContentOffset), @(shouldRestoreScrollViewContentOffset), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+}
 
-/**
- Initialize with frame and title.
- 
- @param title Title of barButtonItem.
- */
--(nonnull instancetype)initWithTitle:(nullable NSString *)title NS_DESIGNATED_INITIALIZER;
-
-/**
- Unavailable. Please use initWithFrame:title: method
- */
--(nonnull instancetype)init NS_UNAVAILABLE;
-
-/**
- Unavailable. Please use initWithFrame:title: method
- */
--(nonnull instancetype)initWithCoder:(nullable NSCoder *)aDecoder NS_UNAVAILABLE;
-
-/**
- Unavailable. Please use initWithFrame:title: method
- */
-+ (nonnull instancetype)new NS_UNAVAILABLE;
+-(BOOL)shouldRestoreScrollViewContentOffset
+{
+    NSNumber *shouldRestoreScrollViewContentOffset = objc_getAssociatedObject(self, @selector(shouldRestoreScrollViewContentOffset));
+    
+    return [shouldRestoreScrollViewContentOffset boolValue];
+}
 
 @end
