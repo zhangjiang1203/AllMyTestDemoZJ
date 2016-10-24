@@ -16,7 +16,7 @@
             startingLineNumber = "203"
             endingLineNumber = "203"
             landmarkName = "-clickCellToPush:imageName:frame:"
-            landmarkType = "5">
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -57,8 +57,8 @@
                   symbolName = "-[WCPaymentModel zhiFubaoPayWithMoney:productName:productDesc:]"
                   moduleName = "AllMyTestDemoZJ"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/pg/Desktop/ios%E6%B5%8B%E8%AF%95/%E6%B5%8B%E8%AF%95/AllMyTestDemoZJ/AllMyTestDemoZJ/ZhifubaoAndWeiXin/Model/WCPaymentModel.m"
-                  timestampString = "498988138.588972"
+                  urlString = "file:///Users/pg/Desktop/ios%E6%B5%8B%E8%AF%95/AllMyTestDemoZJ/AllMyTestDemoZJ/ZhifubaoAndWeiXin/Model/WCPaymentModel.m"
+                  timestampString = "498993093.836826"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "107"
@@ -72,8 +72,8 @@
                   symbolName = "__63-[WCPaymentModel zhiFubaoPayWithMoney:productName:productDesc:]_block_invoke"
                   moduleName = "AllMyTestDemoZJ"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/pg/Desktop/ios%E6%B5%8B%E8%AF%95/%E6%B5%8B%E8%AF%95/AllMyTestDemoZJ/AllMyTestDemoZJ/ZhifubaoAndWeiXin/Model/WCPaymentModel.m"
-                  timestampString = "498988138.592802"
+                  urlString = "file:///Users/pg/Desktop/ios%E6%B5%8B%E8%AF%95/AllMyTestDemoZJ/AllMyTestDemoZJ/ZhifubaoAndWeiXin/Model/WCPaymentModel.m"
+                  timestampString = "498993093.839306"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "109"
@@ -128,7 +128,7 @@
             startingLineNumber = "173"
             endingLineNumber = "173"
             landmarkName = "-application:openURL:sourceApplication:annotation:"
-            landmarkType = "5">
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -144,7 +144,7 @@
             startingLineNumber = "178"
             endingLineNumber = "178"
             landmarkName = "-application:openURL:sourceApplication:annotation:"
-            landmarkType = "5">
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -160,7 +160,39 @@
             startingLineNumber = "158"
             endingLineNumber = "158"
             landmarkName = "-application:handleOpenURL:"
-            landmarkType = "5">
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "AllMyTestDemoZJ/BlueTooth/Controller/ZJBlueToothViewController.m"
+            timestampString = "498991813.974702"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "66"
+            endingLineNumber = "66"
+            landmarkName = "-centralManager:didDiscoverPeripheral:advertisementData:RSSI:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "AllMyTestDemoZJ/BlueTooth/Controller/ZJBlueToothViewController.m"
+            timestampString = "498991223.124834"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "36"
+            endingLineNumber = "36"
+            landmarkName = "-centralManagerDidUpdateState:"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

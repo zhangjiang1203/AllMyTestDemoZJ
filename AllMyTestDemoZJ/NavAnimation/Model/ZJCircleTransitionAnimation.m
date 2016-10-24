@@ -8,7 +8,7 @@
 
 #import "ZJCircleTransitionAnimation.h"
 
-@interface ZJCircleTransitionAnimation ()
+@interface ZJCircleTransitionAnimation ()<CAAnimationDelegate>
 
 @property(nonatomic,strong)id<UIViewControllerContextTransitioning>transitionContext;
 

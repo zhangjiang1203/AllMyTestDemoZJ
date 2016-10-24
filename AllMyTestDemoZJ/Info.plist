@@ -5,7 +5,7 @@
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleDisplayName</key>
-	<string>测试项目</string>
+	<string>AllMyTestDemoZJ</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
@@ -30,6 +30,14 @@
 				<string>zhangjiangTest</string>
 			</array>
 		</dict>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>prefs</string>
+			</array>
+		</dict>
 	</array>
 	<key>CFBundleVersion</key>
 	<string>1</string>
@@ -50,8 +58,6 @@
 		<key>NSAllowsArbitraryLoads</key>
 		<true/>
 	</dict>
-	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>我们需要通过你的地理位置信息获取您周边的相关数据</string>
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>
 		<string>armv7</string>
@@ -60,5 +66,17 @@
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
 	</array>
+	<key>NSAppleMusicUsageDescription</key>
+	<string>MEETU需要在使用期间访问你的多媒体</string>
+	<key>NSCameraUsageDescription</key>
+	<string>MEETU需要访问相机</string>
+	<key>NSLocationUsageDescription</key>
+	<string>MEETU需要访问你的位置</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>MEETU需要在使用期间访问你的位置</string>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>MEETU需要访问麦克风</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>MEETU需要访问相册</string>
 </dict>
 </plist>

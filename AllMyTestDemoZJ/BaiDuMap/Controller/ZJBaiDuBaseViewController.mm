@@ -47,11 +47,11 @@
 
 
 -(void)setRightButtonItem{
-    UIButton *areaListBtn = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, 60, 20)];
+    UIButton *areaListBtn = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, 80, 20)];
 //    [back setImage:[UIImage imageNamed:@"back_press_base"] forState:UIControlStateNormal];
 //    back.imageView.contentMode = UIViewContentModeLeft;
     [areaListBtn setTitle:@"安全区域" forState:UIControlStateNormal];
-    areaListBtn.titleLabel.font = [UIFont systemFontOfSize:15];
+    areaListBtn.titleLabel.font = [UIFont systemFontOfSize:14];
 //    back.titleLabel.ti
     [areaListBtn addTarget:self action:@selector(areaListView:) forControlEvents:UIControlEventTouchUpInside];
     UIBarButtonItem *left = [[UIBarButtonItem alloc]initWithCustomView:areaListBtn];
@@ -114,10 +114,10 @@
     [geocoder reverseGeocodeLocation:commonLocal completionHandler:^(NSArray<CLPlacemark *> * _Nullable placemarks, NSError * _Nullable error) {
         CLPlacemark *placemark = [placemarks lastObject];
         NSLog(@"具体地理位置信息---%@",placemark.name);
-        NSString *currentTime = [HUDHelper getCurrentDateWithFormat:@"yyyy-MM-dd HH:mm:ss"];
+        NSString *currentTime = [HUDHelper getCurrentDateWithFormat:@"yyyy-MM-dd HH:mm"];
         CGSize addressSize = [HUDHelper getSuitSizeWithString:placemark.name fontSize:12 bold:NO sizeOfX:300];
         CGSize timeSize = [HUDHelper getSuitSizeWithString:currentTime fontSize:12 bold:NO sizeOfX:300];
-        CGFloat paopaoViewW = [self commpareWith:addressSize size2:timeSize]+80;
+        CGFloat paopaoViewW = [self commpareWith:addressSize size2:timeSize]+100;
         if(paopaoViewW >= ScreenWidth - 20){
             paopaoViewW = ScreenWidth - 20;
         }

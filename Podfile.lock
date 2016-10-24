@@ -51,7 +51,7 @@ DEPENDENCIES:
   - MBProgressHUD (~> 0.9.1)
   - MJExtension (~> 2.5.16)
   - MJRefresh (~> 3.0.0)
-  - PNChart (~> 0.8.8)
+  - PNChart
   - pop (~> 1.0.8)
 
 SPEC CHECKSUMS:

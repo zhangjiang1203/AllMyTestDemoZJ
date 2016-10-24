@@ -76,7 +76,7 @@ static const NSString *KGaoDeAPIKey = @"34d5745e9a952db4b323c762c12bb9c0";
     //初始化百度地图
     self.mapManager = [[BMKMapManager alloc]init];
     // 如果要关注网络及授权验证事件，请设定     generalDelegate参数
-    BOOL ret = [_mapManager start:@"y2koeRlrmXWLTDjmFmeGBbYd"  generalDelegate:nil];
+    BOOL ret = [_mapManager start:@"Ach1MeflrOVkuTYiHxqFaidg8SPEXykS"  generalDelegate:nil];
     if (!ret) {
         NSLog(@"manager start failed!");
     }

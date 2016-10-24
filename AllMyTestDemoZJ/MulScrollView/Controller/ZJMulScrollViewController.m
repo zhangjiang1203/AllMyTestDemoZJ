@@ -134,7 +134,7 @@
     isStateBar = NO;
     isHiddenBar = NO;
     segmentTitleArr = @[@"美食",@"购物",@"酒店",@"亲子",@"旅游",@"休闲娱乐",@"生活服务",@"美容健身"];
-    CGFloat segmentH = 36;
+    CGFloat segmentH = 40;
     _myCarousel = [[iCarousel alloc]initWithFrame:CGRectMake(0, segmentH, ScreenWidth, ScreenHeight-segmentH)];
     _myCarousel.delegate = self;
     _myCarousel.dataSource = self;

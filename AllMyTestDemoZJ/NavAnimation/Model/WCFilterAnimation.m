@@ -8,7 +8,7 @@
 
 #import "WCFilterAnimation.h"
 
-@interface WCFilterAnimation ()
+@interface WCFilterAnimation ()<CAAnimationDelegate>
 @property(nonatomic,strong)id<UIViewControllerContextTransitioning>transitionContext;
 
 @end

@@ -31,7 +31,7 @@
     if (self = [super initWithFrame:frame]) {
         _titleLabel = ({
             UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(XTSegmentControlHspace, 0, CGRectGetWidth(self.bounds) - 2 * XTSegmentControlHspace, CGRectGetHeight(self.bounds))];
-            label.font = KDefaultFont(14);//[UIFont systemFontOfSize:XTSegmentControlItemFont];
+            label.font = KDefaultFont(13);//[UIFont systemFontOfSize:XTSegmentControlItemFont];
             label.textColor = KRGBA(120, 120, 120, 1);
             label.text = title;
             label.backgroundColor = [UIColor clearColor];
@@ -165,10 +165,10 @@
     NSDictionary *attributes = @{NSFontAttributeName: [UIFont systemFontOfSize:XTSegmentControlItemFont]};
     for (int i = 0; i < titleArray.count; i++) {
         NSString *title = titleArray[i];
-        CGSize size = [title sizeWithAttributes:attributes];
+        CGFloat titleW = [title sizeWithAttributes:attributes].width+10;
         float x = i > 0 ? CGRectGetMaxX([_itemFrames[i-1] CGRectValue]) : 0;
         float y = 0;
-        float width = 2 * XTSegmentControlHspace + size.width;
+        float width = 2 * XTSegmentControlHspace + titleW;
         float height = CGRectGetHeight(self.bounds);
         CGRect rect = CGRectMake(x, y, width, height);
         [_itemFrames addObject:[NSValue valueWithCGRect:rect]];
@@ -216,10 +216,7 @@
     }
     return _selectColor;
 }
--(void)setSelectIndex:(NSInteger)index lastIndex:(NSInteger)lastIndex
-{
-    
-    
+-(void)setSelectIndex:(NSInteger)index lastIndex:(NSInteger)lastIndex{
     if (index==lastIndex) {
         return;
     }
@@ -242,8 +239,6 @@
 - (void)selectIndex:(NSInteger)index
 {
     [self addRedLine];
-    
-    
     if (index != _currentIndex) {
         
         [self setSelectIndex:index lastIndex:_currentIndex];

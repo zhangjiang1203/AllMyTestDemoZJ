@@ -45,7 +45,7 @@
 #pragma mark -自定义视图中的控件
 -(void)initMyPaoPaoViewUIWithFrame:(CGRect)frame{
     CGFloat ViewW = frame.size.width;
-    CGFloat LabelW = ViewW - 60;
+    CGFloat LabelW = ViewW - 70;
     self.backImageView1 = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, ViewW, frame.size.height -8)];
     self.backImageView1.image = [UIImage imageNamed:@"popupBackImage_01"];
     [self addSubview:self.backImageView1];
@@ -64,6 +64,8 @@
     [self addSubview:self.userNameLabel];
     //时间
     self.timeLabel = [[UILabel alloc]initWithFrame:CGRectMake(10, 23, LabelW, 16)];
+//    self.timeLabel.adjustsFontSizeToFitWidth = YES;
+//    self.timeLabel.minimumScaleFactor = 1.0;
     self.timeLabel.textColor = KLabelColor;
     self.timeLabel.font = KLabelFont;
     self.timeLabel.backgroundColor = [UIColor clearColor];

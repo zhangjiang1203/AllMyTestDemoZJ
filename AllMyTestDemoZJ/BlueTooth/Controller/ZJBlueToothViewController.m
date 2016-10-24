@@ -25,14 +25,10 @@
     [TableEmptyData shareManager].emptyDataColor = UIColorFromRGB(0xF2F2F2);
     [self.myTableView setMethodDelegateAndDataSource];
     
-    self.cbManager = [[CBCentralManager alloc]initWithDelegate:self queue:nil];
     //扫描周围蓝牙
+    self.cbManager = [[CBCentralManager alloc]initWithDelegate:self queue:dispatch_get_main_queue()];
     NSDictionary *dict = @{CBCentralManagerScanOptionAllowDuplicatesKey:@(0)};
     [self.cbManager scanForPeripheralsWithServices:nil options:dict];
-    
-
-    
-    
 }
 
 //blueTooth代理方法
@@ -46,6 +42,7 @@
         {
            [HUDHelper confirmMsg:@"请在“设置”-“蓝牙”中，先打开蓝牙功能" continueBlock:^{
                NSLog(@"打开蓝牙功能");
+               [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"prefs:root=General&path=Bluetooth"]];
            }];
         }
             break;
@@ -53,7 +50,6 @@
         {
             //开始扫描周围的外设
             [self.cbManager scanForPeripheralsWithServices:nil options:nil];
-
         }
             break;
     }
@@ -61,11 +57,16 @@
 
 
 //扫面到设备会进入这个代理方法，不止一个蓝牙设备会被调用多次
--(void)centralManager:(CBCentralManager *)central didDiscoverPeripheral:(CBPeripheral *)peripheral advertisementData:(NSDictionary<NSString *,id> *)advertisementData RSSI:(NSNumber *)RSSI{
+-(void)centralManager:(CBCentralManager *)central//中心管理中
+didDiscoverPeripheral:(CBPeripheral *)peripheral//外设
+    advertisementData:(NSDictionary<NSString *,id> *)advertisementData//外设携带的数据
+                 RSSI:(NSNumber *)RSSI//外设发出的蓝牙信号强度
+{
     
     [self.blueSourceArr addObject:peripheral];
     [self.myTableView reloadData];
 }
+
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     return self.blueSourceArr.count;
