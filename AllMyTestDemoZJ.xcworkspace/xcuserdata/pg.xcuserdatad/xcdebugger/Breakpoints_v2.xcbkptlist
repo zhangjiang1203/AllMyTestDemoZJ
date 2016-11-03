@@ -58,7 +58,7 @@
                   moduleName = "AllMyTestDemoZJ"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/pg/Desktop/ios%E6%B5%8B%E8%AF%95/AllMyTestDemoZJ/AllMyTestDemoZJ/ZhifubaoAndWeiXin/Model/WCPaymentModel.m"
-                  timestampString = "498993093.836826"
+                  timestampString = "499052277.529604"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "107"
@@ -73,7 +73,7 @@
                   moduleName = "AllMyTestDemoZJ"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/pg/Desktop/ios%E6%B5%8B%E8%AF%95/AllMyTestDemoZJ/AllMyTestDemoZJ/ZhifubaoAndWeiXin/Model/WCPaymentModel.m"
-                  timestampString = "498993093.839306"
+                  timestampString = "499052277.532479"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "109"
@@ -170,28 +170,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "AllMyTestDemoZJ/BlueTooth/Controller/ZJBlueToothViewController.m"
-            timestampString = "498991813.974702"
+            timestampString = "499052158.972867"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "66"
             endingLineNumber = "66"
             landmarkName = "-centralManager:didDiscoverPeripheral:advertisementData:RSSI:"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "AllMyTestDemoZJ/BlueTooth/Controller/ZJBlueToothViewController.m"
-            timestampString = "498991223.124834"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "36"
-            endingLineNumber = "36"
-            landmarkName = "-centralManagerDidUpdateState:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

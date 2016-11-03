@@ -93,7 +93,6 @@ didDiscoverPeripheral:(CBPeripheral *)peripheral//外设
     [self.cbManager connectPeripheral:peripheral options:@{CBConnectPeripheralOptionNotifyOnDisconnectionKey:@(1)}];
 }
 
-
 //连接成功
 -(void)centralManager:(CBCentralManager *)central didConnectPeripheral:(CBPeripheral *)peripheral{
     NSLog(@"连接到设备为--%@的设备，成功",peripheral.name);
@@ -102,7 +101,6 @@ didDiscoverPeripheral:(CBPeripheral *)peripheral//外设
     //扫描外设services 成功之后进入-(void)peripheral:(CBPeripheral *)peripheral didDiscoverServices:(NSError *)error
     [peripheral discoverServices:nil];
 }
-
 
 //连接失败
 -(void)centralManager:(CBCentralManager *)central didFailToConnectPeripheral:(CBPeripheral *)peripheral error:(NSError *)error{
