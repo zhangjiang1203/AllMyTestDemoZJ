@@ -1,6 +1,7 @@
 # AllMyTestDemoZJ
-演示了百度地图，高德地图，转场动画，支付宝和微信支付，系统动画和pop引擎动画，自定义的segmentControl
-========
+##演示了百度地图，高德地图，转场动画，支付宝和微信支付，系统动画和pop引擎动画，自定义的segmentControl，添加了3D touch功能
+项目中支付流程是基本都通的，只不过支付账号和支付相关的一个秘钥都是私密的 上传的时候都删除了 需要自己配置
+
 ##基本的功能列表
 ![功能展示](https://github.com/zhangjiang1203/AllMyTestDemoZJ/blob/master/Recourses/content.PNG "功能展示")
 
