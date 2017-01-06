@@ -10,7 +10,7 @@
 
 #define XTSegmentControlItemTag (777)
 
-#define XTSegmentControlItemFont (14)
+#define XTSegmentControlItemFont (13)
 
 #define XTSegmentControlHspace (12)
 
@@ -31,7 +31,7 @@
     if (self = [super initWithFrame:frame]) {
         _titleLabel = ({
             UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(XTSegmentControlHspace, 0, CGRectGetWidth(self.bounds) - 2 * XTSegmentControlHspace, CGRectGetHeight(self.bounds))];
-            label.font = KDefaultFont(13);//[UIFont systemFontOfSize:XTSegmentControlItemFont];
+            label.font = KDefaultFont(12);//[UIFont systemFontOfSize:XTSegmentControlItemFont];
             label.textColor = KRGBA(120, 120, 120, 1);
             label.text = title;
             label.backgroundColor = [UIColor clearColor];

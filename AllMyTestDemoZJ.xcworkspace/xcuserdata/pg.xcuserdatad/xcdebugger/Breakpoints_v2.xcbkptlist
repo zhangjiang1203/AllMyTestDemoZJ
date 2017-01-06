@@ -9,22 +9,6 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "AllMyTestDemoZJ/MulScrollView/Controller/ZJMulScrollViewController.m"
-            timestampString = "471183808.838756"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "203"
-            endingLineNumber = "203"
-            landmarkName = "-clickCellToPush:imageName:frame:"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "AllMyTestDemoZJ/ZhifubaoAndWeiXin/Model/WCPaymentModel.m"
             timestampString = "479876657.314164"
             startingColumnNumber = "9223372036854775807"
@@ -58,7 +42,7 @@
                   moduleName = "AllMyTestDemoZJ"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/pg/Desktop/ios%E6%B5%8B%E8%AF%95/AllMyTestDemoZJ/AllMyTestDemoZJ/ZhifubaoAndWeiXin/Model/WCPaymentModel.m"
-                  timestampString = "505378363.683789"
+                  timestampString = "505379526.19709"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "107"
@@ -73,7 +57,7 @@
                   moduleName = "AllMyTestDemoZJ"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/pg/Desktop/ios%E6%B5%8B%E8%AF%95/AllMyTestDemoZJ/AllMyTestDemoZJ/ZhifubaoAndWeiXin/Model/WCPaymentModel.m"
-                  timestampString = "505378363.685979"
+                  timestampString = "505379526.199556"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "109"

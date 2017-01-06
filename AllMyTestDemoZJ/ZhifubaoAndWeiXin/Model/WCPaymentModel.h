@@ -20,9 +20,9 @@
 //支付宝支付
 #define KWXPayNoti  @""
 
-#define KPartner    @"2088411072299364"
-#define KSeller     @"1790267141@qq.com"
-#define KPrivateKey @"MIICdQIBADANBgkqhkiG9w0BAQEFAASCAl8wggJbAgEAAoGBAJ09/x+MYqfmR0LqIw0KBQcl8F1vGqtOSEp+mEdKoeTgv2bxtKIzKunLX83D6eBQcbGch6saXUrIZgSyHyZRggGzHIxDLHNaIYszbV1vrhN8hYd5SHabDLOwbHOEQOjhCIaRJBJlPShpn1wlzrpIVjlxvy73rhakzXXvpI0FknppAgMBAAECgYA6jMI5qhl2MW3pgatpiIiUv9C/ycYhcXXDn13udeDQi8tZdrjvCKR7B8p1oPSuHOYo34M4+Aky9mneZ8DnkMQabl0VViDIT2odOvELqeLBdhI66OWViKeqYkor9bMV9uSsFTa/h5UJwqYC+9pukDfZ7gxBL2oL17SgeUtxkjPuAQJBANFZt0KfETUpiiZWivQaj/0auWv6vFjnA68wESaFThcMRuDmSR1O7fng88YbEymUGdmyKRN9lNiaxEKlj1ry2kECQQDAR8q9fuQxeBDGnGmcGlg3Nth3vDWKV0E5uLG3va9vPwgZtEovWGje7LTJxFluWyBBgz+n1cr4ua8gnOU/kAYpAkBjQLSoyj9fQ/1yZa9lQb6oUeY88lgfkg7mHNTUvXijZren4qYhVg1vXZ5VevqfyM5krpnY2r4Z325S5qlLhj3BAkA5W7ExAg9UanqmpLYkaP9zyRqd7TkTgZ/ldiEdrKoOx4DFGjEfGoJ+LaJopff/oZNnt51flbkspUeGtQb2BSKxAkAhuxOkXpJc9dpugpVj0AyiFvA6dAAFK2pAifwn9hqgPt4KRrIIgWmVXaNK0MpD33l7U7cdBqM4h3m4JcS4R1FZ"
+#define KPartner    @""
+#define KSeller     @""
+#define KPrivateKey @""
 //=============================================================
 
 
