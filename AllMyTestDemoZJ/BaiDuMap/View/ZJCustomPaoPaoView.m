@@ -96,7 +96,9 @@
 -(void)mapNavigation:(UIButton*)sender{
     //TODO:开始设置代理或者是block回执
     NSLog(@"函数回调开始");
-    self.clickhandle();
+    if (self.clickhandle) {
+       self.clickhandle();
+    }
 }
 
 @end

@@ -2,6 +2,7 @@ platform :ios ,'8.0'
 use_frameworks!
 inhibit_all_warnings!  #取消其中的所有警告
 
+target ‘AllMyTestDemoZJ’ do
 pod 'AFNetworking', '~> 3.0.4'
 pod 'pop', '~> 1.0.8'
 pod 'IQKeyboardManager', '~> 3.3.4'
@@ -19,3 +20,4 @@ pod 'JVFloatLabeledTextField', '~> 1.1.0' #主要实现输入框标签浮动效�
 #pod 'TSMessages', '~> 0.9.12'	#一个用来弹出显示警告和通知的轻量级库 https://github.com/KrauseFx/TSMessages
 #pod 'FXBlurView', '~> 1.6.4'	#iOS 模糊背景类库, 可以方便的根据底层显示的状态生成模糊效果 https://github.com/nicklockwood/FXBlurView
 #pod 'ReactiveCocoa', '~> 4.0.2-alpha-1'
+end

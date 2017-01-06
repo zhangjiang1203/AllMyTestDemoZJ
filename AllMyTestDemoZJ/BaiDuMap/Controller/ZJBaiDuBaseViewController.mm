@@ -168,7 +168,7 @@
 
 - (IBAction)mapViewButtonClick:(UIButton *)sender {
 
-            //移除地图中的标注
+    //移除地图中的标注
     [self.myBaiDuMapView removeAnnotation:localAnnotation];
     [localService startUserLocationService];
 
