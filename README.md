@@ -1,5 +1,5 @@
 # AllMyTestDemoZJ
-演示了百度地图，高德地图，转场动画，支付宝和微信支付，系统动画和pop引擎动画，自定义的segmentControl
+演示了百度地图，高德地图，转场动画，支付宝和微信支付，系统动画和pop引擎动画，自定义的segmentControl，添加了3D touch功能
 ========
 ##基本的功能列表
 ![功能展示](https://github.com/zhangjiang1203/AllMyTestDemoZJ/blob/master/Recourses/content.PNG "功能展示")
