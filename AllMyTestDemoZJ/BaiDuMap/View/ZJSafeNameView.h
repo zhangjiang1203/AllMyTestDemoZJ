@@ -12,6 +12,9 @@ typedef void(^SafeNameHandleAction)(NSString *safeName,BOOL isDismiss);
 
 @interface ZJSafeNameView : UIView
 
+@property (nonatomic,strong) UITextField *nameField;
+
+
 @property (nonatomic,copy)SafeNameHandleAction nameHandleAction;
 
 @property (nonatomic,copy)NSString *areaNameStr;

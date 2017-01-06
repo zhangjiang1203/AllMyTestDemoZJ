@@ -58,7 +58,7 @@
                   moduleName = "AllMyTestDemoZJ"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/pg/Desktop/ios%E6%B5%8B%E8%AF%95/AllMyTestDemoZJ/AllMyTestDemoZJ/ZhifubaoAndWeiXin/Model/WCPaymentModel.m"
-                  timestampString = "502080896.547959"
+                  timestampString = "505378363.683789"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "107"
@@ -73,7 +73,7 @@
                   moduleName = "AllMyTestDemoZJ"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/pg/Desktop/ios%E6%B5%8B%E8%AF%95/AllMyTestDemoZJ/AllMyTestDemoZJ/ZhifubaoAndWeiXin/Model/WCPaymentModel.m"
-                  timestampString = "502080896.550939"
+                  timestampString = "505378363.685979"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "109"
@@ -176,6 +176,38 @@
             startingLineNumber = "66"
             endingLineNumber = "66"
             landmarkName = "-centralManager:didDiscoverPeripheral:advertisementData:RSSI:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "AllMyTestDemoZJ/LoadFileOfWord/Controller/ZJFileDetailViewController.m"
+            timestampString = "505378074.307374"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "85"
+            endingLineNumber = "85"
+            landmarkName = "-previewController:previewItemAtIndex:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "AllMyTestDemoZJ/LoadFileOfWord/Controller/ZJFileDetailViewController.m"
+            timestampString = "505378074.307374"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "80"
+            endingLineNumber = "80"
+            landmarkName = "-numberOfPreviewItemsInPreviewController:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

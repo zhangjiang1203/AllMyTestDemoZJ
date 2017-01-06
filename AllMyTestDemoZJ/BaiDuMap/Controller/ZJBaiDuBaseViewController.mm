@@ -18,9 +18,9 @@
 @property (weak, nonatomic) IBOutlet BMKMapView *myBaiDuMapView;
 
 @property (weak, nonatomic) IBOutlet UIView *scaleBackView;
-@property (weak, nonatomic) IBOutlet UIImageView *scaleSmallImage;
+@property (weak, nonatomic) IBOutlet UIButton *scaleSmallBtn;
 
-@property (weak, nonatomic) IBOutlet UIImageView *scaleBigImage;
+@property (weak, nonatomic) IBOutlet UIButton *scaleBigBtn;
 
 @end
 
@@ -117,7 +117,7 @@
         NSString *currentTime = [HUDHelper getCurrentDateWithFormat:@"yyyy-MM-dd HH:mm"];
         CGSize addressSize = [HUDHelper getSuitSizeWithString:placemark.name fontSize:12 bold:NO sizeOfX:300];
         CGSize timeSize = [HUDHelper getSuitSizeWithString:currentTime fontSize:12 bold:NO sizeOfX:300];
-        CGFloat paopaoViewW = [self commpareWith:addressSize size2:timeSize]+100;
+        CGFloat paopaoViewW = [self commpareWith:addressSize size2:timeSize]+120;
         if(paopaoViewW >= ScreenWidth - 20){
             paopaoViewW = ScreenWidth - 20;
         }
@@ -175,31 +175,8 @@
 }
 
 #pragma mark - 缩小比例
-- (IBAction)scaleSmallBaiDuMap:(UITapGestureRecognizer *)sender {
-    if ([self.myBaiDuMapView zoomOut]) {
-        [self.myBaiDuMapView zoomOut];
-        
-        self.scaleBigImage.userInteractionEnabled = YES;
-        self.scaleBigImage.image = [UIImage imageNamed:@"icon_scaleBig"];
-    }else{
-        self.scaleSmallImage.userInteractionEnabled = NO;
-        self.scaleSmallImage.image = [UIImage imageNamed:@"icon_scaleSamllNo"];
-    }
-    
-}
-
-#pragma mark - 放大比例
-- (IBAction)scaleBigBaiDuMap:(UITapGestureRecognizer *)sender {
-    if ([self.myBaiDuMapView zoomIn]) {
-        [self.myBaiDuMapView zoomIn];
-        
-        self.scaleSmallImage.userInteractionEnabled = YES;
-        self.scaleSmallImage.image = [UIImage imageNamed:@"icon_scaleSamll"];
-    }else{
-        self.scaleBigImage.userInteractionEnabled = NO;
-        self.scaleBigImage.image = [UIImage imageNamed:@"icon_scaleBigNo"];
-    }
-    
+- (IBAction)scaleBaiDuMapView:(UIButton *)sender {
+    sender.tag==1?[self.myBaiDuMapView zoomOut]:[self.myBaiDuMapView zoomIn];
 }
 
 #pragma mark - 比较两个size的宽度的大小

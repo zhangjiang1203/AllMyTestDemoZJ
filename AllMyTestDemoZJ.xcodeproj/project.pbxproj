@@ -504,6 +504,7 @@
 		CF0676641CDAF2D200181FB3 /* UILabel+ChangeFont.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+ChangeFont.m"; sourceTree = "<group>"; };
 		CF5F515C1E1F666400A277DE /* ZJDashboardView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZJDashboardView.h; sourceTree = "<group>"; };
 		CF5F515D1E1F666400A277DE /* ZJDashboardView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZJDashboardView.m; sourceTree = "<group>"; };
+		CF5F515F1E1F760600A277DE /* AllMyTestDemoZJ.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = AllMyTestDemoZJ.entitlements; sourceTree = "<group>"; };
 		CFFCFA501C2ACCF400130306 /* iflyMSC.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = iflyMSC.framework; sourceTree = "<group>"; };
 		CFFCFA521C2ACD0100130306 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		CFFCFA541C2AD6A600130306 /* ZJNearByPlaceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZJNearByPlaceViewController.h; sourceTree = "<group>"; };
@@ -1326,6 +1327,7 @@
 		C5471F751BEC748E0001CE89 /* AllMyTestDemoZJ */ = {
 			isa = PBXGroup;
 			children = (
+				CF5F515F1E1F760600A277DE /* AllMyTestDemoZJ.entitlements */,
 				C5471F791BEC748E0001CE89 /* AppDelegate.h */,
 				C5471F7A1BEC748E0001CE89 /* AppDelegate.m */,
 				8D2EB5D51BEC984200C314B3 /* ZJRootViewController.h */,
@@ -1836,7 +1838,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_WEAK = YES;
-				CODE_SIGN_ENTITLEMENTS = "";
+				CODE_SIGN_ENTITLEMENTS = AllMyTestDemoZJ/AllMyTestDemoZJ.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEFINES_MODULE = YES;
@@ -1890,7 +1892,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_WEAK = YES;
-				CODE_SIGN_ENTITLEMENTS = "";
+				CODE_SIGN_ENTITLEMENTS = AllMyTestDemoZJ/AllMyTestDemoZJ.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEFINES_MODULE = YES;

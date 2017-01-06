@@ -324,7 +324,6 @@
                                     [weakSelf.navigationController popToViewController:viewClass animated:YES];
                                 }
                             }
-                            
                         }
                     }
                 }
@@ -332,13 +331,11 @@
             if (weakSelf.areaChangeModel.areaName) {
                 nameView.areaNameStr = weakSelf.areaChangeModel.areaName;
             }
+            [nameView.nameField becomeFirstResponder];
             [CXCardView showWithView:nameView draggable:YES];
-            
         }
-            
             break;
     }
-    
 }
 
 #pragma mark -移除提示信息视图

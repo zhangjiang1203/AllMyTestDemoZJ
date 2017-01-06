@@ -8,12 +8,6 @@
 
 #import "ZJSafeNameView.h"
 
-@interface ZJSafeNameView ()
-
-@property (nonatomic,strong) UITextField *nameField;
-
-@end
-
 @implementation ZJSafeNameView
 
 -(instancetype)initWithFrame:(CGRect)frame nameAction:(SafeNameHandleAction)nameHandleAction{

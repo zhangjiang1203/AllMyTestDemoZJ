@@ -30,6 +30,7 @@ typedef void(^DownLoadSuccess)(NSString *filePathString);
     
     previewController = [[QLPreviewController alloc]init];
     previewController.dataSource = self;
+    previewController.view.frame = self.view.bounds;
     [self.view addSubview:previewController.view];
     
 }

@@ -77,7 +77,7 @@
     self.addressLabel.backgroundColor = [UIColor clearColor];
     [self addSubview:self.addressLabel];
     //按钮单击事件
-    self.leadBtn = [[UIButton alloc]initWithFrame:CGRectMake(LabelW, 0, 60, frame.size.height -8)];
+    self.leadBtn = [[UIButton alloc]initWithFrame:CGRectMake(LabelW+10, 0, 60, frame.size.height -8)];
     [self.leadBtn addTarget:self action:@selector(mapNavigation:) forControlEvents:UIControlEventTouchUpInside];
     [self.leadBtn setBackgroundImage:[UIImage imageNamed:@"leadposition"] forState:UIControlStateNormal];
     [self addSubview:self.leadBtn];

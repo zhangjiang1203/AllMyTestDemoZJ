@@ -32,7 +32,13 @@
 //    _circleView.circleWidth = 4;
 //    _circleView.titleColor = KRGBA(55, 76, 155, 1);
 //    [self.view addSubview:_circleView];
+    [self addMyCardView];
+    UIPanGestureRecognizer *pan = [[UIPanGestureRecognizer alloc]initWithTarget:self action:@selector(panChange:)];
+    [self.view addGestureRecognizer:pan];
 
+}
+
+-(void)addMyCardView{
     for (int i = 0; i<4; i++) {
         ZJCardView *cardView = [[[NSBundle mainBundle]loadNibNamed:@"ZJCardView" owner:nil options:nil]lastObject];
         cardView.backgroundColor = [UIColor whiteColor];
@@ -43,13 +49,15 @@
         [self.view addSubview:cardView];
         [self.viewsArr addObject:cardView];
     }
-    UIPanGestureRecognizer *pan = [[UIPanGestureRecognizer alloc]initWithTarget:self action:@selector(panChange:)];
-    [self.view addGestureRecognizer:pan];
 
 }
 
 
 -(void)panChange:(UIPanGestureRecognizer*)recongizer{
+    
+    if (!self.viewsArr.count) {
+        return;
+    }
     
     ZJCardView *cardView = self.viewsArr[self.viewsArr.count-1];
     CGPoint point = [recongizer translationInView:cardView];
@@ -105,6 +113,7 @@
             }else{
                 //删除完毕之后在请求数据
                 NSLog(@"最后一张");
+                [self addMyCardView];
             }
         }
     }
