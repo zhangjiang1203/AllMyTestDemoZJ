@@ -31,7 +31,15 @@ typedef void(^DownLoadSuccess)(NSString *filePathString);
     previewController = [[QLPreviewController alloc]init];
     previewController.dataSource = self;
     previewController.view.frame = self.view.bounds;
+    CGFloat version = [[[UIDevice currentDevice] systemVersion] floatValue];
+    if (version >= 10) {
+        [self addChildViewController:previewController];
+    }
+
     [self.view addSubview:previewController.view];
+
+    [previewController didMoveToParentViewController:self];
+
     
 }
 

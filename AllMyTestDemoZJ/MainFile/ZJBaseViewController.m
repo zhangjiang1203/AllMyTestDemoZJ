@@ -21,7 +21,8 @@
     self.edgesForExtendedLayout = UIRectEdgeNone;
     self.extendedLayoutIncludesOpaqueBars = NO;
     self.modalPresentationCapturesStatusBarAppearance = NO;
-    
+    self.navigationController.interactivePopGestureRecognizer.delegate = (id)self;
+
     [self setLeftButtonItem];
     
 }
