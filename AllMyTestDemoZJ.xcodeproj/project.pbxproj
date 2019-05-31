@@ -109,13 +109,10 @@
 		8D5EA9031BF2E4EF00ADFB2A /* ApiXml.mm in Sources */ = {isa = PBXBuildFile; fileRef = 8D5EA8901BF2E4EF00ADFB2A /* ApiXml.mm */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		8D5EA9041BF2E4EF00ADFB2A /* payRequsestHandler.mm in Sources */ = {isa = PBXBuildFile; fileRef = 8D5EA8921BF2E4EF00ADFB2A /* payRequsestHandler.mm */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		8D5EA9051BF2E4EF00ADFB2A /* WXUtil.mm in Sources */ = {isa = PBXBuildFile; fileRef = 8D5EA8941BF2E4EF00ADFB2A /* WXUtil.mm */; };
-		8D5EA9061BF2E4EF00ADFB2A /* libWeChatSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D5EA8951BF2E4EF00ADFB2A /* libWeChatSDK.a */; };
 		8D5EA9071BF2E4EF00ADFB2A /* read_me.txt in Resources */ = {isa = PBXBuildFile; fileRef = 8D5EA8961BF2E4EF00ADFB2A /* read_me.txt */; };
 		8D5EA9081BF2E4EF00ADFB2A /* AlipaySDK.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 8D5EA89A1BF2E4EF00ADFB2A /* AlipaySDK.bundle */; };
 		8D5EA9091BF2E4EF00ADFB2A /* AlipaySDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D5EA89B1BF2E4EF00ADFB2A /* AlipaySDK.framework */; };
 		8D5EA90A1BF2E4F000ADFB2A /* APAuthV2Info.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D5EA89D1BF2E4EF00ADFB2A /* APAuthV2Info.m */; };
-		8D5EA90B1BF2E4F000ADFB2A /* libcrypto.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D5EA8A01BF2E4EF00ADFB2A /* libcrypto.a */; };
-		8D5EA90C1BF2E4F000ADFB2A /* libssl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D5EA8A11BF2E4EF00ADFB2A /* libssl.a */; };
 		8D5EA90D1BF2E4F000ADFB2A /* Order.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D5EA8F01BF2E4EF00ADFB2A /* Order.m */; };
 		8D5EA90E1BF2E4F000ADFB2A /* base64.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D5EA8F31BF2E4EF00ADFB2A /* base64.m */; };
 		8D5EA90F1BF2E4F000ADFB2A /* DataSigner.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D5EA8F61BF2E4EF00ADFB2A /* DataSigner.m */; };
@@ -517,6 +514,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8D7DC0F91BF0414D00C14F48 /* libsqlite3.0.tbd in Frameworks */,
 				546D68E61C76EEEB007DD2C9 /* PassKit.framework in Frameworks */,
 				545D128F1C507DDB00E3E208 /* CoreBluetooth.framework in Frameworks */,
 				544FC7F01C438D6A0004C836 /* QuickLook.framework in Frameworks */,
@@ -526,13 +524,9 @@
 				54441B171C2AA53B006DC0CF /* AddressBook.framework in Frameworks */,
 				54441B151C2AA52B006DC0CF /* libz.tbd in Frameworks */,
 				8D7DC0FD1BF0418B00C14F48 /* libstdc++.6.0.9.tbd in Frameworks */,
-				8D5EA90C1BF2E4F000ADFB2A /* libssl.a in Frameworks */,
 				8D5EA9091BF2E4EF00ADFB2A /* AlipaySDK.framework in Frameworks */,
-				8D5EA9061BF2E4EF00ADFB2A /* libWeChatSDK.a in Frameworks */,
 				CFFCFA511C2ACCF400130306 /* iflyMSC.framework in Frameworks */,
-				8D7DC0F91BF0414D00C14F48 /* libsqlite3.0.tbd in Frameworks */,
 				8D7DC0F71BF0413F00C14F48 /* Security.framework in Frameworks */,
-				8D5EA90B1BF2E4F000ADFB2A /* libcrypto.a in Frameworks */,
 				8D7DC0F51BF0413100C14F48 /* CoreGraphics.framework in Frameworks */,
 				8D7DC0F31BF0412400C14F48 /* SystemConfiguration.framework in Frameworks */,
 				8D7DC0F11BF0411600C14F48 /* OpenGLES.framework in Frameworks */,
@@ -727,43 +721,11 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		546D68D41C76A54E007DD2C9 /* ApplePay */ = {
-			isa = PBXGroup;
-			children = (
-				546D68D51C76A59E007DD2C9 /* Controller */,
-				546D68D61C76A59E007DD2C9 /* Model */,
-				546D68D71C76A59E007DD2C9 /* View */,
-			);
-			path = ApplePay;
-			sourceTree = "<group>";
-		};
-		546D68D51C76A59E007DD2C9 /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Controller;
-			sourceTree = "<group>";
-		};
-		546D68D61C76A59E007DD2C9 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		546D68D71C76A59E007DD2C9 /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
 		546F9A611C157F660079AD80 /* NavAnimation */ = {
 			isa = PBXGroup;
 			children = (
 				546F9A621C157FC10079AD80 /* Controller */,
 				546F9A661C157FC10079AD80 /* Model */,
-				546F9A671C157FC10079AD80 /* View */,
 			);
 			path = NavAnimation;
 			sourceTree = "<group>";
@@ -807,13 +769,6 @@
 				549F21E31C71D82D0085454C /* MaskAnimation.m */,
 			);
 			path = Model;
-			sourceTree = "<group>";
-		};
-		546F9A671C157FC10079AD80 /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = View;
 			sourceTree = "<group>";
 		};
 		548012C31C4CDA840002D9BA /* SwiftCollectionTest */ = {
@@ -1348,7 +1303,6 @@
 				C5471F921BEC750C0001CE89 /* PopAnimation */,
 				C5471F931BEC750C0001CE89 /* ZhifubaoAndWeiXin */,
 				8D7DC0DA1BF02D7800C14F48 /* OtherLibrary */,
-				546D68D41C76A54E007DD2C9 /* ApplePay */,
 				C5471F761BEC748E0001CE89 /* Supporting Files */,
 			);
 			path = AllMyTestDemoZJ;
@@ -1601,13 +1555,18 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-AllMyTestDemoZJ/Pods-AllMyTestDemoZJ-resources.sh",
+				"${PODS_ROOT}/AMapNavi/AMapNaviKit.framework/Versions/1.4.0.a708ac1/Resources/AMap.bundle",
+				"${PODS_ROOT}/AMapNavi/AMapNaviKit.framework/Versions/1.4.0.a708ac1/Resources/AMapNavi.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/AMap.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/AMapNavi.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AllMyTestDemoZJ/Pods-AllMyTestDemoZJ-resources.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-AllMyTestDemoZJ/Pods-AllMyTestDemoZJ-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		73A72B1050723192A6856483 /* [CP] Embed Pods Frameworks */ = {
@@ -1616,13 +1575,40 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-AllMyTestDemoZJ/Pods-AllMyTestDemoZJ-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
+				"${BUILT_PRODUCTS_DIR}/Aspects/Aspects.framework",
+				"${BUILT_PRODUCTS_DIR}/CocoaAsyncSocket/CocoaAsyncSocket.framework",
+				"${BUILT_PRODUCTS_DIR}/FMDB/FMDB.framework",
+				"${BUILT_PRODUCTS_DIR}/IQKeyboardManager/IQKeyboardManager.framework",
+				"${BUILT_PRODUCTS_DIR}/JVFloatLabeledTextField/JVFloatLabeledTextField.framework",
+				"${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework",
+				"${BUILT_PRODUCTS_DIR}/MJExtension/MJExtension.framework",
+				"${BUILT_PRODUCTS_DIR}/MJRefresh/MJRefresh.framework",
+				"${BUILT_PRODUCTS_DIR}/Masonry/Masonry.framework",
+				"${BUILT_PRODUCTS_DIR}/PNChart/PNChart.framework",
+				"${BUILT_PRODUCTS_DIR}/UICountingLabel/UICountingLabel.framework",
+				"${BUILT_PRODUCTS_DIR}/pop/pop.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFNetworking.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Aspects.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CocoaAsyncSocket.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FMDB.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManager.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JVFloatLabeledTextField.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBProgressHUD.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MJExtension.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MJRefresh.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Masonry.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PNChart.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/UICountingLabel.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/pop.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AllMyTestDemoZJ/Pods-AllMyTestDemoZJ-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-AllMyTestDemoZJ/Pods-AllMyTestDemoZJ-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		C519F2FCA1819F9F66FB1584 /* [CP] Check Pods Manifest.lock */ = {
@@ -1631,13 +1617,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-AllMyTestDemoZJ-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -1867,7 +1856,7 @@
 					"$(SRCROOT)/AllMyTestDemoZJ/ZhifubaoAndWeiXin/View/zhifubao/OpenSSL/include",
 				);
 				INFOPLIST_FILE = AllMyTestDemoZJ/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1921,7 +1910,7 @@
 					"$(SRCROOT)/AllMyTestDemoZJ/ZhifubaoAndWeiXin/View/zhifubao/OpenSSL/include",
 				);
 				INFOPLIST_FILE = AllMyTestDemoZJ/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
